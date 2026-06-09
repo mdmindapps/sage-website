@@ -4,6 +4,100 @@ import { motion } from "framer-motion";
 import PhoneMockup from "@/components/ui/PhoneMockup";
 import Button from "@/components/ui/Button";
 
+/* ─── Designed iOS-style chat mock that lives inside the phone screen ─── */
+function ChatMockup() {
+  return (
+    <div className="absolute inset-0 flex flex-col bg-cream">
+      {/* Header — pt-10 clears the dynamic island */}
+      <div className="flex items-center gap-2.5 px-4 pt-10 pb-3 bg-cream/95 backdrop-blur-sm border-b border-border/60">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/brand/logo-mark.svg"
+          alt=""
+          width={30}
+          height={30}
+          style={{ width: 30, height: 30 }}
+          className="rounded-lg shrink-0"
+          draggable={false}
+        />
+        <div className="flex-1 min-w-0 leading-tight">
+          <p className="font-bold text-[14px] text-ink">Sage</p>
+          <p className="text-[11px] text-muted">Your coach</p>
+        </div>
+        {/* Subtle online dot */}
+        <span className="w-2 h-2 rounded-full bg-success shrink-0" />
+      </div>
+
+      {/* Chat area */}
+      <div className="flex-1 px-3 py-3.5 space-y-2 overflow-hidden">
+        {/* Day separator */}
+        <p className="text-center text-[10px] text-subtle font-medium pb-1">
+          Today, 12:31 PM
+        </p>
+
+        {/* User msg 1 */}
+        <div className="flex justify-end">
+          <div className="bg-ink text-white text-[12.5px] leading-snug rounded-2xl rounded-tr-md px-3 py-2 max-w-[75%] shadow-sm">
+            what did I have for lunch?
+          </div>
+        </div>
+
+        {/* Sage reply 1 */}
+        <div className="flex justify-start">
+          <div className="bg-white text-ink text-[12.5px] leading-snug rounded-2xl rounded-tl-md px-3 py-2 max-w-[82%] shadow-sm border border-border/60">
+            About <span className="font-semibold">620 kcal</span> — chicken,
+            rice, and a small salad. You&apos;ve got{" "}
+            <span className="font-semibold text-primary">740 kcal</span> left
+            for dinner.
+          </div>
+        </div>
+
+        {/* User msg 2 */}
+        <div className="flex justify-end pt-1">
+          <div className="bg-ink text-white text-[12.5px] leading-snug rounded-2xl rounded-tr-md px-3 py-2 max-w-[75%] shadow-sm">
+            am I on track?
+          </div>
+        </div>
+
+        {/* Sage reply 2 */}
+        <div className="flex justify-start">
+          <div className="bg-white text-ink text-[12.5px] leading-snug rounded-2xl rounded-tl-md px-3 py-2 max-w-[82%] shadow-sm border border-border/60">
+            Yes —{" "}
+            <span className="font-semibold">75% of your protein target</span>{" "}
+            and right on calories. Solid day. 💪
+          </div>
+        </div>
+      </div>
+
+      {/* Input bar */}
+      <div className="px-3 pt-2 pb-4 bg-cream border-t border-border/40">
+        <div className="flex items-center gap-2 bg-white rounded-full pl-4 pr-1 py-1 border border-border shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+          <span className="text-subtle text-[12px] font-medium flex-1 truncate">
+            Message Sage…
+          </span>
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-hidden
+            className="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center shrink-0"
+          >
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path
+                d="M2.5 6.5h8M10.5 6.5L7 3M10.5 6.5L7 10"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 const aiFeatures = [
   {
     icon: (
@@ -99,46 +193,9 @@ export default function PoweredByAI() {
                 className="absolute inset-0 rounded-full blur-3xl opacity-20 bg-primary"
                 style={{ transform: "scale(0.8)" }}
               />
-              <PhoneMockup size="lg" label="Chat with Sage" className="relative z-10" />
-
-              {/* Floating chat bubbles */}
-              <motion.div
-                className="absolute -left-16 top-20 bg-white rounded-2xl rounded-tl-sm px-4 py-3 shadow-lg max-w-[180px]"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.4 }}
-              >
-                <p className="text-xs font-medium text-ink">What did I have for lunch?</p>
-                <p className="text-[10px] text-subtle mt-0.5">You · 12:30 PM</p>
-              </motion.div>
-
-              <motion.div
-                className="absolute -right-14 top-48 bg-primary rounded-2xl rounded-tr-sm px-4 py-3 shadow-lg max-w-[190px]"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.55, duration: 0.4 }}
-              >
-                <p className="text-xs font-medium text-white">
-                  Chicken caesar salad — 480 kcal, 38g protein 🥗
-                </p>
-                <p className="text-[10px] text-white/60 mt-0.5">Sage · 12:30 PM</p>
-              </motion.div>
-
-              <motion.div
-                className="absolute -left-12 bottom-32 bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-lg max-w-[165px]"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.7, duration: 0.4 }}
-              >
-                <p className="text-xs font-medium text-ink">Am I on track today?</p>
-                <div className="mt-2 h-1.5 rounded-full bg-border overflow-hidden">
-                  <div className="h-full w-3/4 rounded-full bg-primary" />
-                </div>
-                <p className="text-[10px] text-subtle mt-1">75% of daily goal</p>
-              </motion.div>
+              <PhoneMockup size="lg" className="relative z-10">
+                <ChatMockup />
+              </PhoneMockup>
             </div>
           </motion.div>
         </div>

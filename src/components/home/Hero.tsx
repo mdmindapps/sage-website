@@ -131,16 +131,32 @@ export default function Hero() {
           className="flex justify-center items-end gap-6 pb-0"
         >
           {/* Center phone — main */}
-          <PhoneMockup size="lg" label="Sage home screen" className="z-10 -mb-2 shadow-2xl" />
+          <PhoneMockup
+            size="lg"
+            label="Sage home screen"
+            screenshotSrc="/images/screenshots/screenshot-home-today.png"
+            screenshotAlt="Sage home — today's calorie ring, macros, and logged meals"
+            className="z-10 -mb-2 shadow-2xl"
+          />
 
           {/* Left phone — slightly smaller, tilted */}
           <div className="hidden sm:block" style={{ transform: "translateY(40px) rotate(-5deg)", opacity: 0.85 }}>
-            <PhoneMockup size="md" label="Meal photo logging" />
+            <PhoneMockup
+              size="md"
+              label="Meal photo logging"
+              screenshotSrc="/images/screenshots/screenshot-meal-logging.png"
+              screenshotAlt="Snap a photo of your meal — Sage analyses calories and macros instantly"
+            />
           </div>
 
           {/* Right phone */}
           <div className="hidden sm:block" style={{ transform: "translateY(40px) rotate(5deg)", opacity: 0.85 }}>
-            <PhoneMockup size="md" label="AI coach chat" />
+            <PhoneMockup
+              size="md"
+              label="AI coach chat"
+              screenshotSrc="/images/screenshots/screenshot-coach-chat.png"
+              screenshotAlt="Chat with your AI fitness coach — personalised, always available"
+            />
           </div>
         </motion.div>
       </div>

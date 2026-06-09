@@ -19,6 +19,9 @@ const steps = [
     description:
       "Snap a photo of anything you eat. Sage's AI vision instantly breaks down calories, macros, and nutrients — no barcode scanning, no manual entry.",
     mockupLabel: "Meal photo scan",
+    screenshotSrc: "/images/screenshots/screenshot-meal-scan.png",
+    screenshotAlt:
+      "Step 1 — snap a photo of your meal and Sage scans calories and macros instantly",
   },
   {
     number: "02",
@@ -32,6 +35,9 @@ const steps = [
     description:
       "Ask Sage anything about your nutrition — from \"how many calories are in this?\" to \"what should I eat to hit my protein goal today?\". Personalised, always available.",
     mockupLabel: "AI coach chat",
+    screenshotSrc: "/images/screenshots/screenshot-coach-reply.png",
+    screenshotAlt:
+      "Step 2 — chat with your AI fitness coach for personalised, in-context replies",
   },
   {
     number: "03",
@@ -45,6 +51,9 @@ const steps = [
     description:
       "Daily check-ins, streak tracking, and progress photo comparisons help you see how far you've come and stay motivated to keep going.",
     mockupLabel: "Habit tracker",
+    screenshotSrc: "/images/screenshots/screenshot-habit-checkin.png",
+    screenshotAlt:
+      "Step 3 — daily habit check-ins and streak tracking to build lasting routines",
   },
 ];
 
@@ -85,7 +94,12 @@ export default function HowItWorks() {
             >
               {/* Step number */}
               <div className="relative mb-8">
-                <PhoneMockup size="md" label={step.mockupLabel} />
+                <PhoneMockup
+                  size="md"
+                  label={step.mockupLabel}
+                  screenshotSrc={step.screenshotSrc}
+                  screenshotAlt={step.screenshotAlt}
+                />
                 {/* Step badge */}
                 <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shadow-lg">
                   {step.number}

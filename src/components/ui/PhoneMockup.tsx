@@ -3,6 +3,8 @@ interface PhoneMockupProps {
   className?: string;
   size?: "sm" | "md" | "lg";
   children?: React.ReactNode;
+  screenshotSrc?: string;
+  screenshotAlt?: string;
 }
 
 const sizeMap = {
@@ -11,13 +13,20 @@ const sizeMap = {
   lg: { w: 300, h: 620 },
 };
 
+// Matches the `inset: 8` on the screen div below — change in lockstep.
+const SCREEN_INSET = 8;
+
 export default function PhoneMockup({
   label = "Screenshot placeholder",
   className = "",
   size = "md",
   children,
+  screenshotSrc,
+  screenshotAlt,
 }: PhoneMockupProps) {
   const { w, h } = sizeMap[size];
+  const screenW = w - SCREEN_INSET * 2;
+  const screenH = h - SCREEN_INSET * 2;
 
   return (
     <div
@@ -40,17 +49,36 @@ export default function PhoneMockup({
       <div
         className="phone-mockup-screen absolute flex flex-col items-center justify-center overflow-hidden z-10"
         style={{
-          inset: 8,
+          inset: SCREEN_INSET,
           borderRadius: "2.1rem",
         }}
       >
-        {children ?? (
-          <div className="flex flex-col items-center gap-2 text-center p-6">
-            <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-1">
-              <span className="text-primary font-bold text-lg">S</span>
+        {screenshotSrc ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={screenshotSrc}
+            alt={screenshotAlt ?? label}
+            width={screenW}
+            height={screenH}
+            style={{
+              width: screenW,
+              height: screenH,
+              objectFit: "cover",
+              objectPosition: "center top",
+              display: "block",
+            }}
+            className="select-none pointer-events-none"
+            draggable={false}
+          />
+        ) : (
+          children ?? (
+            <div className="flex flex-col items-center gap-2 text-center p-6">
+              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-1">
+                <span className="text-primary font-bold text-lg">S</span>
+              </div>
+              <p className="text-subtle text-xs font-medium">{label}</p>
             </div>
-            <p className="text-subtle text-xs font-medium">{label}</p>
-          </div>
+          )
         )}
       </div>
 
