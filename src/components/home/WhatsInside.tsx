@@ -14,6 +14,8 @@ interface Row {
   bullets: BulletItem[];
   mockupLabel: string;
   mockupScreenLabel: string;
+  screenshotSrc: string;
+  screenshotAlt: string;
 }
 
 /* ─── section data ─── */
@@ -30,6 +32,8 @@ const rows: Row[] = [
     ],
     mockupLabel: "Meal logging screen — camera + meal preview",
     mockupScreenLabel: "Meal logging",
+    screenshotSrc: "/images/screenshots/screenshot-meal-camera.png",
+    screenshotAlt: "Sage meal camera view with food detection",
   },
   {
     imageLeft: true,
@@ -43,6 +47,8 @@ const rows: Row[] = [
     ],
     mockupLabel: "Today tab — calorie ring + macros + meals list",
     mockupScreenLabel: "Today",
+    screenshotSrc: "/images/screenshots/screenshot-today-macros.png",
+    screenshotAlt: "Sage Today tab showing calorie ring and macro progress",
   },
   {
     imageLeft: false,
@@ -56,6 +62,8 @@ const rows: Row[] = [
     ],
     mockupLabel: "Progress tab — weight chart + photo grid",
     mockupScreenLabel: "Progress",
+    screenshotSrc: "/images/screenshots/screenshot-progress.png",
+    screenshotAlt: "Sage Progress tab with weight chart and trends",
   },
 ];
 
@@ -104,10 +112,11 @@ function FeatureRow({ row, index }: { row: Row; index: number }) {
       {...phoneMotion}
       className="flex justify-center w-full lg:w-auto shrink-0"
     >
-      {/* The `phone-mockup` class is the swap target — replace with a real screenshot */}
       <PhoneMockup
         size="lg"
         label={row.mockupScreenLabel}
+        screenshotSrc={row.screenshotSrc}
+        screenshotAlt={row.screenshotAlt}
         className="phone-mockup"
       />
     </motion.div>
