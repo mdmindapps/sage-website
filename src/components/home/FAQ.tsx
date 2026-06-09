@@ -7,9 +7,9 @@ import Button from "@/components/ui/Button";
 
 const faqs = [
   {
-    question: "How does the meal recognition work?",
+    question: "How does the AI in Sage work?",
     answer:
-      "Sage uses GPT-4o Vision, one of the world's most advanced AI vision models. You simply take a photo of your food and Sage analyses it instantly, identifying each item and estimating portion sizes. It's trained on millions of food photos and handles restaurant dishes, homemade meals, and international cuisine.",
+      "Sage is powered entirely by OpenAI. GPT-4o Vision analyses every meal photo you take — identifying items, estimating portions, and breaking down calories and macros in seconds. The same OpenAI models handle your coaching chat replies, remember durable facts about you (your goals, preferences, struggles), and transcribe your \"My Why\" voice recording so Sage always understands your deeper motivation. One AI provider, doing four distinct jobs seamlessly.",
   },
   {
     question: "Is my data private?",

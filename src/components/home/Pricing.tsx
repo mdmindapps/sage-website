@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/ui/Section";
 
 const features = [
   "Unlimited photo meal logging",
-  "AI nutrition coach (24/7)",
+  "AI fitness coach (24/7)",
   "Habit tracking & streaks",
   "Progress photo comparisons",
   "Smart reminders",
@@ -48,11 +48,12 @@ export default function Pricing() {
                   className="text-4xl font-bold text-ink"
                   style={{ letterSpacing: "-0.02em" }}
                 >
-                  $9.99
+                  $12.99
                 </span>
                 <span className="text-muted text-sm pb-1.5">/ month</span>
               </div>
               <p className="text-sm text-subtle mt-1.5">Billed monthly, cancel anytime.</p>
+              <p className="text-xs text-primary font-semibold mt-1">Includes 3-day free trial</p>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1">
@@ -85,14 +86,15 @@ export default function Pricing() {
                   className="text-4xl font-bold text-ink"
                   style={{ letterSpacing: "-0.02em" }}
                 >
-                  $59.99
+                  $89.99
                 </span>
                 <span className="text-muted text-sm pb-1.5">/ year</span>
               </div>
               <p className="text-sm text-subtle mt-1.5">
                 That&apos;s{" "}
-                <span className="text-primary font-semibold">$5.00/month</span>. Billed annually.
+                <span className="text-primary font-semibold">$7.50/month</span>. Billed annually.
               </p>
+              <p className="text-xs text-primary font-semibold mt-1">Includes 3-day free trial</p>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1">

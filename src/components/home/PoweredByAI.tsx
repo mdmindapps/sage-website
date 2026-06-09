@@ -12,7 +12,7 @@ const aiFeatures = [
         <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "GPT-4o Vision for instant meal recognition",
+    text: "GPT-4o Vision analyses every meal photo — calories, macros, ingredients",
   },
   {
     icon: (
@@ -21,7 +21,7 @@ const aiFeatures = [
         <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "Claude for empathetic, personalised coaching",
+    text: "OpenAI powers every coaching reply — honest, personal, and context-aware",
   },
   {
     icon: (
@@ -30,7 +30,7 @@ const aiFeatures = [
         <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "Learns your patterns and adjusts advice over time",
+    text: "Durable memory of your goals, patterns, and preferences — stored and used by OpenAI",
   },
   {
     icon: (
@@ -39,7 +39,7 @@ const aiFeatures = [
         <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "Understands dietary preferences and restrictions",
+    text: "Your \"My Why\" voice note is transcribed by OpenAI and kept as your north star",
   },
 ];
 
@@ -62,13 +62,13 @@ export default function PoweredByAI() {
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
               style={{ letterSpacing: "-0.02em" }}
             >
-              The smartest nutrition coach.{" "}
+              The smartest fitness coach.{" "}
               <span className="text-primary">Period.</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-8">
-              Sage combines the world&apos;s most powerful AI models into one seamless experience.
-              Whether you snap a plate of pasta or ask &quot;is oat milk healthy?&quot;, Sage gives
-              you instant, accurate, deeply personalised answers.
+              Sage is built entirely on OpenAI — from the moment you snap a photo to the coaching
+              reply you read a second later. One world-class AI, doing four distinct jobs so you
+              never have to think about any of it.
             </p>
 
             <ul className="space-y-4 mb-10">

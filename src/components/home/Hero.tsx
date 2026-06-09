@@ -55,7 +55,7 @@ export default function Hero() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.08] mb-5 max-w-3xl"
             style={{ letterSpacing: "-0.025em" }}
           >
-            Your AI nutrition coach.{" "}
+            Your AI fitness coach.{" "}
             <span className="text-primary">In your pocket.</span>
           </motion.h1>
 

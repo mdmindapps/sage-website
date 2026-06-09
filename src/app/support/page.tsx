@@ -91,14 +91,14 @@ export default function SupportPage() {
             Our team is based in Romania (UTC+3) and replies Monday–Sunday within 24 hours.
           </p>
           <a
-            href="mailto:support@sage.app"
+            href="mailto:support@sageacademy.app"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-semibold text-sm hover:bg-primary-dark transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.8" />
               <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
             </svg>
-            support@sage.app
+            support@sageacademy.app
           </a>
           <p className="text-white/35 text-xs mt-4">Average response time: under 4 hours</p>
         </div>

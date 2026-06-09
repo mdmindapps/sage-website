@@ -61,7 +61,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <SageLogo variant="light" size="md" />
             <p className="mt-4 text-white/55 text-sm leading-relaxed max-w-xs">
-              Your AI nutrition coach. Track meals from a photo, chat with Sage,
+              Your AI fitness coach. Track meals from a photo, chat with Sage,
               and build habits that stick.
             </p>
             <div className="flex items-center gap-3 mt-6">

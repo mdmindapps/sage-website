@@ -13,48 +13,48 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Sage — AI Nutrition Coach",
+    default: "Sage — AI Fitness Coach",
     template: "%s | Sage",
   },
   description:
-    "Snap a photo of your meal. Chat with your AI coach. Build habits that stick. Get Sage for iOS and Android.",
+    "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick. Get Sage for iOS and Android.",
   keywords: [
-    "AI nutrition coach",
+    "AI fitness coach",
     "calorie tracker",
     "meal photo logging",
     "diet app",
-    "nutrition app",
+    "fitness app",
     "healthy habits",
     "food tracking",
   ],
   authors: [{ name: "Friday Technologies SRL" }],
   creator: "Friday Technologies SRL",
   publisher: "Friday Technologies SRL",
-  metadataBase: new URL("https://sage.app"),
+  metadataBase: new URL("https://sageacademy.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sage.app",
+    url: "https://sageacademy.app",
     siteName: "Sage",
-    title: "Sage — AI Nutrition Coach",
+    title: "Sage — AI Fitness Coach",
     description:
-      "Snap a photo of your meal. Chat with your AI coach. Build habits that stick.",
+      "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Sage — AI Nutrition Coach",
+        alt: "Sage — AI Fitness Coach",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sage — AI Nutrition Coach",
+    title: "Sage — AI Fitness Coach",
     description:
-      "Snap a photo of your meal. Chat with your AI coach. Build habits that stick.",
+      "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
     images: ["/og-image.png"],
-    creator: "@sagenutritionai",
+    creator: "@sagefitnesai",
   },
   robots: {
     index: true,
