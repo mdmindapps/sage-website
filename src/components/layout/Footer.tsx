@@ -84,7 +84,7 @@ export default function Footer() {
               <p className="font-semibold text-sm text-white mb-4">{category}</p>
               <ul className="space-y-2.5">
                 {links.map((l) => (
-                  <li key={l.href}>
+                  <li key={`${category}-${l.label}`}>
                     <Link
                       href={l.href}
                       className="text-sm text-white/50 hover:text-white transition-colors"
