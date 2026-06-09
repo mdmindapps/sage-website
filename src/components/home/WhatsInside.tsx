@@ -19,19 +19,6 @@ interface Row {
 /* ─── section data ─── */
 const rows: Row[] = [
   {
-    imageLeft: true,
-    label: "AI MENTOR",
-    headline: "A coach in your pocket, 24/7",
-    body: "Sage isn't a generic chatbot. It learns how you talk, what you struggle with, and what motivates you. Whether you need a nudge before lunch or a deep talk about why this time will be different — Sage is there. With three tone styles (empathetic, balanced, or tough love), you choose how Sage speaks to you.",
-    bullets: [
-      "Tone-aware coaching — choose how Sage talks to you",
-      "Remembers your goals, your patterns, your why",
-      "Daily check-ins that feel like a friend, not a notification",
-    ],
-    mockupLabel: "Coach tab — AI mentor chat screen",
-    mockupScreenLabel: "Coach screen",
-  },
-  {
     imageLeft: false,
     label: "MEAL LOGGING",
     headline: "Snap a photo. Done.",
