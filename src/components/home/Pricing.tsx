@@ -75,7 +75,7 @@ export default function Pricing() {
             {/* Badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <span className="px-4 py-1 rounded-full bg-primary text-white text-xs font-bold tracking-wide shadow">
-                SAVE 50% — BEST VALUE
+                SAVE 43% — BEST VALUE
               </span>
             </div>
 

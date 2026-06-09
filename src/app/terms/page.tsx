@@ -89,7 +89,7 @@ export default function TermsPage() {
             <ul>
               <li>
                 Photo-based and text-based meal logging with nutritional analysis powered by
-                OpenAI (GPT-4o Vision)
+                OpenAI
               </li>
               <li>Personalised fitness coaching via an AI chat interface powered by OpenAI</li>
               <li>Habit tracking, daily check-ins, and progress monitoring</li>

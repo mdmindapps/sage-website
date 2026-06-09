@@ -165,11 +165,22 @@ export default function CookiesPage() {
               No Analytics or Tracking Cookies
             </h2>
             <p>
-              sageacademy.app does <strong className="text-ink">not</strong> currently use any
-              third-party analytics service (such as PostHog, Google Analytics, or similar) that
-              would set cookies or collect behavioural data about your browsing. If this changes
-              in the future, this policy will be updated and you will be notified at least 14 days
-              in advance via the consent banner.
+              <strong className="text-ink">This website (sageacademy.app)</strong> does{" "}
+              <strong className="text-ink">not</strong> currently use any third-party analytics
+              service (such as Google Analytics, Plausible, or similar) that would set cookies or
+              collect behavioural data about your browsing. If this changes in the future, this
+              policy will be updated and you will be notified at least 14 days in advance via the
+              consent banner.
+            </p>
+            <p className="mt-3">
+              <strong className="text-ink">Note about the mobile app:</strong> the Sage iOS and
+              Android app uses PostHog (EU-hosted) for anonymised product analytics — no health
+              values, photos, chat content, or session replay. Full details are in our{" "}
+              <Link href="/privacy" className="text-primary underline underline-offset-2">
+                Privacy Policy
+              </Link>
+              . The mobile app does not use browser cookies, so it is out of scope for this
+              Cookie Policy.
             </p>
           </section>
 

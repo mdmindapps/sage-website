@@ -26,7 +26,7 @@ const rows: Row[] = [
     headline: "Snap a photo. Done.",
     body: "Forget scrolling through endless food databases. Point your camera at your plate and Sage's AI breaks it down — calories, protein, carbs, fat — in seconds. Got a homemade dish? Just describe it in plain language. Sage handles the rest.",
     bullets: [
-      "Photo recognition powered by GPT-4o vision",
+      "Photo recognition powered by OpenAI's vision models",
       'Describe in your own words — "chicken bowl with rice and avocado"',
       "Edit any meal in seconds if Sage gets it slightly off",
     ],

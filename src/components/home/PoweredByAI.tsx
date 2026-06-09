@@ -106,7 +106,7 @@ const aiFeatures = [
         <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "GPT-4o Vision analyses every meal photo — calories, macros, ingredients",
+    text: "OpenAI's vision models analyse every meal photo — calories, macros, ingredients",
   },
   {
     icon: (

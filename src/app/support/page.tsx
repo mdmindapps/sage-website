@@ -16,11 +16,11 @@ const topics = [
       </svg>
     ),
     title: "Subscription & Billing",
-    description: "Manage your plan, update payment info, cancel or pause your subscription.",
+    description: "Manage your plan, update payment info, or cancel your subscription.",
     items: [
       "How to start or extend the free trial",
       "Upgrading from monthly to annual",
-      "Cancelling your subscription",
+      "Cancelling your subscription (or pausing it on Google Play)",
       "Requesting a refund (via App Store or Google Play)",
     ],
   },
@@ -32,10 +32,10 @@ const topics = [
       </svg>
     ),
     title: "Account & Profile",
-    description: "Update your goals, dietary preferences, personal info, or delete your account.",
+    description: "Update your goals, edit your profile, or delete your account.",
     items: [
-      "Changing your email or password",
-      "Updating dietary preferences",
+      "Changing your password",
+      "Updating your goals",
       "Requesting account deletion",
       "Exporting your data (GDPR)",
     ],

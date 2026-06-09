@@ -118,10 +118,30 @@ export default function PrivacyPage() {
             </p>
             <ul>
               <li>Dietary preferences or restrictions — these are not part of the app&apos;s onboarding or data model</li>
-              <li>Usage analytics via any third-party analytics platform (no PostHog, no Firebase Analytics, no similar service is integrated into the app)</li>
               <li>Location data</li>
               <li>Contacts or calendar data</li>
+              <li>Advertising identifiers or ad-targeting data</li>
             </ul>
+
+            <h3>2.5 Product Analytics</h3>
+            <p>
+              We use <strong>PostHog (EU-hosted)</strong> to understand how the app is used so we
+              can improve it. We collect behavioural events on an anonymised basis — for example,
+              which features and screens are used, and onboarding and paywall funnel steps.
+            </p>
+            <p>
+              We do <strong>not</strong> send any of the following to analytics:
+            </p>
+            <ul>
+              <li>Your health values (e.g., your weight, calorie counts, macro intake)</li>
+              <li>Your meal photos or progress photos</li>
+              <li>Your chat content with the AI coach or your &ldquo;My Why&rdquo; recording</li>
+            </ul>
+            <p>
+              We also do <strong>not</strong> record your screen — there is no session replay.
+              PostHog acts as our processor under a Data Processing Agreement (DPA) and is hosted
+              in the EU, so this data does not leave the European Economic Area.
+            </p>
           </LegalSection>
 
           <LegalSection title="3. How We Use Your Information">
@@ -129,7 +149,7 @@ export default function PrivacyPage() {
             <ul>
               <li>
                 <strong>To provide the AI fitness coaching service:</strong> Food photos and text
-                meal descriptions are sent to OpenAI (GPT-4o Vision) for nutritional analysis.
+                meal descriptions are sent to OpenAI&apos;s vision models for nutritional analysis.
                 Your goals, check-in responses, and conversation history are processed by OpenAI
                 to generate personalised coaching replies. OpenAI also transcribes your
                 &ldquo;My Why&rdquo; voice recording and maintains durable memory of key facts
@@ -189,7 +209,7 @@ export default function PrivacyPage() {
                     ],
                     [
                       "OpenAI",
-                      "Meal photo & text analysis (GPT-4o Vision), AI coaching replies, durable user memory, and \"My Why\" voice transcription",
+                      "Meal photo & text analysis, AI coaching replies, durable user memory, and \"My Why\" voice transcription",
                       "USA",
                     ],
                     [
@@ -211,6 +231,11 @@ export default function PrivacyPage() {
                       "Expo",
                       "App build infrastructure and push notification delivery",
                       "USA",
+                    ],
+                    [
+                      "PostHog",
+                      "Anonymised behavioural product analytics — screens viewed, features used, onboarding and paywall funnel steps. No health values, no photos, no chat content, no session replay.",
+                      "EU",
                     ],
                   ].map(([processor, purpose, location]) => (
                     <tr key={processor} className="border-b border-border/50">
