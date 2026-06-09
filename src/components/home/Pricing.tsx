@@ -74,7 +74,7 @@ export default function Pricing() {
           <div className="relative bg-white rounded-2xl p-7 border-2 border-primary flex flex-col shadow-xl shadow-primary/10">
             {/* Badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-              <span className="px-4 py-1 rounded-full bg-primary text-white text-xs font-bold tracking-wide shadow">
+              <span className="inline-block whitespace-nowrap px-4 py-1 rounded-full bg-primary text-white text-xs font-bold tracking-wide shadow">
                 SAVE 43% — BEST VALUE
               </span>
             </div>
