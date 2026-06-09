@@ -259,10 +259,10 @@ export default function CookiesPage() {
             <p>
               Questions about this policy? Contact us at{" "}
               <a
-                href="mailto:privacy@sageacademy.app"
+                href="mailto:contact@sageacademy.app"
                 className="text-primary underline underline-offset-2"
               >
-                privacy@sageacademy.app
+                contact@sageacademy.app
               </a>
               . For our full data practices, see the{" "}
               <Link href="/privacy" className="text-primary underline underline-offset-2">

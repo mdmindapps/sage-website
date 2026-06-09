@@ -56,7 +56,7 @@ export default function PrivacyPage() {
             <p>
               <strong>Data Controller:</strong> Friday Technologies SRL, Romania, EU.{" "}
               Contact:{" "}
-              <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a>
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>
             </p>
           </LegalSection>
 
@@ -294,7 +294,7 @@ export default function PrivacyPage() {
             <p>
               You may request an export of your data in a structured, machine-readable format (JSON
               or CSV). Contact us at{" "}
-              <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a>.
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>.
             </p>
 
             <h3>Right to Object</h3>
@@ -330,7 +330,7 @@ export default function PrivacyPage() {
 
             <p>
               To exercise any of the above rights, contact us at{" "}
-              <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a>.
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>.
             </p>
           </LegalSection>
 
@@ -356,7 +356,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               You may request a copy of the applicable SCCs by contacting us at{" "}
-              <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a>.
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>.
             </p>
           </LegalSection>
 
@@ -390,7 +390,7 @@ export default function PrivacyPage() {
               Sage is intended for users aged 18 and over. We do not knowingly collect personal
               data from anyone under 18. If you are a parent or guardian and believe your child
               has created an account or submitted personal data, please contact us at{" "}
-              <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a> and we will
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a> and we will
               delete the relevant data promptly.
             </p>
           </LegalSection>
@@ -415,7 +415,7 @@ export default function PrivacyPage() {
             </ul>
             <p>
               To exercise these rights, contact us at{" "}
-              <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a>.
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>.
             </p>
           </LegalSection>
 
@@ -433,14 +433,14 @@ export default function PrivacyPage() {
             <ul>
               <li>
                 <strong>Email:</strong>{" "}
-                <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a>
+                <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>
               </li>
               <li>
                 <strong>Company:</strong> Friday Technologies SRL, Romania, EU
               </li>
               <li>
                 <strong>Data Protection contact:</strong> Available on request at{" "}
-                <a href="mailto:privacy@sageacademy.app">privacy@sageacademy.app</a>
+                <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>
               </li>
             </ul>
             <p>We aim to respond to all privacy-related requests within 30 days.</p>

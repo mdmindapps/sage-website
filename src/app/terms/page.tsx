@@ -121,7 +121,7 @@ export default function TermsPage() {
               <li>All activity that occurs under your account</li>
               <li>
                 Notifying us immediately at{" "}
-                <a href="mailto:support@sageacademy.app">support@sageacademy.app</a> of any
+                <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a> of any
                 unauthorised access to your account
               </li>
             </ul>
@@ -326,7 +326,7 @@ export default function TermsPage() {
             </p>
             <p>
               You may terminate your account at any time by contacting us at{" "}
-              <a href="mailto:support@sageacademy.app">support@sageacademy.app</a> to request
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a> to request
               account deletion.
             </p>
             <p>
@@ -372,7 +372,7 @@ export default function TermsPage() {
             <ul>
               <li>
                 <strong>Email:</strong>{" "}
-                <a href="mailto:support@sageacademy.app">support@sageacademy.app</a>
+                <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>
               </li>
               <li>
                 <strong>Company:</strong> Friday Technologies SRL, Romania, EU
