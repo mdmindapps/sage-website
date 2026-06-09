@@ -15,6 +15,8 @@ type MsgKind = "" | "ok" | "err";
 export default function ResetPage() {
   const [pw, setPw] = useState("");
   const [pw2, setPw2] = useState("");
+  const [showPw, setShowPw] = useState(false);
+  const [showPw2, setShowPw2] = useState(false);
   const [msg, setMsg] = useState("");
   const [msgKind, setMsgKind] = useState<MsgKind>("");
   const [busy, setBusy] = useState(false);
@@ -114,24 +116,47 @@ export default function ResetPage() {
           Enter a new password for your Sage account.
         </p>
 
-        <input
-          id="pw"
-          type="password"
-          placeholder="New password (6+ characters)"
-          autoComplete="new-password"
-          value={pw}
-          onChange={(e) => setPw(e.target.value)}
-          style={inputStyle}
-        />
-        <input
-          id="pw2"
-          type="password"
-          placeholder="Confirm new password"
-          autoComplete="new-password"
-          value={pw2}
-          onChange={(e) => setPw2(e.target.value)}
-          style={inputStyle}
-        />
+        <div style={fieldStyle}>
+          <input
+            id="pw"
+            type={showPw ? "text" : "password"}
+            placeholder="New password (6+ characters)"
+            autoComplete="new-password"
+            value={pw}
+            onChange={(e) => setPw(e.target.value)}
+            style={inputStyle}
+          />
+          <button
+            type="button"
+            onClick={() => setShowPw((v) => !v)}
+            aria-label={showPw ? "Hide password" : "Show password"}
+            aria-pressed={showPw}
+            style={toggleStyle}
+          >
+            <EyeIcon off={showPw} />
+          </button>
+        </div>
+
+        <div style={fieldStyle}>
+          <input
+            id="pw2"
+            type={showPw2 ? "text" : "password"}
+            placeholder="Confirm new password"
+            autoComplete="new-password"
+            value={pw2}
+            onChange={(e) => setPw2(e.target.value)}
+            style={inputStyle}
+          />
+          <button
+            type="button"
+            onClick={() => setShowPw2((v) => !v)}
+            aria-label={showPw2 ? "Hide password" : "Show password"}
+            aria-pressed={showPw2}
+            style={toggleStyle}
+          >
+            <EyeIcon off={showPw2} />
+          </button>
+        </div>
 
         <button
           id="btn"
@@ -170,13 +195,56 @@ export default function ResetPage() {
   );
 }
 
+const fieldStyle: React.CSSProperties = {
+  position: "relative",
+  marginBottom: 12,
+};
+
 const inputStyle: React.CSSProperties = {
   width: "100%",
   boxSizing: "border-box",
   height: 48,
   border: "1px solid #E2E6E8",
   borderRadius: 12,
-  padding: "0 14px",
+  padding: "0 46px 0 14px",
   fontSize: 16,
-  marginBottom: 12,
 };
+
+const toggleStyle: React.CSSProperties = {
+  position: "absolute",
+  top: 0,
+  right: 0,
+  height: 48,
+  width: 44,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "transparent",
+  border: 0,
+  padding: 0,
+  cursor: "pointer",
+  color: "#5A6B70",
+};
+
+function EyeIcon({ off }: { off: boolean }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.7" />
+      {off && (
+        <path
+          d="M4 4l16 16"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          strokeLinecap="round"
+        />
+      )}
+    </svg>
+  );
+}
