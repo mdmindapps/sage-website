@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
 
-const STANDALONE_ROUTES = ["/reset"];
+const STANDALONE_ROUTES = ["/reset", "/delete-account"];
 
 export default function SiteChrome({
   children,
