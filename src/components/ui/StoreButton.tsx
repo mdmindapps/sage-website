@@ -25,7 +25,7 @@ const themeClasses: Record<Theme, string> = {
 export default function StoreButton({
   platform,
   theme = "dark",
-  href = "#",
+  href = "#pricing",
   className = "",
 }: StoreButtonProps) {
   const isApp = platform === "appstore";
@@ -37,11 +37,13 @@ export default function StoreButton({
     ? "Download on the App Store"
     : "Get it on Google Play";
 
+  // Real store URLs (http...) open in a new tab; in-page anchors scroll within the page.
+  const isExternal = /^https?:\/\//.test(href);
+
   return (
     <Link
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       aria-label={ariaLabel}
       className={`inline-flex items-center gap-3 h-14 px-6 rounded-full font-semibold transition-all duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 select-none ${themeClasses[theme]} ${className}`}
     >

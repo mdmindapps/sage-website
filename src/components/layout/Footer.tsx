@@ -20,38 +20,6 @@ const footerLinks = {
   ],
 };
 
-const socialLinks = [
-  {
-    label: "Instagram",
-    href: "#",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    label: "X / Twitter",
-    href: "#",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  {
-    label: "TikTok",
-    href: "#",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.88a8.28 8.28 0 004.84 1.55V7a4.84 4.84 0 01-1.07-.31z" />
-      </svg>
-    ),
-  },
-];
-
 export default function Footer() {
   return (
     <footer className="bg-ink text-white pt-16 pb-8">
@@ -64,18 +32,6 @@ export default function Footer() {
               Your AI fitness coach. Track meals from a photo, chat with Sage,
               and build habits that stick.
             </p>
-            <div className="flex items-center gap-3 mt-6">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/8 text-white/60 hover:bg-white/15 hover:text-white transition-all"
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Links */}

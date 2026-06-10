@@ -52,7 +52,6 @@ export const metadata: Metadata = {
     description:
       "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
     images: ["/og-image.png"],
-    creator: "@sagefitnesai",
   },
   robots: {
     index: true,
