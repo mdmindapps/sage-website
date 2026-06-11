@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Terms and conditions for using the Sage AI fitness coach app and website.",
 };
 
-const LAST_UPDATED = "June 9, 2026";
+const LAST_UPDATED = "June 11, 2026";
 
 function LegalSection({
   title,
@@ -237,28 +237,63 @@ export default function TermsPage() {
             </p>
           </LegalSection>
 
-          <LegalSection title="6. Health Disclaimer">
+          <LegalSection title="6. Health, AI &amp; Risk Disclaimers">
             <div className="bg-warning/10 border border-warning/30 rounded-xl p-5">
               <p className="font-semibold text-ink mb-2">Important Health Notice</p>
               <p>
                 <strong>
-                  Sage is not a substitute for professional medical advice, diagnosis, or
-                  treatment.
+                  Sage is a general health and fitness application. It is not a medical device and
+                  does not provide medical advice, diagnosis, or treatment.
                 </strong>{" "}
-                The nutritional information, coaching responses, and recommendations provided by
-                Sage are for informational and educational purposes only.
+                The content, plans, calorie and macro targets, and coaching are for general
+                informational and motivational purposes only and are not a substitute for advice
+                from a physician, registered dietitian, or other qualified healthcare
+                professional.
               </p>
               <p className="mt-3">
-                Always consult a qualified healthcare professional, doctor, or registered dietitian
-                before making significant changes to your diet, exercise routine, or health plan —
-                particularly if you have a pre-existing medical condition, are pregnant, or are
-                taking medication.
+                Always consult your doctor before beginning, changing, or stopping any diet,
+                exercise, fasting, or weight-management program, especially if you have a medical
+                condition, take medication, are pregnant or breastfeeding, or are under 18.
+                Individual results vary and are not guaranteed.
               </p>
             </div>
+
+            <h3>6.1 AI-Generated Content</h3>
             <p>
-              The AI models powering Sage may make errors in food recognition or nutritional
-              calculations. All figures should be treated as estimates. Do not rely on Sage for
-              clinical, diagnostic, or medical purposes.
+              Sage uses artificial intelligence (including third-party AI models) to generate
+              coaching responses, meal and photo analysis, and other content. AI output can be
+              inaccurate, incomplete, outdated, or wrong, and may occasionally produce content
+              that sounds confident but is not correct (&ldquo;hallucinations&rdquo;). AI
+              responses are provided for general informational purposes only and do not constitute
+              professional, medical, nutritional, psychological, or fitness advice. You are solely
+              responsible for any decisions or actions you take based on AI-generated content, and
+              you should independently verify important information and consult a qualified
+              professional before relying on it.
+            </p>
+
+            <h3>6.2 Assumption of Risk</h3>
+            <p>
+              Physical exercise, dietary changes, fasting, and weight management carry inherent
+              risks, including injury or adverse health effects. By using Sage, you voluntarily
+              assume all such risks. You are responsible for exercising and eating within your own
+              limits and abilities and for stopping and seeking medical attention if you
+              experience pain, dizziness, or any other symptom. Sage is intended for healthy
+              adults; if you have any doubt about your fitness to participate, consult a physician
+              first.
+            </p>
+
+            <h3>6.3 Not for Medical Conditions, Eating Disorders, or Emergencies</h3>
+            <p>
+              Sage is not intended for, and should not be used by, individuals with eating
+              disorders or a history of disordered eating, individuals who are pregnant or
+              breastfeeding, minors, or individuals with medical conditions requiring supervised
+              nutrition or exercise, in each case without prior approval and ongoing supervision
+              from a qualified healthcare professional. Sage&apos;s calorie, weight, and tracking
+              features, and its motivational/&ldquo;panic&rdquo;/support features, are not
+              therapy, counseling, crisis intervention, or a substitute for professional
+              mental-health care. If you are experiencing a medical or mental-health emergency, or
+              thoughts of self-harm, stop using the app and contact your local emergency services
+              or a crisis helpline immediately.
             </p>
           </LegalSection>
 
@@ -283,10 +318,19 @@ export default function TermsPage() {
             </p>
           </LegalSection>
 
-          <LegalSection title="8. Limitation of Liability">
+          <LegalSection title="8. Limitation of Liability &amp; No Warranty">
             <p>
-              To the fullest extent permitted by applicable law, Friday Technologies SRL and its
-              directors, employees, and partners shall not be liable for:
+              Sage is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;, without
+              warranties of any kind, express or implied, including implied warranties of
+              merchantability, fitness for a particular purpose, accuracy, or non-infringement.
+            </p>
+            <p>
+              To the maximum extent permitted by applicable law, Friday Technologies SRL and its
+              directors, owners, employees, and partners shall not be liable for any indirect,
+              incidental, special, consequential, or punitive damages, or for any loss of health,
+              profits, or data, arising out of or relating to your use of (or inability to use)
+              Sage or any content or AI output it provides, even if advised of the possibility of
+              such damages. In particular, we are not liable for:
             </p>
             <ul>
               <li>Any indirect, incidental, special, consequential, or punitive damages</li>
@@ -302,6 +346,11 @@ export default function TermsPage() {
               Our total aggregate liability for any claims arising from or relating to these Terms
               shall not exceed the total amount you paid to us in the 12 months preceding the
               claim.
+            </p>
+            <p>
+              Nothing in these Terms excludes or limits liability that cannot be excluded or
+              limited under applicable law (including liability for death or personal injury
+              caused by gross negligence or fraud, or non-waivable consumer rights).
             </p>
           </LegalSection>
 
