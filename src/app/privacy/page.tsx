@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Learn how Sage collects, uses, and protects your personal and health data. GDPR and CCPA compliant.",
 };
 
-const LAST_UPDATED = "June 9, 2026";
+const LAST_UPDATED = "June 11, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
                 Food photos and text meal descriptions you submit for AI analysis
               </li>
               <li>Calorie and macronutrient data derived from logged meals</li>
-              <li>Progress photos (if you choose to use this feature)</li>
+              <li>Progress photos (if you choose to use this feature, including when you ask Sage to compare two of them).</li>
               <li>Daily check-in responses and habit-tracking data</li>
               <li>
                 &ldquo;My Why&rdquo; voice recording — an optional voice note captured during
@@ -150,10 +150,14 @@ export default function PrivacyPage() {
               <li>
                 <strong>To provide the AI fitness coaching service:</strong> Food photos and text
                 meal descriptions are sent to OpenAI&apos;s vision models for nutritional analysis.
-                Your goals, check-in responses, and conversation history are processed by OpenAI
-                to generate personalised coaching replies. OpenAI also transcribes your
-                &ldquo;My Why&rdquo; voice recording and maintains durable memory of key facts
-                about you so that Sage remains contextually aware across sessions.
+                When you choose to compare two of your progress photos, those photos are sent to
+                OpenAI&apos;s vision models so Sage can describe the visible changes and offer
+                encouragement. This happens only when you actively request a comparison — your
+                progress photos are never sent for AI analysis automatically. Your goals,
+                check-in responses, and conversation history are processed by OpenAI to generate
+                personalised coaching replies. OpenAI also transcribes your &ldquo;My Why&rdquo;
+                voice recording and maintains durable memory of key facts about you so that Sage
+                remains contextually aware across sessions.
               </li>
               <li>
                 <strong>To personalise your experience:</strong> Your profile data, goals, and
@@ -209,7 +213,7 @@ export default function PrivacyPage() {
                     ],
                     [
                       "OpenAI",
-                      "Meal photo & text analysis, AI coaching replies, durable user memory, and \"My Why\" voice transcription",
+                      "Meal photo & text analysis, progress-photo comparison analysis, AI coaching replies, durable user memory, and \"My Why\" voice transcription",
                       "USA",
                     ],
                     [
