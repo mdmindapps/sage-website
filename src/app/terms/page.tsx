@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Terms and conditions for using the Sage AI fitness coach app and website.",
 };
 
-const LAST_UPDATED = "June 11, 2026";
+const LAST_UPDATED = "June 16, 2026";
 
 function LegalSection({
   title,
@@ -131,89 +131,38 @@ export default function TermsPage() {
             </p>
           </LegalSection>
 
-          <LegalSection title="4. Subscription and Payment">
-            <h3>4.1 Subscription Plans</h3>
+          <LegalSection title="4. Subscriptions">
             <p>
-              Access to Sage requires a paid subscription. We currently offer two plans:
+              Sage offers an auto-renewable subscription (&ldquo;Sage Premium&rdquo;) that unlocks
+              full access to the app&apos;s coaching features, available in two options:
             </p>
             <ul>
-              <li>
-                <strong>Monthly Plan:</strong> $12.99 per month, billed monthly
-              </li>
-              <li>
-                <strong>Annual Plan:</strong> $89.99 per year, billed annually (equivalent to
-                approximately $7.50 per month)
-              </li>
+              <li>Monthly — $12.99 per month</li>
+              <li>Annual — $89.99 per year</li>
             </ul>
             <p>
-              All new users receive a <strong>3-day free trial</strong> with full access to all
-              features. You will not be charged during the trial period.
+              New users may be offered a 3-day free trial. Any unused portion of a free trial is
+              forfeited when a subscription is purchased.
             </p>
             <p>
-              Subscriptions are processed by Apple (App Store) or Google (Play Store) and managed
-              via RevenueCat. We do not directly store or process payment card information.
+              <strong>Auto-renewal:</strong> Payment is charged to your Apple Account (on iOS) or
+              your Google Play account (on Android) at confirmation of purchase. The subscription
+              automatically renews at the same price and period unless it is canceled at least 24
+              hours before the end of the current period. Your account is charged for renewal
+              within 24 hours prior to the end of the current period.
             </p>
-
-            <h3>4.2 Auto-Renewal</h3>
             <p>
-              Subscriptions renew automatically at the end of each billing period unless you
-              cancel before the renewal date. By starting a subscription, you authorise Apple or
-              Google to charge your payment method on file for the applicable fee at each renewal.
+              <strong>Managing your subscription:</strong> You can manage your subscription and
+              turn off auto-renewal at any time from your App Store account settings (iOS) or your
+              Google Play subscriptions (Android) after purchase.
             </p>
-
-            <h3>4.3 Cancellation</h3>
             <p>
-              You may cancel at any time through your device&apos;s subscription settings.
-              Cancellation takes effect at the end of the current billing period — you retain
-              access to the Service until that date.
+              Prices are also shown in the app before purchase and may vary by region; the price
+              displayed at the time of purchase applies.
             </p>
-            <ul>
-              <li>
-                <strong>iOS:</strong> Settings &gt; [Your Name] &gt; Subscriptions &gt; Sage
-              </li>
-              <li>
-                <strong>Android:</strong> Google Play Store &gt; Menu &gt; Subscriptions &gt; Sage
-              </li>
-            </ul>
-
-            <h3>4.4 Refunds</h3>
             <p>
-              All payments are processed by Apple or Google. Refund requests are governed by their
-              respective policies:
-            </p>
-            <ul>
-              <li>
-                Apple:{" "}
-                <a
-                  href="https://support.apple.com/en-us/HT204084"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Apple Refund Policy
-                </a>
-              </li>
-              <li>
-                Google:{" "}
-                <a
-                  href="https://support.google.com/googleplay/answer/2479637"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Google Play Refund Policy
-                </a>
-              </li>
-            </ul>
-            <p>
-              Friday Technologies SRL does not independently issue refunds for subscription
-              periods already billed, but may make exceptions at our sole discretion in cases of
-              demonstrated service failure.
-            </p>
-
-            <h3>4.5 Price Changes</h3>
-            <p>
-              We reserve the right to change subscription prices. We will give at least 30
-              days&apos; notice of any price increase. Continued use after the notice period
-              constitutes acceptance of the new pricing.
+              By subscribing you agree to these Terms of Use and to our Privacy Policy (
+              <Link href="/privacy">https://www.sageacademy.app/privacy</Link>).
             </p>
           </LegalSection>
 
