@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Learn how Sage collects, uses, and protects your personal and health data. GDPR and CCPA compliant.",
 };
 
-const LAST_UPDATED = "June 11, 2026";
+const LAST_UPDATED = "June 16, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -158,6 +158,12 @@ export default function PrivacyPage() {
                 personalised coaching replies. OpenAI also transcribes your &ldquo;My Why&rdquo;
                 voice recording and maintains durable memory of key facts about you so that Sage
                 remains contextually aware across sessions.
+                <p className="mt-3">
+                  Data shared with OpenAI is processed under a Data Processing Agreement; OpenAI
+                  is contractually required to protect it to a standard equivalent to this
+                  Privacy Policy and applicable data protection law (GDPR), to use it only to
+                  provide these features, and not to use it to train its models.
+                </p>
               </li>
               <li>
                 <strong>To personalise your experience:</strong> Your profile data, goals, and
