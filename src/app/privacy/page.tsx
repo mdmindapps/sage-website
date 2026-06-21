@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Learn how Sage collects, uses, and protects your personal and health data. GDPR and CCPA compliant.",
 };
 
-const LAST_UPDATED = "June 16, 2026";
+const LAST_UPDATED = "June 21, 2026";
 
 export default function PrivacyPage() {
   return (
