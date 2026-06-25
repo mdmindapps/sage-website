@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 import StoreButton from "@/components/ui/StoreButton";
 
 /* Sage — single shareable bio link.
@@ -12,9 +13,12 @@ import StoreButton from "@/components/ui/StoreButton";
 const ANDROID_LIVE = false;
 const APPSTORE_URL = "https://apps.apple.com/app/id6777168646";
 const PLAY_URL = "https://play.google.com/store/apps/details?id=app.sageacademy";
-const TALLY_FORM_ID = "VLdEYN";
-const TALLY_API_URL = `https://api.tally.so/forms/${TALLY_FORM_ID}/submissions`;
-const TALLY_HOSTED_URL = `https://tally.so/r/${TALLY_FORM_ID}`;
+
+// Same Supabase project as src/app/reset/page.tsx — publishable key, safe to ship.
+const SUPABASE_URL = "https://flchqdspfidwcljtuttq.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_6JflakxdG19uLJfGXvIotA_kLFroJKC";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 type Device = "loading" | "ios" | "android" | "desktop";
 
@@ -43,6 +47,7 @@ export default function GetPage() {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [alreadySubscribed, setAlreadySubscribed] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -70,23 +75,30 @@ export default function GetPage() {
     }
 
     setSubmitting(true);
-    try {
-      const res = await fetch(TALLY_API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fields: [{ key: "email", value: trimmed }],
-        }),
-      });
-      if (!res.ok) throw new Error(`Tally responded ${res.status}`);
-    } catch {
-      // Graceful fallback — open Tally's hosted form so the user can still submit.
-      if (typeof window !== "undefined") {
-        window.open(TALLY_HOSTED_URL, "_blank", "noopener,noreferrer");
+
+    let duplicate = false;
+    const { error: insertError } = await supabase
+      .from("android_waitlist")
+      .insert({ email: trimmed });
+
+    if (insertError) {
+      // Postgres unique-violation = "duplicate" → friendly UX, no error state.
+      const isDuplicate =
+        insertError.code === "23505" ||
+        /duplicate/i.test(insertError.message ?? "");
+      if (isDuplicate) {
+        duplicate = true;
+      } else {
+        // Transient/other error — log for debugging, but never block the user.
+        console.error("android_waitlist insert failed", insertError);
       }
     }
 
-    capture("get_page_android_waitlist_signup", { email_domain: trimmed.split("@")[1] });
+    capture("get_page_android_waitlist_signup", {
+      email_domain: trimmed.split("@")[1],
+      already_subscribed: duplicate,
+    });
+    setAlreadySubscribed(duplicate);
     setSubmitted(true);
     setSubmitting(false);
   };
@@ -189,7 +201,9 @@ export default function GetPage() {
           </div>
         )}
 
-        {device === "android" && submitted && <SuccessCard />}
+        {device === "android" && submitted && (
+          <SuccessCard alreadySubscribed={alreadySubscribed} />
+        )}
 
         {device === "desktop" && (
           <div>
@@ -242,7 +256,7 @@ export default function GetPage() {
   );
 }
 
-function SuccessCard() {
+function SuccessCard({ alreadySubscribed }: { alreadySubscribed: boolean }) {
   return (
     <div>
       <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-success/15 text-success flex items-center justify-center">
@@ -267,7 +281,9 @@ function SuccessCard() {
         You&apos;re on the list
       </h1>
       <p className="text-sm text-muted leading-relaxed">
-        Thanks — we&apos;ll email you the moment Android is live.
+        {alreadySubscribed
+          ? "You\u2019re already on the list \u2014 we\u2019ll email you the moment Android is live."
+          : "Thanks \u2014 we\u2019ll email you the moment Android is live."}
       </p>
     </div>
   );
