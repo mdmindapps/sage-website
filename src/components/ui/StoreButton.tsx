@@ -10,6 +10,10 @@ interface StoreButtonProps {
   className?: string;
 }
 
+// Single source of truth for the live store URLs.
+const APPSTORE_URL = "https://apps.apple.com/app/id6777168646";
+const PLAY_URL = "https://play.google.com/store/apps/details?id=app.sageacademy";
+
 const APPLE_PATH =
   "M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z";
 
@@ -25,7 +29,7 @@ const themeClasses: Record<Theme, string> = {
 export default function StoreButton({
   platform,
   theme = "dark",
-  href = "#pricing",
+  href,
   className = "",
 }: StoreButtonProps) {
   const isApp = platform === "appstore";
@@ -37,12 +41,15 @@ export default function StoreButton({
     ? "Download on the App Store"
     : "Get it on Google Play";
 
+  // Default to the live store URL for this platform; callers can still pass an explicit href.
+  const resolvedHref = href ?? (isApp ? APPSTORE_URL : PLAY_URL);
+
   // Real store URLs (http...) open in a new tab; in-page anchors scroll within the page.
-  const isExternal = /^https?:\/\//.test(href);
+  const isExternal = /^https?:\/\//.test(resolvedHref);
 
   return (
     <Link
-      href={href}
+      href={resolvedHref}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       aria-label={ariaLabel}
       className={`inline-flex items-center gap-3 h-14 px-6 rounded-full font-semibold transition-all duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 select-none ${themeClasses[theme]} ${className}`}

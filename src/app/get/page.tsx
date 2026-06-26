@@ -135,13 +135,11 @@ export default function GetPage() {
               <StoreButton
                 platform="appstore"
                 theme="dark"
-                href={APPSTORE_URL}
                 className="w-full justify-center"
               />
               <StoreButton
                 platform="play"
                 theme="dark"
-                href={PLAY_URL}
                 className="w-full justify-center"
               />
             </div>
