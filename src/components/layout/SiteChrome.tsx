@@ -11,6 +11,7 @@ const STANDALONE_ROUTES = [
   "/get",
   "/download",
   "/creators",
+  "/creator-terms",
 ];
 
 export default function SiteChrome({
