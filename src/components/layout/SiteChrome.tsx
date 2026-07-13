@@ -5,7 +5,13 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
 
-const STANDALONE_ROUTES = ["/reset", "/delete-account", "/get", "/download"];
+const STANDALONE_ROUTES = [
+  "/reset",
+  "/delete-account",
+  "/get",
+  "/download",
+  "/creators",
+];
 
 export default function SiteChrome({
   children,
