@@ -27,7 +27,7 @@ export default function FinalCTA() {
             Your best nutrition year starts today.
           </h2>
           <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto">
-            Join 10,000+ people who&apos;ve swapped food guilt for food knowledge. Start your free trial — no credit card required.
+            Start tracking smarter today. No credit card required to start your free trial.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

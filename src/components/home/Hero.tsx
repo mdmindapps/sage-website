@@ -66,24 +66,37 @@ export default function Hero() {
             <StoreButton platform="play" theme="light" />
           </motion.div>
 
-          {/* Social proof numbers */}
+          {/* Trust signals — honest feature pills, no fabricated stats */}
           <motion.div
             initial="hidden"
             animate="show"
             custom={0.28}
             variants={fadeUp}
-            className="flex items-center gap-8 mb-16 text-center"
+            className="flex flex-wrap items-center justify-center gap-x-7 gap-y-3 mb-16"
           >
             {[
-              { stat: "1,000+", label: "Active users" },
-              { stat: "Free", label: "3-day trial" },
-              { stat: "50K+", label: "Meals logged" },
-            ].map((s) => (
-              <div key={s.stat}>
-                <p className="text-2xl font-bold text-ink" style={{ letterSpacing: "-0.02em" }}>
-                  {s.stat}
-                </p>
-                <p className="text-xs text-subtle mt-0.5">{s.label}</p>
+              "Free 3-day trial",
+              "AI-powered nutrition tracking",
+              "Cancel anytime",
+            ].map((feature) => (
+              <div key={feature} className="flex items-center gap-2 text-sm text-muted">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden="true"
+                  className="text-primary shrink-0"
+                >
+                  <path
+                    d="M3.5 8.5l3 3 6-6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span>{feature}</span>
               </div>
             ))}
           </motion.div>
