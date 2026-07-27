@@ -1,17 +1,26 @@
 /**
  * Creator handle → Insert Affiliate deep link.
  *
- * Handles are the public-facing slug used at /c/[handle] (e.g. TikTok/IG bio
- * links). Keep them lowercase; the redirect route lowercases inbound requests
- * before lookup so /c/BELLAGRAE, /c/Bellagrae, and /c/bellagrae all resolve
- * to the same target.
+ * Handles are the public-facing slug used in creator bio links. Two routes
+ * consume this map:
+ *
+ *   - /[handle]              — canonical, short URL for bios (e.g.
+ *                              sageacademy.app/isabella_grae). Unknown handles
+ *                              return 404 so typos don't hijack real routes.
+ *                              A RESERVED_HANDLES guard in that route also
+ *                              prevents accidental shadowing of real pages.
+ *   - /c/[handle]            — legacy alias, kept working so any bio links
+ *                              already posted with the /c/ prefix continue to
+ *                              resolve. Unknown handles fall back to /creators.
+ *
+ * Keep handle keys lowercase; both routes lowercase inbound requests before
+ * lookup, so /BELLAGRAE, /Bellagrae, and /bellagrae all resolve to the same
+ * target if `bellagrae` is the key.
  *
  * The destination URL is the full Insert Affiliate proceed-link, including
  * companyId, userCode, and any embedded utm_* parameters. Attribution is
  * handled entirely by Insert Affiliate on the destination — do not add any
  * tracking on our redirect side.
- *
- * Unknown handles fall back to /creators (see src/app/c/[handle]/page.tsx).
  */
 export const CREATOR_LINKS: Record<string, string> = {
   isabella_grae:
