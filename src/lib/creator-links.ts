@@ -25,4 +25,6 @@
 export const CREATOR_LINKS: Record<string, string> = {
   isabella_grae:
     "https://insertaffiliate.link/proceed-to-link.html?companyId=p56z0jG9quWqk5PSANaz960rR3p1&userCode=BELLAGRAE&originalUrl=/p56z0jG9quWqk5PSANaz960rR3p1/BELLAGRAE?utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio&utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+  vitoria_machado:
+    "https://insertaffiliate.link/p56z0jG9quWqk5PSANaz960rR3p1/VITORIAMACHADO",
 };
