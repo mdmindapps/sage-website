@@ -97,6 +97,8 @@ export default function JoinFlow({
         provider: "google",
         options: {
           redirectTo: `${window.location.origin}/join/${handle}?continue=1`,
+          // always show the account chooser (don't silently auto-pick a single signed-in account)
+          queryParams: { prompt: "select_account" },
         },
       });
       if (error) throw error;
