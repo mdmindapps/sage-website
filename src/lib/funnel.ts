@@ -41,9 +41,32 @@ export type CreatorFunnel = {
   card_banner_url: string | null;
   banner_url: string | null;
   reviews_enabled: boolean;
+  show_other_offers: boolean;
   instagram: string | null;
   social_url: string | null;
   blocks: PitchBlock[];
+  review_avg: number | null;
+  review_count: number;
+  reviews: FunnelReview[];
+  communities: FunnelCommunity[];
+};
+
+export type FunnelReview = {
+  name: string | null;
+  avatar: string | null;
+  stars: number;
+  body: string | null;
+  created_at: string;
+};
+
+export type FunnelCommunity = {
+  id: string;
+  title: string | null;
+  tagline: string | null;
+  image: string | null;
+  categories: string[] | null;
+  member_count: number;
+  price_monthly: number | null;
 };
 
 export async function getCreatorFunnel(

@@ -2,6 +2,8 @@ import Link from "next/link";
 import SageLogo from "@/components/ui/SageLogo";
 import Gallery from "./Gallery";
 import PitchBlocks from "./PitchBlocks";
+import Reviews from "./Reviews";
+import OtherOffers from "./OtherOffers";
 import SubscribeFlow from "./SubscribeFlow";
 import type { CreatorFunnel as Creator } from "@/lib/funnel";
 
@@ -115,6 +117,19 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
                 <PitchBlocks blocks={creator.blocks} />
               </div>
             )}
+
+            {/* reviews (public when the coach turns them on) */}
+            <Reviews
+              reviews={creator.reviews}
+              avg={creator.review_avg}
+              count={creator.review_count}
+            />
+
+            {/* the creator's other offers (their communities) */}
+            <OtherOffers
+              communities={creator.communities}
+              creatorName={creator.display_name}
+            />
           </div>
 
           {/* ── sticky sidebar (desktop) ── */}
