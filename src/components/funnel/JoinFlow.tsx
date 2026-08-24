@@ -56,9 +56,15 @@ export default function JoinFlow({
 
   // Returning from Google OAuth (?continue=1) → wait for the session, then proceed.
   useEffect(() => {
-    const returning =
-      typeof window !== "undefined" &&
-      new URLSearchParams(window.location.search).get("continue") === "1";
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    // Surface an OAuth error that Supabase appended, instead of a generic timeout.
+    const oauthErr = params.get("error_description") || params.get("error");
+    if (oauthErr) {
+      setErr(decodeURIComponent(oauthErr.replace(/\+/g, " ")));
+      return;
+    }
+    const returning = params.get("continue") === "1";
     if (!returning) return;
     const supabase = getSupabase();
     setBusy(true);
