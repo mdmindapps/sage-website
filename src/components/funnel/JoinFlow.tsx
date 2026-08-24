@@ -39,6 +39,7 @@ export default function JoinFlow({
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [already, setAlready] = useState(false);
+  const [signedIn, setSignedIn] = useState<string | null>(null);
 
   const coachPrice = priceMonthly != null ? `$${priceMonthly}` : "—";
   const firstName = creatorName.split(" ")[0];
@@ -87,6 +88,37 @@ export default function JoinFlow({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [creatorId]);
+
+  // Fresh visit (not an OAuth return): if a Sage session already exists, offer to
+  // continue as that account instead of silently using it.
+  useEffect(() => {
+    const returning =
+      typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).get("continue") === "1";
+    if (returning) return;
+    getSupabase()
+      .auth.getSession()
+      .then(({ data }) => {
+        if (data.session?.user?.email) setSignedIn(data.session.user.email);
+      });
+  }, []);
+
+  async function useDifferentAccount() {
+    await getSupabase().auth.signOut();
+    setSignedIn(null);
+    setErr("");
+  }
+
+  async function continueAsSignedIn() {
+    setErr("");
+    setBusy(true);
+    try {
+      await proceedAfterAuth();
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Something went wrong.");
+      setBusy(false);
+    }
+  }
 
   async function withGoogle() {
     setErr("");
@@ -224,6 +256,28 @@ export default function JoinFlow({
         <div className="mt-6 flex items-center justify-center gap-3 py-4">
           <span className="h-5 w-5 animate-spin rounded-full border-[3px] border-border border-t-primary" />
           <span className="text-sm font-medium text-muted">One moment…</span>
+        </div>
+      ) : mode === "choose" && signedIn ? (
+        <div className="mt-5 flex flex-col gap-3">
+          <div className="rounded-xl bg-surface px-4 py-3 text-center">
+            <p className="text-xs font-medium text-subtle">Signed in as</p>
+            <p className="text-sm font-semibold text-ink">{signedIn}</p>
+          </div>
+          <button
+            onClick={continueAsSignedIn}
+            className="flex h-13 w-full items-center justify-center rounded-full bg-primary text-base font-semibold text-white shadow-sm transition hover:bg-primary-dark active:scale-[0.98]"
+          >
+            Continue as {signedIn.split("@")[0]}
+          </button>
+          <button
+            onClick={useDifferentAccount}
+            className="text-center text-xs font-medium text-muted transition hover:text-ink"
+          >
+            Use a different account
+          </button>
+          <p className="mt-1 text-center text-xs font-medium text-subtle">
+            Secure card payment · Cancel anytime
+          </p>
         </div>
       ) : mode === "choose" ? (
         <div className="mt-5 flex flex-col gap-3">
