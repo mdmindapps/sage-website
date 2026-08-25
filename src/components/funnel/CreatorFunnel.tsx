@@ -129,6 +129,7 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
             <OtherOffers
               communities={creator.communities}
               creatorName={creator.display_name}
+              handle={creator.handle}
             />
           </div>
 

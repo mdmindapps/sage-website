@@ -60,7 +60,8 @@ export type FunnelReview = {
 };
 
 export type FunnelCommunity = {
-  id: string;
+  id?: string;
+  slug?: string;
   title: string | null;
   tagline: string | null;
   image: string | null;
@@ -68,6 +69,58 @@ export type FunnelCommunity = {
   member_count: number;
   price_monthly: number | null;
 };
+
+export type CommunityFunnel = {
+  id: string;
+  slug: string;
+  title: string | null;
+  tagline: string | null;
+  gallery: GalleryItem[] | null;
+  cover_url: string | null;
+  card_banner_url: string | null;
+  categories: string[] | null;
+  reviews_enabled: boolean;
+  member_count: number;
+  price_monthly: number | null;
+  price_annual: number | null;
+  creator: { id: string; handle: string; display_name: string; avatar_url: string | null };
+  blocks: PitchBlock[];
+  review_count: number;
+  review_avg: number | null;
+  reviews: FunnelReview[];
+  other_communities: FunnelCommunity[];
+  coaching: { handle: string; price_monthly: number | null; title: string | null } | null;
+};
+
+async function callRpc<T>(fn: string, body: object): Promise<T | null> {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_ANON_KEY,
+        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return null;
+    return (await res.json()) as T | null;
+  } catch {
+    return null;
+  }
+}
+
+export async function getCommunityFunnel(
+  handle: string,
+  slug: string,
+): Promise<CommunityFunnel | null> {
+  const data = await callRpc<CommunityFunnel>("community_funnel", {
+    p_handle: handle,
+    p_slug: slug,
+  });
+  return data && data.id ? data : null;
+}
 
 export async function getCreatorFunnel(
   handle: string,

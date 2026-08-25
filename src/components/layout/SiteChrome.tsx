@@ -17,10 +17,13 @@ const STANDALONE_ROUTES = [
   "/mentor",
 ];
 
-// Single-segment static pages that KEEP the global site header/footer.
-// Any OTHER single-segment path (e.g. /andreiy) is a creator funnel — it renders
-// its own focused chrome, so we treat it as standalone here to avoid a doubled header.
-const CHROME_PATHS = new Set(["/", "/privacy", "/terms", "/cookies", "/support"]);
+// First path segments that are real site routes (NOT creator handles). Anything else with 1–2
+// segments — /andreiy (coach funnel) or /andreiy/fat-loss-crew (community funnel) — is a creator
+// funnel that renders its own focused chrome, so we treat it as standalone (no doubled header).
+const KNOWN_FIRST = new Set([
+  "privacy", "terms", "cookies", "support", "reset", "delete-account", "get",
+  "download", "creators", "creator-terms", "join", "creator-profile", "mentor", "c", "api",
+]);
 
 export default function SiteChrome({
   children,
@@ -28,8 +31,9 @@ export default function SiteChrome({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isSingleSegment = /^\/[^/]+$/.test(pathname);
-  const isFunnel = isSingleSegment && !CHROME_PATHS.has(pathname);
+  const segs = pathname.split("/").filter(Boolean);
+  const isFunnel =
+    pathname !== "/" && segs.length >= 1 && segs.length <= 2 && !KNOWN_FIRST.has(segs[0]);
   const isStandalone =
     isFunnel ||
     STANDALONE_ROUTES.some(
