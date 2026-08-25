@@ -84,3 +84,69 @@ export async function beginCheckout(creatorId: string, share: boolean) {
   const coachUrl = await startCoachCheckout(creatorId, share, true);
   window.location.href = coachUrl;
 }
+
+// ---------- community membership (same rules as 1:1: bundle Premium, skip if owned, dup-guard) ----------
+
+/** The membership billing cycle. Sage Premium follows the SAME cycle (annual community → annual Premium). */
+export type CommunityPlan = "monthly" | "yearly";
+
+/** Sage Premium before a COMMUNITY join, on the same cycle as the membership.
+ *  success_url continues to /creator-profile?community=…&nextCommunity=<plan>. */
+export async function startPremiumForCommunity(
+  communityId: string,
+  plan: CommunityPlan = "monthly",
+): Promise<{ ready?: boolean; url?: string }> {
+  const supabase = getSupabase();
+  const { data, error } = await supabase.functions.invoke("stripe-premium-checkout", {
+    body: { plan, communityId, baseUrl: window.location.origin },
+  });
+  if (error) throw error;
+  if (data?.error) throw new Error(data.detail || data.error);
+  return data as { ready?: boolean; url?: string };
+}
+
+/** The community membership checkout (monthly or yearly). Returns the Stripe-hosted URL. */
+export async function startCommunityCheckout(
+  communityId: string,
+  plan: CommunityPlan = "monthly",
+): Promise<string> {
+  const supabase = getSupabase();
+  const { data, error } = await supabase.functions.invoke("stripe-community-checkout", {
+    body: { communityId, plan, baseUrl: window.location.origin },
+  });
+  if (error) throw error;
+  if (data?.error) throw new Error(data.detail || data.error);
+  return data.url as string;
+}
+
+/** Is the logged-in user already an active member of this community? Guards duplicate joins. */
+export async function isMemberOf(communityId: string): Promise<boolean> {
+  const supabase = getSupabase();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return false;
+  const { data } = await supabase
+    .from("community_members")
+    .select("id")
+    .eq("member_id", user.id)
+    .eq("community_id", communityId)
+    .eq("status", "active")
+    .maybeSingle();
+  return !!data;
+}
+
+/** Full community-join entry: Premium first (skipped if owned), then the membership checkout —
+ *  both on the chosen cycle (annual community → annual Premium). */
+export async function beginCommunityCheckout(
+  communityId: string,
+  plan: CommunityPlan = "monthly",
+) {
+  const premium = await startPremiumForCommunity(communityId, plan);
+  if (premium.url) {
+    window.location.href = premium.url; // → Stripe (Premium), then continues to the community checkout
+    return;
+  }
+  const url = await startCommunityCheckout(communityId, plan);
+  window.location.href = url;
+}

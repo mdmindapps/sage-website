@@ -1,4 +1,5 @@
 import type { PitchBlock } from "@/lib/funnel";
+import SliderBlock from "./SliderBlock";
 
 /** Renders a creator's pitch (the sales-copy blocks authored in-app: heading / text / list / image / quote). */
 export default function PitchBlocks({ blocks }: { blocks: PitchBlock[] }) {
@@ -51,16 +52,51 @@ export default function PitchBlocks({ blocks }: { blocks: PitchBlock[] }) {
                 {b.body}
               </blockquote>
             );
-          case "image":
-            return b.url ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+          case "slider": {
+            const imgs = b.config?.images?.filter((im) => im?.url) || [];
+            return imgs.length ? <SliderBlock key={i} images={imgs} /> : null;
+          }
+          case "image": {
+            if (!b.url) return null;
+            const fit = b.config?.fit === "fill" ? "fill" : "whole";
+            if (fit === "fill") {
+              const fx = b.config?.focusX ?? 50;
+              const fy = b.config?.focusY ?? 50;
+              return (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={i}
+                  src={b.url}
+                  alt=""
+                  className="aspect-[16/9] w-full rounded-2xl object-cover"
+                  style={{ objectPosition: `${fx}% ${fy}%` }}
+                />
+              );
+            }
+            // whole photo — shown in full, side/top gaps filled with a soft blur of the same shot
+            return (
+              <div
                 key={i}
-                src={b.url}
-                alt=""
-                className="w-full rounded-2xl object-cover"
-              />
-            ) : null;
+                className="relative w-full overflow-hidden rounded-2xl"
+                style={{ aspectRatio: "4 / 5", maxHeight: 560 }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={b.url}
+                  alt=""
+                  aria-hidden
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ filter: "blur(24px)", transform: "scale(1.2)" }}
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={b.url}
+                  alt=""
+                  className="absolute inset-0 m-auto max-h-full max-w-full object-contain"
+                />
+              </div>
+            );
+          }
           default: // "text" and anything else → paragraph
             return b.body ? (
               <p

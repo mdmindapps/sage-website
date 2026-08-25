@@ -5,20 +5,10 @@ import PitchBlocks from "./PitchBlocks";
 import Reviews from "./Reviews";
 import OtherOffers from "./OtherOffers";
 import SubscribeFlow from "./SubscribeFlow";
+import CoachCTAMobile from "./CoachCTAMobile";
 import type { CreatorFunnel as Creator } from "@/lib/funnel";
 
-function initials(name: string) {
-  return name
-    .trim()
-    .split(/\s+/)
-    .map((w) => w[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
-
 export default function CreatorFunnel({ creator }: { creator: Creator }) {
-  const igHandle = creator.instagram?.replace(/^@/, "");
   const cats = (creator.categories || []).slice(0, 3);
 
   return (
@@ -40,76 +30,64 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_360px] lg:gap-14">
           {/* ── main column ── */}
           <div className="min-w-0">
-            {creator.gallery && creator.gallery.length > 0 && (
-              <Gallery items={creator.gallery} />
+            {/* header: title + tagline + rating, above the media (Skool-style) */}
+            <h1
+              className="text-3xl font-extrabold leading-tight text-ink md:text-4xl"
+              style={{ letterSpacing: "-0.025em", textWrap: "balance" }}
+            >
+              {creator.sales_title || "1:1 Coaching"}
+            </h1>
+            {creator.sales_tagline && (
+              <p className="mt-2.5 text-lg leading-relaxed text-muted">
+                {creator.sales_tagline}
+              </p>
             )}
-
-            {/* identity */}
-            <div className="mt-7">
-              <div className="flex items-center gap-3.5">
-                {creator.avatar_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={creator.avatar_url}
-                    alt={creator.display_name}
-                    className="h-14 w-14 rounded-full object-cover"
-                  />
-                ) : (
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/12 text-lg font-bold text-primary">
-                    {initials(creator.display_name)}
-                  </div>
-                )}
-                <div className="min-w-0">
-                  <p className="text-base font-bold text-ink">
-                    {creator.display_name}
-                  </p>
-                  {igHandle && (
-                    <a
-                      href={`https://instagram.com/${igHandle}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-muted transition hover:text-primary"
-                    >
-                      @{igHandle}
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <h1
-                className="mt-6 text-3xl font-extrabold leading-tight text-ink md:text-4xl"
-                style={{ letterSpacing: "-0.025em", textWrap: "balance" }}
-              >
-                {creator.sales_title || "1:1 Coaching"}
-              </h1>
-              {creator.sales_tagline && (
-                <p className="mt-2.5 text-lg leading-relaxed text-muted">
-                  {creator.sales_tagline}
-                </p>
-              )}
-
-              {cats.length > 0 && (
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {cats.map((cat) => (
-                    <span
-                      key={cat}
-                      className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-muted ring-1 ring-border"
-                    >
-                      {cat}
-                    </span>
+            {creator.review_count > 0 && creator.review_avg != null && (
+              <div className="mt-3 flex items-center gap-2">
+                <div className="flex gap-0.5">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill={i < Math.round(creator.review_avg!) ? "#EF9F27" : "none"} stroke="#EF9F27" strokeWidth="1.6" aria-hidden="true">
+                      <path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 18.6 6.1 21.3l1.2-6.6L2.5 9.5l6.6-.9L12 2.5z" strokeLinejoin="round" />
+                    </svg>
                   ))}
                 </div>
-              )}
+                <span className="text-sm font-semibold text-ink">
+                  {creator.review_avg.toFixed(1)}
+                  <span className="font-medium text-muted"> · {creator.review_count} review{creator.review_count === 1 ? "" : "s"}</span>
+                </span>
+              </div>
+            )}
+
+            {/* media */}
+            {creator.gallery && creator.gallery.length > 0 && (
+              <div className="mt-5">
+                <Gallery items={creator.gallery} />
+              </div>
+            )}
+
+            {/* meta chips: category · type */}
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              {cats.map((cat) => (
+                <span
+                  key={cat}
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-muted ring-1 ring-border"
+                >
+                  {cat}
+                </span>
+              ))}
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-muted ring-1 ring-border">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.4" stroke="currentColor" strokeWidth="1.8" /><path d="M5.5 20c0-3.4 2.9-5.6 6.5-5.6s6.5 2.2 6.5 5.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+                1:1 Coaching
+              </span>
             </div>
 
-            {/* mobile: subscribe card sits here, right under the pitch header */}
-            <div className="mt-8 lg:hidden">
-              <SubscribeFlow
-                handle={creator.handle}
-                creatorName={creator.display_name}
-                priceMonthly={creator.price_monthly}
-              />
-            </div>
+            {/* creator + price row, and the sticky mobile CTA (full breakdown is on /join) */}
+            <CoachCTAMobile
+              handle={creator.handle}
+              creatorName={creator.display_name}
+              avatarUrl={creator.avatar_url}
+              priceMonthly={creator.price_monthly}
+            />
 
             {/* pitch */}
             {creator.blocks.length > 0 && (
@@ -145,6 +123,9 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
           </aside>
         </div>
       </main>
+
+      {/* keeps the footer clear of the sticky mobile Join bar */}
+      <div className="h-16 lg:hidden" />
 
       {/* footer */}
       <footer className="border-t border-border bg-white">

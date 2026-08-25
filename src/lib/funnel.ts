@@ -17,11 +17,20 @@ const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRobWZzeGt1a2ZkamFpem52b2V4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY2MDcyNzEsImV4cCI6MjEwMjE4MzI3MX0.pdpv5vSP8e2mE-Kfpg48kL_O92o5tR76i3-8ETg1WwE";
 
 export type GalleryItem = { url: string; type: "image" | "video" };
+export type SliderImage = { url: string; caption?: string | null };
 export type PitchBlock = {
-  kind: "heading" | "text" | "list" | "image" | "quote" | string;
+  kind: "heading" | "text" | "list" | "image" | "quote" | "slider" | string;
   body: string | null;
   url: string | null;
-  config: { w?: number; h?: number } | null;
+  config: {
+    w?: number;
+    h?: number;
+    size?: "sm" | "md" | "lg";
+    fit?: "fill" | "whole";
+    focusX?: number;
+    focusY?: number;
+    images?: SliderImage[];
+  } | null;
 };
 
 export type CreatorFunnel = {

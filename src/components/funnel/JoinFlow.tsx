@@ -3,9 +3,26 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getSupabase } from "@/lib/supabase-client";
-import { beginCheckout, isSubscribedTo } from "@/lib/checkout";
+import {
+  beginCheckout,
+  isSubscribedTo,
+  beginCommunityCheckout,
+  isMemberOf,
+  type CommunityPlan,
+} from "@/lib/checkout";
 
-const PREMIUM_PRICE = "$4.99";
+/** When set, JoinFlow runs the COMMUNITY join instead of the 1:1 coach join. */
+export type JoinCommunity = {
+  id: string;
+  slug: string;
+  title: string;
+  priceMonthly: number | null;
+  priceAnnual: number | null;
+};
+
+// Display-only Premium prices (real charge comes from Stripe). DEV values — update monthly to
+// the prod price ($12.99) at cutover; annual ($39.99) matches prod.
+const PREMIUM = { monthly: "$4.99", yearly: "$39.99" } as const;
 
 /**
  * Account step (/join/<handle>). The visitor creates/logs into a Sage account
@@ -26,11 +43,15 @@ export default function JoinFlow({
   creatorName,
   priceMonthly,
   handle,
+  community,
+  plan = "monthly",
 }: {
   creatorId: string;
   creatorName: string;
   priceMonthly: number | null;
   handle: string;
+  community?: JoinCommunity;
+  plan?: CommunityPlan;
 }) {
   const [mode, setMode] = useState<"choose" | "email">("choose");
   const [isLogin, setIsLogin] = useState(false);
@@ -41,11 +62,50 @@ export default function JoinFlow({
   const [already, setAlready] = useState(false);
   const [signedIn, setSignedIn] = useState<string | null>(null);
 
-  const coachPrice = priceMonthly != null ? `$${priceMonthly}` : "—";
   const firstName = creatorName.split(" ")[0];
+  // Community can be monthly-only, annual-only, or both; the funnel passes the chosen `plan`.
+  const cHasMonthly = (community?.priceMonthly ?? 0) > 0;
+  const cHasAnnual = (community?.priceAnnual ?? 0) > 0;
+  const effPlan: CommunityPlan = community
+    ? cHasMonthly && cHasAnnual
+      ? plan
+      : cHasAnnual
+        ? "yearly"
+        : "monthly"
+    : "monthly";
+  const per = community && effPlan === "yearly" ? "/yr" : "/mo";
+  const offerPrice = community
+    ? effPlan === "yearly"
+      ? community.priceAnnual != null
+        ? `$${community.priceAnnual}`
+        : "—"
+      : community.priceMonthly != null
+        ? `$${community.priceMonthly}`
+        : "—"
+    : priceMonthly != null
+      ? `$${priceMonthly}`
+      : "—";
+  const premiumPrice = community ? PREMIUM[effPlan] : PREMIUM.monthly;
+  const offerLabel = community ? `Membership · ${community.title}` : `Coaching · ${firstName}`;
+  const subhead = community
+    ? `to join ${community.title}`
+    : `to start coaching with ${firstName}`;
+  const returnPath = community
+    ? `/join/${handle}/${community.slug}`
+    : `/join/${handle}`;
+  const returnQuery = community ? `?continue=1&plan=${effPlan}` : `?continue=1`;
 
-  // After any successful auth: guard against re-subscribing, else go to checkout.
+  // After any successful auth: guard against a duplicate purchase, else go to checkout.
   async function proceedAfterAuth() {
+    if (community) {
+      if (await isMemberOf(community.id)) {
+        setAlready(true);
+        setBusy(false);
+        return;
+      }
+      await beginCommunityCheckout(community.id, effPlan); // Premium (skipped if owned) → membership, same cycle
+      return;
+    }
     if (await isSubscribedTo(creatorId)) {
       setAlready(true);
       setBusy(false);
@@ -134,7 +194,7 @@ export default function JoinFlow({
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: `${window.location.origin}/join/${handle}?continue=1`,
+          redirectTo: `${window.location.origin}${returnPath}${returnQuery}`,
           // Google: always show the account chooser (don't silently auto-pick a single account).
           ...(provider === "google"
             ? { queryParams: { prompt: "select_account" } }
@@ -211,11 +271,14 @@ export default function JoinFlow({
           </svg>
         </div>
         <h1 className="mt-5 text-2xl font-extrabold text-ink" style={{ letterSpacing: "-0.02em" }}>
-          You&apos;re already training with {firstName}
+          {community
+            ? `You're already in ${community.title}`
+            : `You're already training with ${firstName}`}
         </h1>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Your subscription is active — no need to pay again. Open the Sage app and
-          log in to continue.
+          {community
+            ? "Your membership is active — no need to pay again. Open the Sage app and log in to continue."
+            : "Your subscription is active — no need to pay again. Open the Sage app and log in to continue."}
         </p>
         <Link
           href="/get"
@@ -232,18 +295,18 @@ export default function JoinFlow({
       <h1 className="text-2xl font-extrabold text-ink" style={{ letterSpacing: "-0.02em" }}>
         Create your account
       </h1>
-      <p className="mt-1 text-sm text-muted">to start coaching with {firstName}</p>
+      <p className="mt-1 text-sm text-muted">{subhead}</p>
 
       {/* price summary */}
       <div className="mt-5 overflow-hidden rounded-2xl border border-border bg-white">
         <div className="flex items-center justify-between border-b border-border px-4 py-3">
           <div>
-            <p className="text-sm font-semibold text-ink">Coaching · {firstName}</p>
+            <p className="text-sm font-semibold text-ink">{offerLabel}</p>
             <p className="text-xs font-medium text-subtle">by card</p>
           </div>
           <p className="text-sm font-semibold text-ink">
-            {coachPrice}
-            <span className="text-xs font-medium text-subtle"> /mo</span>
+            {offerPrice}
+            <span className="text-xs font-medium text-subtle"> {per}</span>
           </p>
         </div>
         <div className="flex items-center justify-between px-4 py-3">
@@ -252,8 +315,8 @@ export default function JoinFlow({
             <p className="text-xs font-medium text-subtle">by card · skipped if you already have it</p>
           </div>
           <p className="text-sm font-semibold text-ink">
-            {PREMIUM_PRICE}
-            <span className="text-xs font-medium text-subtle"> /mo</span>
+            {premiumPrice}
+            <span className="text-xs font-medium text-subtle"> {per}</span>
           </p>
         </div>
       </div>

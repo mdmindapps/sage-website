@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { startCoachCheckout } from "@/lib/checkout";
+import { startCoachCheckout, startCommunityCheckout, type CommunityPlan } from "@/lib/checkout";
 import SageLogo from "@/components/ui/SageLogo";
 
 /**
@@ -16,20 +16,38 @@ function Continue() {
   const id = params.get("id") || "";
   const nextCoach = params.get("nextCoach");
   const share = params.get("share") === "1";
+  const community = params.get("community") || "";
+  const nextCommunity = params.get("nextCommunity");
   const started = useRef(false);
   const [err, setErr] = useState("");
 
   useEffect(() => {
-    if (started.current || !id || !nextCoach) return;
-    started.current = true;
-    startCoachCheckout(id, share, true)
-      .then((url) => {
-        window.location.href = url;
-      })
-      .catch((e) =>
-        setErr(e instanceof Error ? e.message : "Could not continue to checkout."),
-      );
-  }, [id, nextCoach, share]);
+    if (started.current) return;
+    // Premium done → continue to a COMMUNITY membership checkout
+    if (community && nextCommunity) {
+      started.current = true;
+      const plan: CommunityPlan = nextCommunity === "yearly" ? "yearly" : "monthly";
+      startCommunityCheckout(community, plan)
+        .then((url) => {
+          window.location.href = url;
+        })
+        .catch((e) =>
+          setErr(e instanceof Error ? e.message : "Could not continue to checkout."),
+        );
+      return;
+    }
+    // Premium done → continue to the COACH checkout
+    if (id && nextCoach) {
+      started.current = true;
+      startCoachCheckout(id, share, true)
+        .then((url) => {
+          window.location.href = url;
+        })
+        .catch((e) =>
+          setErr(e instanceof Error ? e.message : "Could not continue to checkout."),
+        );
+    }
+  }, [id, nextCoach, share, community, nextCommunity]);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-5 bg-cream px-6 text-center">
@@ -43,7 +61,7 @@ function Continue() {
         <>
           <div className="h-8 w-8 animate-spin rounded-full border-[3px] border-border border-t-primary" />
           <p className="text-sm font-medium text-muted">
-            Setting up your coaching…
+            {nextCommunity ? "Setting up your membership…" : "Setting up your coaching…"}
           </p>
         </>
       )}
