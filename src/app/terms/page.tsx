@@ -417,6 +417,13 @@ export default function TermsPage() {
               cleared earnings are still paid, and on a breach (for example, fraud) pending
               unconfirmed earnings may be voided.
             </p>
+            <p>
+              <strong>Full Creator Agreement.</strong> The complete terms for creators &mdash;
+              including the self-billing authorisation, intellectual-property licence, payout
+              details, and tax responsibilities &mdash; are set out in the{" "}
+              <Link href="/creator-agreement">Sage Creator Agreement</Link>, which you accept when
+              you apply to become a creator.
+            </p>
 
             <h3>13.2 Subscribing to a creator (members)</h3>
             <p>
