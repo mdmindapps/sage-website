@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Terms and conditions for using the Sage AI fitness coach app and website.",
 };
 
-const LAST_UPDATED = "June 16, 2026";
+const LAST_UPDATED = "August 26, 2026";
 
 function LegalSection({
   title,
@@ -365,7 +365,76 @@ export default function TermsPage() {
             </p>
           </LegalSection>
 
-          <LegalSection title="13. Contact">
+          <LegalSection title="13. The Creator Marketplace">
+            <p>
+              Sage also lets creators — coaches, trainers, nutritionists, and other experts — sell
+              their own 1-on-1 coaching and communities directly to their audience. Sage provides the
+              tools, the storefront, and the payments; the creator provides the coaching. The
+              following applies whenever you sell as a creator, or subscribe to one.
+            </p>
+
+            <h3>13.1 Selling on Sage (creators)</h3>
+            <p>
+              <strong>Earnings and fee.</strong> You keep <strong>80% of every payment</strong> from
+              your subscribers; Sage keeps a <strong>20% platform fee</strong> (which also covers
+              payment processing). This applies to subscriptions, memberships, tips, and any paid
+              content. You set your own prices.
+            </p>
+            <p>
+              <strong>Getting paid.</strong> Payouts run through Stripe to your connected account,
+              weekly, after a short clearing window (about 7 days) that protects against fraud and
+              chargebacks. You must complete Stripe&apos;s payout setup before you can be paid.
+            </p>
+            <p>
+              <strong>Chargebacks and refunds.</strong> If a payment you&apos;ve received is later
+              refunded or charged back, that amount (your share) is deducted from your current or
+              upcoming earnings. If your balance goes negative, we may recover the difference,
+              including from your connected payout account.
+            </p>
+            <p>
+              <strong>Refund policy.</strong> Payments are non-refundable by default. You may grant a
+              refund to your own subscriber at your discretion. Sage may issue a refund where the law
+              requires it, or in cases of fraud or abuse.
+            </p>
+            <p>
+              <strong>Invoicing (self-billing).</strong> You authorise Sage to issue invoices on your
+              behalf (self-billing) for the amounts you earn, and you agree not to issue your own
+              invoices for those same amounts. You can view and download these invoices in the app.
+            </p>
+            <p>
+              <strong>Taxes.</strong> You are an independent business, responsible for declaring and
+              paying your own taxes (income tax, and VAT/GST if you&apos;re registered) in your own
+              country. Sage handles the sales tax/VAT charged to the end customer as the merchant of
+              record.
+            </p>
+            <p>
+              <strong>Your responsibilities.</strong> Deliver what you promise to your subscribers.
+              Don&apos;t make medical claims or guarantee specific results. Keep your content and
+              conduct legal, honest, and respectful. Your content stays yours. Sage may remove
+              content, restrict features, suspend, or remove a creator who breaks these Terms,
+              commits fraud, or abuses the platform or its members. You are an independent creator,
+              not an employee, partner, or agent of Sage. Either side can end this at any time;
+              cleared earnings are still paid, and on a breach (for example, fraud) pending
+              unconfirmed earnings may be voided.
+            </p>
+
+            <h3>13.2 Subscribing to a creator (members)</h3>
+            <p>
+              When you subscribe to a creator, you&apos;re paying for that specific creator&apos;s
+              coaching or community. <strong>The creator — not Sage — provides that service</strong>;
+              Sage is the platform and the merchant of record for the payment.
+            </p>
+            <p>
+              Subscriptions renew automatically until you cancel; you can cancel anytime and keep
+              access until the end of the period you&apos;ve paid for. Payments are non-refundable by
+              default — a creator may grant a refund at their discretion, and we&apos;ll issue one
+              where the law requires it. Fitness and health results are never guaranteed, and nothing
+              a creator provides through Sage is medical advice (see Section 6). Follow each
+              community&apos;s rules; we may remove members who are abusive or break them.
+            </p>
+          </LegalSection>
+
+          <LegalSection title="14. Contact">
             <p>For questions about these Terms, please contact us:</p>
             <ul>
               <li>
