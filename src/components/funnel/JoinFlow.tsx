@@ -23,6 +23,10 @@ export type JoinCommunity = {
 // Display-only Premium prices (real charge comes from Stripe). DEV values — update monthly to
 // the prod price ($12.99) at cutover; annual ($39.99) matches prod.
 const PREMIUM = { monthly: "$4.99", yearly: "$39.99" } as const;
+// coached rate vs the standalone (solo) price — shown as a strike-through + "save" badge so the coach
+// subscription visibly discounts Premium. $7.99→$4.99 = 37% ; $59.99→$39.99 = 33%.
+const PREMIUM_WAS = { monthly: "$7.99", yearly: "$59.99" } as const;
+const PREMIUM_SAVE = { monthly: "37%", yearly: "33%" } as const;
 
 /**
  * Account step (/join/<handle>). The visitor creates/logs into a Sage account
@@ -86,6 +90,8 @@ export default function JoinFlow({
       ? `$${priceMonthly}`
       : "—";
   const premiumPrice = community ? PREMIUM[effPlan] : PREMIUM.monthly;
+  const premiumWas = community ? PREMIUM_WAS[effPlan] : PREMIUM_WAS.monthly;
+  const premiumSave = community ? PREMIUM_SAVE[effPlan] : PREMIUM_SAVE.monthly;
   const offerLabel = community ? `Membership · ${community.title}` : `Coaching · ${firstName}`;
   const subhead = community
     ? `to join ${community.title}`
@@ -311,10 +317,14 @@ export default function JoinFlow({
         </div>
         <div className="flex items-center justify-between px-4 py-3">
           <div>
-            <p className="text-sm font-semibold text-ink">Sage Premium · the app</p>
-            <p className="text-xs font-medium text-subtle">by card · skipped if you already have it</p>
+            <div className="flex items-center gap-2">
+              <p className="text-sm font-semibold text-ink">Sage Premium · the app</p>
+              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">Save {premiumSave}</span>
+            </div>
+            <p className="text-xs font-medium text-subtle">by card · your coach&apos;s rate · skipped if you already have it</p>
           </div>
           <p className="text-sm font-semibold text-ink">
+            <span className="mr-1.5 font-medium text-subtle line-through">{premiumWas}</span>
             {premiumPrice}
             <span className="text-xs font-medium text-subtle"> {per}</span>
           </p>
