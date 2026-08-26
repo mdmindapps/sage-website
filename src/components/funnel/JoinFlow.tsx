@@ -323,8 +323,8 @@ export default function JoinFlow({
             </div>
             <p className="text-xs font-medium text-subtle">by card · your coach&apos;s rate · skipped if you already have it</p>
           </div>
-          <p className="text-sm font-semibold text-ink">
-            <span className="mr-1.5 font-medium text-subtle line-through">{premiumWas}</span>
+          <p className="shrink-0 whitespace-nowrap pl-3 text-right text-sm font-semibold text-ink">
+            <span className="mr-1 font-medium text-subtle line-through">{premiumWas}</span>
             {premiumPrice}
             <span className="text-xs font-medium text-subtle"> {per}</span>
           </p>
