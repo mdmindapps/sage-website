@@ -137,8 +137,8 @@ export default function TermsPage() {
               full access to the app&apos;s coaching features, available in two options:
             </p>
             <ul>
-              <li>Monthly — $12.99 per month</li>
-              <li>Annual — $89.99 per year</li>
+              <li>Monthly — $7.99 per month</li>
+              <li>Annual — $59.99 per year</li>
             </ul>
             <p>
               New users may be offered a 3-day free trial. Any unused portion of a free trial is

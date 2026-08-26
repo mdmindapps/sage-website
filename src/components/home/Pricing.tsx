@@ -48,7 +48,7 @@ export default function Pricing() {
                   className="text-4xl font-bold text-ink"
                   style={{ letterSpacing: "-0.02em" }}
                 >
-                  $12.99
+                  $7.99
                 </span>
                 <span className="text-muted text-sm pb-1.5">/ month</span>
               </div>
@@ -75,7 +75,7 @@ export default function Pricing() {
             {/* Badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
               <span className="inline-block whitespace-nowrap px-4 py-1 rounded-full bg-primary text-white text-xs font-bold tracking-wide shadow">
-                SAVE 43% — BEST VALUE
+                SAVE 37% — BEST VALUE
               </span>
             </div>
 
@@ -86,13 +86,13 @@ export default function Pricing() {
                   className="text-4xl font-bold text-ink"
                   style={{ letterSpacing: "-0.02em" }}
                 >
-                  $89.99
+                  $59.99
                 </span>
                 <span className="text-muted text-sm pb-1.5">/ year</span>
               </div>
               <p className="text-sm text-subtle mt-1.5">
                 That&apos;s{" "}
-                <span className="text-primary font-semibold">$7.50/month</span>. Billed annually.
+                <span className="text-primary font-semibold">$5.00/month</span>. Billed annually.
               </p>
               <p className="text-xs text-primary font-semibold mt-1">Includes 3-day free trial</p>
             </div>
