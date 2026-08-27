@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const LAST_UPDATED = "August 26, 2026";
 const VERSION = "1.0";
 // Flip to false at go-live (after the accountant has reviewed the tax clauses).
-const DRAFT = true;
+const DRAFT = false;
 
 function LegalSection({
   title,
