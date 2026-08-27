@@ -81,8 +81,8 @@ export default function CreatorAgreementPage() {
             under the laws of Romania, registered office at Șoseaua Pipera no.
             61, Parter, Camera 1, Modul A, Bloc 3, Scara 1, Ap. 4, Sector 2,
             Bucharest, Romania; Trade Register no. J40/11353/2022; sole fiscal
-            code (CUI) 46304555; VAT ID RO&#95;&#95;&#95;&#95;&#95;&#95;&#95;&#95;;
-            represented by Marius Sandu, Administrator (operating the{" "}
+            code (CUI) 46304555 (VAT ID RO46304555 if/when registered for VAT);
+            contact contact@sageacademy.app (operating the{" "}
             <strong>Sage</strong>{" "}platform &mdash; &quot;Sage&quot;,
             &quot;we&quot;, &quot;us&quot;) &mdash; and{" "}
             <strong>you</strong>, the person or entity registering as a creator
@@ -243,6 +243,16 @@ export default function CreatorAgreementPage() {
                 to correct errors, recover refunds/chargebacks, or where required
                 by law.
               </li>
+              <li>
+                <strong>Reserves & negative balances.</strong>{" "}Sage (or its
+                payment providers) may hold, delay or reserve part or all of a
+                payout where reasonably needed to cover refunds, chargebacks,
+                disputes or suspected fraud. If refunds or chargebacks exceed your
+                balance, it goes negative; you must repay the shortfall, and Sage
+                may recover it from future Creator Earnings or by other lawful
+                means. This repayment obligation survives the closing, suspension
+                or termination of your Creator account.
+              </li>
             </ul>
           </LegalSection>
 
@@ -364,8 +374,18 @@ export default function CreatorAgreementPage() {
               promotes disordered eating, unsafe practices or unlicensed medical
               claims; that infringes intellectual property; or that violates the
               Sage Community Guidelines or the rules of Apple&apos;s App Store or
-              Google Play. You will not attempt to move Subscribers off-Platform
-              to avoid fees, or use the Platform to defraud users.
+              Google Play. You will not use the Platform to defraud users.
+            </p>
+            <p>
+              <strong>No circumvention.</strong>{" "}You will not (a) direct,
+              encourage or solicit Subscribers to buy your Content or transact
+              with you outside the Platform in order to avoid Sage&apos;s fees;
+              (b) advertise, link to, or name competing platforms inside the
+              Platform or to Subscribers you reached through it; or (c) use
+              Subscriber contact details obtained through the Platform to take
+              that relationship off-Platform. Deliberate or repeated circumvention
+              is a material breach and may lead to suspension, termination, and
+              withholding of the affected earnings.
             </p>
           </LegalSection>
 
@@ -419,6 +439,12 @@ export default function CreatorAgreementPage() {
               over any dispute, without prejudice to any mandatory
               consumer-protection rights you may have where you live.
             </p>
+            <p>
+              <strong>Talk to us first.</strong>{" "}Before starting any formal
+              proceeding, you agree to raise the issue with Sage in writing (at
+              contact@sageacademy.app) and allow 30 days to resolve it in good
+              faith.
+            </p>
           </LegalSection>
 
           <LegalSection title="17. General">
@@ -446,8 +472,8 @@ export default function CreatorAgreementPage() {
               signature.
             </p>
             <p className="text-sm">
-              On behalf of Sage: <strong>Friday Technologies SRL</strong>,
-              represented by Marius Sandu, Administrator.
+              On behalf of Sage: <strong>Friday Technologies SRL</strong>
+              (Bucharest, Romania; J40/11353/2022; CUI 46304555).
             </p>
           </LegalSection>
         </div>
