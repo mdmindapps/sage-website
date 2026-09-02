@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Learn how Sage collects, uses, and protects your personal and health data. GDPR and CCPA compliant.",
 };
 
-const LAST_UPDATED = "June 21, 2026";
+const LAST_UPDATED = "September 2, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -141,6 +141,36 @@ export default function PrivacyPage() {
               We also do <strong>not</strong> record your screen — there is no session replay.
               PostHog acts as our processor under a Data Processing Agreement (DPA) and is hosted
               in the EU, so this data does not leave the European Economic Area.
+            </p>
+
+            <h3>2.6 Apple Health &amp; Google Health Connect (optional)</h3>
+            <p>
+              If you choose to connect Sage to Apple Health (on iPhone) or Google Health Connect
+              (on Android), Sage reads the following movement and activity data — and only the
+              following — with your explicit permission:
+            </p>
+            <ul>
+              <li>Steps</li>
+              <li>Walking and running distance</li>
+              <li>Active energy (calories burned through movement)</li>
+              <li>Flights climbed</li>
+              <li>Exercise minutes</li>
+              <li>Workouts recorded by your phone or watch (type, duration, distance, energy)</li>
+            </ul>
+            <p>
+              This connection is entirely optional — Sage works without it, and you choose whether
+              to enable it. We use this data solely to show you your own daily movement and calories
+              burned within the app&apos;s Energy Balance feature. Sage reads this data{" "}
+              <strong>only</strong>; we never write to, modify, or delete anything in Apple Health
+              or Google Health Connect.
+            </p>
+            <p>
+              Data obtained from Apple Health and Google Health Connect is{" "}
+              <strong>never used for advertising or marketing</strong>, is never sold, and is{" "}
+              <strong>never shared with any third party</strong> for advertising, marketing, or
+              use-based data mining. You can revoke Sage&apos;s access at any time — on iOS via
+              Settings → Health → Data Access &amp; Devices → Sage, and on Android via the Health
+              Connect app → App permissions → Sage.
             </p>
           </LegalSection>
 
