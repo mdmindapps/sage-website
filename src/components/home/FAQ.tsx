@@ -42,6 +42,16 @@ const faqs = [
       "Sage is available worldwide on both the Apple App Store and Google Play Store. The app is currently in English, with more languages coming soon. The AI coach handles food from cuisines around the world.",
   },
   {
+    question: "Can I work with a real coach, or is it just AI?",
+    answer:
+      "Both. Your Sage AI coach is always on — and you can also work 1:1 with vetted human coaches, nutritionists and trainers who run their programs, plans and communities right inside the app. AI keeps you on track day to day; a real coach adds the human accountability when you want it.",
+  },
+  {
+    question: "I'm a coach — can I offer my services on Sage?",
+    answer:
+      "Yes. Coaches, nutritionists and trainers can launch their programs on Sage and keep 80% — while we handle payments, currency conversion, taxes and invoices. Every creator is reviewed by hand. Head to the \"Launch on Sage\" page to apply.",
+  },
+  {
     question: "Is Sage a replacement for a dietitian?",
     answer:
       "No, and we want to be upfront about this. Sage is a coaching tool powered by AI — it's designed to educate, motivate, and help you make better daily choices. But it's not a substitute for professional medical or dietary advice. If you have a medical condition, please consult a qualified healthcare provider.",

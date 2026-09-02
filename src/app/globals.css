@@ -41,6 +41,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Site is light-only — opt out of browser/OS forced dark mode (Chrome Auto-Dark, Samsung Internet). */
+  color-scheme: only light;
 }
 
 /* ── Base body typography ── */

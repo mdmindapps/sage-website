@@ -6,6 +6,7 @@ const footerLinks = {
     { label: "Features", href: "/#features" },
     { label: "Pricing", href: "/#pricing" },
     { label: "FAQ", href: "/#faq" },
+    { label: "Launch on Sage", href: "/become-a-coach" },
   ],
   Company: [
     { label: "About", href: "/about" },
@@ -17,6 +18,7 @@ const footerLinks = {
     { label: "Terms of Service", href: "/terms" },
     { label: "Cookie Policy", href: "/cookies" },
     { label: "GDPR", href: "/privacy#gdpr" },
+    { label: "Creator Agreement", href: "/creator-agreement" },
   ],
 };
 

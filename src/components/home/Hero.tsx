@@ -49,10 +49,27 @@ export default function Hero() {
             animate="show"
             custom={0.14}
             variants={fadeUp}
-            className="text-lg md:text-xl text-muted max-w-xl mb-9 leading-relaxed"
+            className="text-lg md:text-xl text-muted max-w-xl mb-6 leading-relaxed"
           >
             Track meals from a photo. Chat with Sage. Build habits that stick.
           </motion.p>
+
+          {/* Human coaches accent */}
+          <motion.a
+            href="#coaches"
+            initial="hidden"
+            animate="show"
+            custom={0.18}
+            variants={fadeUp}
+            className="inline-flex items-center gap-2 mb-9 text-sm font-semibold text-ink bg-white border border-border rounded-full px-4 py-2 shadow-sm hover:border-primary/40 transition-colors"
+          >
+            <span aria-hidden="true">✨</span>
+            <span>
+              <span className="text-primary font-bold">New</span> — now with real
+              human coaches
+            </span>
+            <span className="text-primary" aria-hidden="true">→</span>
+          </motion.a>
 
           {/* CTAs */}
           <motion.div

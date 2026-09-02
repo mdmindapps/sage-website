@@ -65,7 +65,7 @@ export default function Pricing() {
               ))}
             </ul>
 
-            <Button href="#" variant="outline" size="lg" fullWidth>
+            <Button href="#get-app" variant="outline" size="lg" fullWidth>
               Start free trial
             </Button>
           </div>
@@ -106,7 +106,7 @@ export default function Pricing() {
               ))}
             </ul>
 
-            <Button href="#" variant="primary" size="lg" fullWidth>
+            <Button href="#get-app" variant="primary" size="lg" fullWidth>
               Start free trial
             </Button>
           </div>

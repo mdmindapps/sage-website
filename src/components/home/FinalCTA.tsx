@@ -5,7 +5,7 @@ import StoreButton from "@/components/ui/StoreButton";
 
 export default function FinalCTA() {
   return (
-    <section className="py-20 md:py-28 bg-primary overflow-hidden relative">
+    <section id="get-app" className="py-20 md:py-28 bg-primary overflow-hidden relative">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/5" />
