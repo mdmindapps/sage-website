@@ -202,6 +202,7 @@ const HTML = `
       <div class="heroCtas">
         <a href="#apply" class="btn primary md">Launch on Sage</a>
         <a href="/become-a-coach/guide" class="btn outline md">See how it works</a>
+        <a href="/become-a-coach/monetize" class="btn outline md">What your audience is worth</a>
       </div>
     </div>
     <div class="artwrap">
