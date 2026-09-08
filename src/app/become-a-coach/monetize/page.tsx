@@ -81,6 +81,7 @@ const CSS = `
 
   .cmon .stack{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
   @media(min-width:760px){.cmon .stack{grid-template-columns:1fr 1fr}}
+  .cmon .stack.one{grid-template-columns:1fr;max-width:640px}
   .cmon .card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
   .cmon .card h4{font-size:15px;margin:0 0 10px}
   .cmon .card ul{margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted)}
@@ -129,7 +130,7 @@ const HTML = `
       <a href="#options">The six options, compared</a>
       <a href="#numbers">What % of followers actually pay</a>
       <a href="#math">The math on your audience</a>
-      <a href="#stack">What it costs to run a club</a>
+      <a href="#stack">What it costs on Sage</a>
       <a href="#sage">How a club on Sage works</a>
       <a href="#faq">Questions coaches ask</a>
     </aside>
@@ -201,27 +202,19 @@ const HTML = `
 
       <section id="stack">
         <p class="snum">05</p>
-        <h2>What it actually costs to run a paid club yourself</h2>
-        <p class="slead">This is the part nobody puts in the reel. A club is a page, payments, subscriptions, a community, programs, check-ins and progress tracking, and it has to run every day.</p>
-        <div class="stack">
-          <div class="card"><h4>Do it yourself</h4><ul>
-            <li><span>Skool or Circle (community)</span><span>$99/mo</span></li>
-            <li><span>Kajabi or similar (programs, sales page)</span><span>$149/mo</span></li>
-            <li><span>Stripe (payments)</span><span>2.9% + $0.30</span></li>
-            <li><span>Typeform (intake, check-ins)</span><span>$29/mo</span></li>
-            <li><span>Google Sheets + screenshots (food, weight)</span><span>your evenings</span></li>
-            <li><span>WhatsApp group (chat)</span><span>your phone, 24/7</span></li>
-            <li><span>A VA for invoices, refunds, chasing payments</span><span>$300+/mo</span></li>
-          </ul><div class="tot">≈ $580/month + 6 tools, before the first member</div></div>
+        <h2>What it costs to run a club on Sage</h2>
+        <p class="slead">A club is a page, payments, subscriptions, a community, programs, check-ins and progress tracking, and it has to run every day. On Sage all of it is included, and there is nothing to pay until you earn.</p>
+        <div class="stack one">
           <div class="card sage"><h4>A club inside Sage Academy</h4><ul>
             <li><span>Your page, club, 1:1, programs, challenges</span><span>$0</span></li>
             <li><span>Payments, subscriptions, invoices, refunds</span><span>included</span></li>
             <li><span>Members log meals from a photo, weigh in, track progress</span><span>included</span></li>
             <li><span>You see every member's food, weight and adherence</span><span>included</span></li>
             <li><span>Chat, announcements, challenge leaderboard</span><span>included</span></li>
+            <li><span>Setup fee, monthly fee</span><span>none</span></li>
             <li><span>Payouts to your bank</span><span>every Monday</span></li>
             <li><span>Platform fee</span><span>20% of what you earn</span></li>
-          </ul><div class="tot">$0 to launch. You keep 80%.</div></div>
+          </ul><div class="tot">$0 to launch. You keep 80%. We only earn when you earn.</div></div>
         </div>
       </section>
 
