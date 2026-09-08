@@ -7,6 +7,7 @@ const footerLinks = {
     { label: "Pricing", href: "/#pricing" },
     { label: "FAQ", href: "/#faq" },
     { label: "Launch on Sage", href: "/become-a-coach" },
+    { label: "How coaches monetize", href: "/become-a-coach/monetize" },
   ],
   Company: [
     { label: "About", href: "/about" },

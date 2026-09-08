@@ -334,6 +334,7 @@ const HTML = `
       <div class="step"><div class="sn"></div><h4>Go live &amp; get paid</h4><p>Set your offer and price, connect payouts, and go live. Most creators land their first client in about 20 minutes.</p></div>
     </div>
     <p class="lead" style="margin-top:26px">Want the full walkthrough? <a href="/become-a-coach/guide" style="color:var(--tealD);font-weight:700;text-decoration:none">Read the complete creator guide →</a></p>
+    <p class="lead" style="margin-top:10px">Wondering what your audience is worth? <a href="/become-a-coach/monetize" style="color:var(--tealD);font-weight:700;text-decoration:none">How fitness coaches monetize their audience, with real numbers →</a></p>
   </div>
 </section>
 
