@@ -32,8 +32,8 @@ export default function Footer() {
           <div className="md:col-span-2">
             <SageLogo variant="light" size="md" />
             <p className="mt-4 text-white/55 text-sm leading-relaxed max-w-xs">
-              Your AI fitness coach. Track meals from a photo, chat with Sage,
-              and build habits that stick.
+              Sage Academy — your AI fitness coach. Track meals from a photo,
+              chat with Sage, and build habits that stick. By Friday Technologies SRL.
             </p>
           </div>
 

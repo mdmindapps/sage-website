@@ -15,12 +15,14 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Sage — AI Fitness Coach",
-    template: "%s | Sage",
+    default: "Sage Academy — AI Fitness Coach App",
+    template: "%s | Sage Academy",
   },
   description:
-    "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick. Get Sage for iOS and Android.",
+    "Sage Academy is the AI fitness coach app: snap a photo of your meal, chat with your coach, build habits that stick. On the App Store and Google Play.",
   keywords: [
+    "Sage Academy",
+    "Sage Academy app",
     "AI fitness coach",
     "calorie tracker",
     "meal photo logging",
@@ -37,8 +39,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.sageacademy.app",
-    siteName: "Sage",
-    title: "Sage — AI Fitness Coach",
+    siteName: "Sage Academy",
+    title: "Sage Academy — AI Fitness Coach App",
     description:
       "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
     images: [
@@ -46,13 +48,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Sage — AI Fitness Coach",
+        alt: "Sage Academy — AI Fitness Coach App",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sage — AI Fitness Coach",
+    title: "Sage Academy — AI Fitness Coach App",
     description:
       "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
     images: ["/og-image.png"],

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Launch on Sage",
+  title: "Launch on Sage Academy — for coaches & creators",
   description:
     "Coaches, nutritionists and trainers: launch your programs on Sage. Coach on real data, earn five ways, keep 80% — payments, taxes and invoices handled.",
   openGraph: {
-    title: "Launch on Sage",
+    title: "Launch on Sage Academy — for coaches & creators",
     description:
       "Coaches, nutritionists and trainers: launch your programs on Sage. Coach on real data, earn five ways, keep 80%.",
     url: "https://www.sageacademy.app/become-a-coach",

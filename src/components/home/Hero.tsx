@@ -51,7 +51,7 @@ export default function Hero() {
             variants={fadeUp}
             className="text-lg md:text-xl text-muted max-w-xl mb-6 leading-relaxed"
           >
-            Track meals from a photo. Chat with Sage. Build habits that stick.
+            Sage Academy: track meals from a photo, chat with your coach, build habits that stick.
           </motion.p>
 
           {/* Human coaches accent */}
