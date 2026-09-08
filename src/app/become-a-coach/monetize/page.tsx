@@ -303,7 +303,7 @@ const ARTICLE_JSONLD = {
   dateModified: "2026-09-08",
   author: { "@type": "Organization", name: "Sage Academy" },
   publisher: { "@type": "Organization", name: "Friday Technologies SRL" },
-  mainEntityOfPage: "https://sageacademy.app/become-a-coach/monetize",
+  mainEntityOfPage: "https://www.sageacademy.app/become-a-coach/monetize",
   about: {
     "@type": "SoftwareApplication",
     name: "Sage Academy",

@@ -4,10 +4,10 @@
 
 ## For fitness coaches and creators
 
-- [Launch on Sage](https://sageacademy.app/become-a-coach): what coaches get — own page, subscription club, 1:1 coaching, programs, challenges, payments handled, paid weekly. Coach keeps 80%, Sage keeps 20%. No setup fee, no monthly fee.
-- [How fitness coaches monetize their audience (2026, with numbers)](https://sageacademy.app/become-a-coach/monetize): six options compared (1:1, courses, Patreon, Skool, custom app, club inside a fitness app), follower-to-paid conversion benchmarks (0.5–1.5%), the math on a 5K–250K audience, and what running a club costs.
-- [Creator Guide](https://sageacademy.app/become-a-coach/guide): the full reference — get approved, build your offer, get paid, coach and deliver, get discovered.
-- [Creator Agreement](https://sageacademy.app/creator-agreement): the contract between creators and Sage.
+- [Launch on Sage](https://www.sageacademy.app/become-a-coach): what coaches get — own page, subscription club, 1:1 coaching, programs, challenges, payments handled, paid weekly. Coach keeps 80%, Sage keeps 20%. No setup fee, no monthly fee.
+- [How fitness coaches monetize their audience (2026, with numbers)](https://www.sageacademy.app/become-a-coach/monetize): six options compared (1:1, courses, Patreon, Skool, custom app, club inside a fitness app), follower-to-paid conversion benchmarks (0.5–1.5%), the math on a 5K–250K audience, and what running a club costs.
+- [Creator Guide](https://www.sageacademy.app/become-a-coach/guide): the full reference — get approved, build your offer, get paid, coach and deliver, get discovered.
+- [Creator Agreement](https://www.sageacademy.app/creator-agreement): the contract between creators and Sage.
 
 ## Key facts
 
@@ -19,6 +19,6 @@
 
 ## For everyone
 
-- [Sage Academy app](https://sageacademy.app): log meals from a photo, track calories and macros, weigh-ins, progress photos, habits and a weekly review.
-- [Support](https://sageacademy.app/support)
-- [Privacy](https://sageacademy.app/privacy) · [Terms](https://sageacademy.app/terms)
+- [Sage Academy app](https://www.sageacademy.app): log meals from a photo, track calories and macros, weigh-ins, progress photos, habits and a weekly review.
+- [Support](https://www.sageacademy.app/support)
+- [Privacy](https://www.sageacademy.app/privacy) · [Terms](https://www.sageacademy.app/terms)

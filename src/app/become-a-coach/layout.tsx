@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Launch on Sage",
     description:
       "Coaches, nutritionists and trainers: launch your programs on Sage. Coach on real data, earn five ways, keep 80%.",
-    url: "https://sageacademy.app/become-a-coach",
+    url: "https://www.sageacademy.app/become-a-coach",
     type: "website",
   },
 };

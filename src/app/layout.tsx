@@ -32,11 +32,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Friday Technologies SRL" }],
   creator: "Friday Technologies SRL",
   publisher: "Friday Technologies SRL",
-  metadataBase: new URL("https://sageacademy.app"),
+  metadataBase: new URL("https://www.sageacademy.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sageacademy.app",
+    url: "https://www.sageacademy.app",
     siteName: "Sage",
     title: "Sage — AI Fitness Coach",
     description:

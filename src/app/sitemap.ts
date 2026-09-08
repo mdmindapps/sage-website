@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://sageacademy.app";
+  const base = "https://www.sageacademy.app";
   const now = new Date();
 
   return [

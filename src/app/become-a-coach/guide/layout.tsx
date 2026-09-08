@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Sage Creator Guide",
     description:
       "From your first client to mastering every tool — the complete reference for coaching on Sage.",
-    url: "https://sageacademy.app/become-a-coach/guide",
+    url: "https://www.sageacademy.app/become-a-coach/guide",
     type: "website",
   },
 };

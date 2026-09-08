@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     "app for fitness coaches",
     "Sage Academy creators",
   ],
-  alternates: { canonical: "https://sageacademy.app/become-a-coach/monetize" },
+  alternates: { canonical: "https://www.sageacademy.app/become-a-coach/monetize" },
   openGraph: {
     title: "How fitness coaches monetize their audience in 2026",
     description:
       "Six options compared, what % of followers actually pay, and the math on a 5K–250K audience. Every number sourced.",
-    url: "https://sageacademy.app/become-a-coach/monetize",
+    url: "https://www.sageacademy.app/become-a-coach/monetize",
     type: "article",
   },
 };
