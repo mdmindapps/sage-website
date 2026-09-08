@@ -57,6 +57,9 @@ export const metadata: Metadata = {
       "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
     images: ["/og-image.png"],
   },
+  verification: {
+    other: { "msvalidate.01": "C56A505C9E8EAE4B6DF9AC56ABD0460B" },
+  },
   robots: {
     index: true,
     follow: true,
