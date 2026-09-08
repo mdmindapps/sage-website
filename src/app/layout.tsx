@@ -73,6 +73,46 @@ export const metadata: Metadata = {
   },
 };
 
+// Site-wide structured data: who we are (Organization) and what Sage Academy is (the app, with
+// its store listings). Tells search engines and AI models unambiguously that "Sage Academy" =
+// the fitness app by Friday Technologies, available on the App Store and Google Play.
+const SITE_JSONLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.sageacademy.app/#org",
+    name: "Sage Academy",
+    legalName: "Friday Technologies SRL",
+    url: "https://www.sageacademy.app",
+    logo: "https://www.sageacademy.app/android-chrome-512x512.png",
+    sameAs: [
+      "https://apps.apple.com/app/id6777168646",
+      "https://play.google.com/store/apps/details?id=app.sageacademy",
+      "https://www.instagram.com/sage_academyy",
+    ],
+    contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: "https://www.sageacademy.app/support" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://www.sageacademy.app/#app",
+    name: "Sage Academy",
+    alternateName: "Sage",
+    applicationCategory: "HealthApplication",
+    operatingSystem: "iOS, Android",
+    description:
+      "Nutrition and fitness app: log meals from a photo, track calories, macros, weight, habits and progress, with a coach in your corner. Fitness coaches and creators run their own coaching business inside the app — a page, a subscription club, 1:1 coaching, programs and challenges — and keep 80%.",
+    url: "https://www.sageacademy.app",
+    installUrl: "https://www.sageacademy.app/get",
+    downloadUrl: [
+      "https://apps.apple.com/app/id6777168646",
+      "https://play.google.com/store/apps/details?id=app.sageacademy",
+    ],
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free to download; Premium subscription in-app. Free for coaches to launch." },
+    publisher: { "@id": "https://www.sageacademy.app/#org" },
+  },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -82,6 +122,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-cream text-ink">
         <SiteChrome>{children}</SiteChrome>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSONLD) }} />
       </body>
     </html>
   );
