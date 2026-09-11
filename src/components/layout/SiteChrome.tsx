@@ -13,6 +13,7 @@ const STANDALONE_ROUTES = [
   "/creators",
   "/creator-terms",
   "/become-a-coach",
+  "/creator-docs",
   "/join",
   "/creator-profile",
   "/mentor",
@@ -23,7 +24,7 @@ const STANDALONE_ROUTES = [
 // funnel that renders its own focused chrome, so we treat it as standalone (no doubled header).
 const KNOWN_FIRST = new Set([
   "privacy", "terms", "cookies", "support", "reset", "delete-account", "get",
-  "download", "creators", "creator-terms", "become-a-coach", "join", "creator-profile", "mentor", "c", "api",
+  "download", "creators", "creator-terms", "become-a-coach", "creator-docs", "join", "creator-profile", "mentor", "c", "api",
 ]);
 
 export default function SiteChrome({
