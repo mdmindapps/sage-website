@@ -1,4 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import type { FunnelReview } from "@/lib/funnel";
+
+const PAGE = 4;
 
 function Stars({ n, size = 14 }: { n: number; size?: number }) {
   return (
@@ -22,6 +27,7 @@ function initials(name?: string | null) {
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-US", { month: "short", year: "numeric" });
 
+/** Newest reviews first, 4 at a time: "See more reviews" reveals the next 4 until all are shown. */
 export default function Reviews({
   reviews,
   avg,
@@ -31,7 +37,9 @@ export default function Reviews({
   avg: number | null;
   count: number;
 }) {
+  const [shown, setShown] = useState(PAGE);
   if (!reviews?.length) return null;
+  const visible = reviews.slice(0, shown);
   return (
     <section className="mt-12">
       <div className="flex items-center gap-3">
@@ -48,7 +56,7 @@ export default function Reviews({
       </div>
 
       <div className="mt-5 flex flex-col gap-4">
-        {reviews.map((r, i) => (
+        {visible.map((r, i) => (
           <div key={i} className="rounded-2xl border border-border bg-white p-4">
             <div className="flex items-center gap-3">
               {r.avatar ? (
@@ -71,6 +79,16 @@ export default function Reviews({
           </div>
         ))}
       </div>
+
+      {reviews.length > shown && (
+        <button
+          type="button"
+          onClick={() => setShown((n) => n + PAGE)}
+          className="mt-4 h-11 w-full rounded-full border border-border bg-white text-sm font-semibold text-ink transition hover:bg-cream"
+        >
+          See more reviews
+        </button>
+      )}
     </section>
   );
 }
