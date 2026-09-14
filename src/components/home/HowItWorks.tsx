@@ -96,6 +96,7 @@ export default function HowItWorks() {
               <div className="relative mb-8">
                 <PhoneMockup
                   size="md"
+                  tilt={parseInt(step.number, 10) % 2 === 0 ? "right" : "left"}
                   label={step.mockupLabel}
                   screenshotSrc={step.screenshotSrc}
                   screenshotAlt={step.screenshotAlt}

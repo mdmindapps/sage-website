@@ -114,6 +114,7 @@ function FeatureRow({ row, index }: { row: Row; index: number }) {
     >
       <PhoneMockup
         size="lg"
+        tilt={isImageLeft ? "right" : "left"}
         label={row.mockupScreenLabel}
         screenshotSrc={row.screenshotSrc}
         screenshotAlt={row.screenshotAlt}

@@ -15,12 +15,23 @@ export default function HomePage() {
     <>
       <Hero />
       <HowItWorks />
-      <PhotoBand src="/images/home/healthy-meal.jpg" alt="A colourful, balanced meal" />
+      <PhotoBand
+        src="/images/home/breakfast-spread.png"
+        alt="A breakfast table with eggs, cheese, vegetables and fresh bread"
+        scan={{
+          box: { left: 30, top: 20, right: 72, bottom: 94 },
+          labels: [
+            { name: "Olives", kcal: 60, x: 53, y: 25 },
+            { name: "Cheese", kcal: 190, x: 36, y: 60 },
+            { name: "Tomatoes", kcal: 25, x: 67, y: 72 },
+          ],
+        }}
+      />
       <PoweredByAI />
       <WorkWithCoach />
       <WhatsInside />
       <FeatureGrid />
-      <PhotoBand src="/images/home/active-lifestyle.jpg" alt="A runner outdoors at sunset" />
+      <PhotoBand src="/images/home/group-run.png" alt="A group of friends running together on a sunny day" />
       <Pricing />
       <FAQ />
       <CoachBanner />

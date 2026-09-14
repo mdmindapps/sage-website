@@ -132,13 +132,15 @@ export default function Hero() {
             label="Sage home screen"
             screenshotSrc="/images/screenshots/screenshot-home-today.png"
             screenshotAlt="Sage home — today's calorie ring, macros, and logged meals"
-            className="z-10 -mb-2 shadow-2xl"
+            tilt="right"
+            className="z-10 -mb-2"
           />
 
-          {/* Left phone — slightly smaller, tilted */}
-          <div className="hidden sm:block" style={{ transform: "translateY(40px) rotate(-5deg)", opacity: 0.85 }}>
+          {/* Left phone — slightly smaller, turned (3D render) */}
+          <div className="hidden sm:block" style={{ transform: "translateY(40px)", opacity: 0.85 }}>
             <PhoneMockup
               size="md"
+              tilt="left"
               label="Meal photo logging"
               screenshotSrc="/images/screenshots/screenshot-meal-logging.png"
               screenshotAlt="Snap a photo of your meal — Sage analyses calories and macros instantly"
@@ -146,9 +148,10 @@ export default function Hero() {
           </div>
 
           {/* Right phone */}
-          <div className="hidden sm:block" style={{ transform: "translateY(40px) rotate(5deg)", opacity: 0.85 }}>
+          <div className="hidden sm:block" style={{ transform: "translateY(40px)", opacity: 0.85 }}>
             <PhoneMockup
               size="md"
+              tilt="right"
               label="AI coach chat"
               screenshotSrc="/images/screenshots/screenshot-coach-chat.png"
               screenshotAlt="Chat with your AI fitness coach — personalised, always available"

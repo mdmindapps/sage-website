@@ -5,6 +5,14 @@ interface PhoneMockupProps {
   children?: React.ReactNode;
   screenshotSrc?: string;
   screenshotAlt?: string;
+  /** Which way the realistic 3D phone is turned: "left" shows its left side edge, "right" its right side edge. */
+  tilt?: "left" | "right";
+}
+
+/** A screenshot at /images/screenshots/<name>.png has pre-rendered 3D phones at /images/screenshots/framed/<name>-l|r.png */
+function framedSrc(src: string, tilt: "left" | "right") {
+  const m = src.match(/^\/images\/screenshots\/([\w-]+)\.png$/);
+  return m ? `/images/screenshots/framed/${m[1]}-${tilt === "right" ? "r" : "l"}.png` : null;
 }
 
 const sizeMap = {
@@ -23,8 +31,26 @@ export default function PhoneMockup({
   children,
   screenshotSrc,
   screenshotAlt,
+  tilt = "left",
 }: PhoneMockupProps) {
   const { w, h } = sizeMap[size];
+
+  // real screenshot -> realistic 3D phone render (same height as the drawn frame, width follows the render)
+  const framed = screenshotSrc ? framedSrc(screenshotSrc, tilt) : null;
+  if (framed) {
+    return (
+      <div className={`phone-mockup relative flex shrink-0 justify-center ${className}`} style={{ height: h, minWidth: w }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={framed}
+          alt={screenshotAlt ?? label}
+          style={{ height: h, width: "auto", display: "block", filter: "drop-shadow(0 28px 36px rgba(17,24,28,0.22))" }}
+          className="select-none pointer-events-none"
+          draggable={false}
+        />
+      </div>
+    );
+  }
   const screenW = w - SCREEN_INSET * 2;
   const screenH = h - SCREEN_INSET * 2;
 

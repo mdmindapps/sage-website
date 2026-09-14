@@ -193,9 +193,14 @@ export default function PoweredByAI() {
                 className="absolute inset-0 rounded-full blur-3xl opacity-20 bg-primary"
                 style={{ transform: "scale(0.8)" }}
               />
-              <PhoneMockup size="lg" className="relative z-10">
-                <ChatMockup />
-              </PhoneMockup>
+              {/* the chat screen (ChatMockup, rasterised to screenshot-ai-chat.png) in the realistic 3D phone */}
+              <PhoneMockup
+                size="lg"
+                tilt="left"
+                screenshotSrc="/images/screenshots/screenshot-ai-chat.png"
+                screenshotAlt="Sage coach chat — what did I have for lunch, am I on track"
+                className="relative z-10"
+              />
             </div>
           </motion.div>
         </div>
