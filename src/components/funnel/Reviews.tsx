@@ -84,9 +84,9 @@ export default function Reviews({
         <button
           type="button"
           onClick={() => setShown((n) => n + PAGE)}
-          className="mt-4 h-11 w-full rounded-full border border-border bg-white text-sm font-semibold text-ink transition hover:bg-cream"
+          className="mt-4 text-sm font-semibold text-subtle transition hover:text-ink"
         >
-          See more reviews
+          See more
         </button>
       )}
     </section>
