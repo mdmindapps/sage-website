@@ -12,10 +12,10 @@ export default function CreatorBanner({ handle }: { handle: string }) {
         {/* two 3D phones with the real Classroom + Discover screens */}
         <div className="relative h-[170px] w-[190px] shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/funnel/banner-phone-classroom.webp" alt="" loading="lazy" className="absolute left-0 top-2 h-[158px] w-auto" />
+          <img src="/images/funnel/banner-phone-classroom.png" alt="" loading="lazy" className="absolute left-0 top-2 h-[158px] w-auto" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/funnel/banner-phone-discover.webp"
+            src="/images/funnel/banner-phone-discover.png"
             alt=""
             loading="lazy"
             className="absolute right-0 top-0 h-[170px] w-auto"

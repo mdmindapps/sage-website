@@ -40,7 +40,7 @@ export default function SageAppBlock({ offer }: { offer: "club" | "coaching" }) 
           style={{ transform: "rotate(-7deg)" }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/funnel/sage-meal-photo.webp" alt="" loading="lazy" className="h-full w-full object-cover" />
+          <img src="/images/funnel/sage-meal-photo.jpg" alt="" loading="lazy" className="h-full w-full object-cover" />
           <span className="absolute left-3 top-3 h-6 w-6 rounded-tl-lg border-l-[3px] border-t-[3px] border-white" />
           <span className="absolute right-3 top-3 h-6 w-6 rounded-tr-lg border-r-[3px] border-t-[3px] border-white" />
           <span className="absolute bottom-3 left-3 h-6 w-6 rounded-bl-lg border-b-[3px] border-l-[3px] border-white" />
@@ -48,7 +48,7 @@ export default function SageAppBlock({ offer }: { offer: "club" | "coaching" }) 
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/funnel/sage-phone.webp"
+          src="/images/funnel/sage-phone.png"
           alt="The Nutrition screen in the Sage app"
           loading="lazy"
           className="relative z-10 ml-auto block h-auto w-[250px]"
@@ -56,7 +56,7 @@ export default function SageAppBlock({ offer }: { offer: "club" | "coaching" }) 
         />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/funnel/sage-meal-card.webp"
+          src="/images/funnel/sage-meal-card.png"
           alt="A meal logged from a photo in the Sage app"
           loading="lazy"
           className="absolute bottom-[26%] left-0 z-20 w-[250px] rounded-2xl bg-white shadow-[0_18px_40px_-12px_rgba(16,20,22,0.35)] ring-1 ring-black/5"
