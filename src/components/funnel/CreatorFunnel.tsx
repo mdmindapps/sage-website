@@ -141,8 +141,7 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
         <div className="mx-auto flex max-w-[1080px] flex-col items-center gap-3 px-5 py-10 text-center md:px-8">
           <SageLogo size="sm" />
           <p className="max-w-md text-sm text-muted">
-            Sage is your AI fitness coach — track meals by photo, build habits,
-            and train 1:1 with real coaches.
+            Sage Academy — train with real coaches, in clubs and 1:1, and track your meals and progress in one app.
           </p>
           <div className="mt-1 flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs font-medium text-subtle">
             <Link href="/terms" className="transition hover:text-ink">
