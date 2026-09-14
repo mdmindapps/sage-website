@@ -6,6 +6,8 @@ import Reviews from "./Reviews";
 import OtherOffers from "./OtherOffers";
 import CommunityJoinCard from "./CommunityJoinCard";
 import CommunityCTAMobile from "./CommunityCTAMobile";
+import SageAppBlock from "./SageAppBlock";
+import CreatorBanner from "./CreatorBanner";
 import type { CommunityFunnel as Community } from "@/lib/funnel";
 
 function JoinCard({ community }: { community: Community }) {
@@ -108,6 +110,9 @@ export default function CommunityFunnel({ community }: { community: Community })
               </div>
             )}
 
+            {/* fixed Sage block (every creator page, not editable): what the app tracks + the Premium add-on */}
+            <SageAppBlock offer="club" />
+
             <Reviews reviews={community.reviews} avg={community.review_avg} count={community.review_count} />
 
             <OtherOffers
@@ -127,6 +132,9 @@ export default function CommunityFunnel({ community }: { community: Community })
           </aside>
         </div>
       </main>
+
+      {/* fixed "Are you a creator?" strip (every creator page, not editable) */}
+      <CreatorBanner handle={cr.handle} />
 
       {/* keeps the footer clear of the sticky mobile Join bar */}
       <div className="h-16 lg:hidden" />

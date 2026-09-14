@@ -6,6 +6,8 @@ import Reviews from "./Reviews";
 import OtherOffers from "./OtherOffers";
 import SubscribeFlow from "./SubscribeFlow";
 import CoachCTAMobile from "./CoachCTAMobile";
+import SageAppBlock from "./SageAppBlock";
+import CreatorBanner from "./CreatorBanner";
 import type { CreatorFunnel as Creator } from "@/lib/funnel";
 
 export default function CreatorFunnel({ creator }: { creator: Creator }) {
@@ -96,6 +98,9 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
               </div>
             )}
 
+            {/* fixed Sage block (every creator page, not editable): what the app tracks + the Premium add-on */}
+            <SageAppBlock offer="coaching" />
+
             {/* reviews (public when the coach turns them on) */}
             <Reviews
               reviews={creator.reviews}
@@ -124,6 +129,9 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
           </aside>
         </div>
       </main>
+
+      {/* fixed "Are you a creator?" strip (every creator page, not editable) */}
+      <CreatorBanner handle={creator.handle} />
 
       {/* keeps the footer clear of the sticky mobile Join bar */}
       <div className="h-16 lg:hidden" />
