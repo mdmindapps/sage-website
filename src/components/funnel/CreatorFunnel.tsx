@@ -108,6 +108,7 @@ export default function CreatorFunnel({ creator }: { creator: Creator }) {
               communities={creator.communities}
               creatorName={creator.display_name}
               handle={creator.handle}
+              creatorAvatar={creator.avatar_url}
             />
           </div>
 

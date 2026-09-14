@@ -98,7 +98,7 @@ export type CommunityFunnel = {
   review_avg: number | null;
   reviews: FunnelReview[];
   other_communities: FunnelCommunity[];
-  coaching: { handle: string; price_monthly: number | null; title: string | null } | null;
+  coaching: { handle: string; price_monthly: number | null; title: string | null; card_banner_url?: string | null; card_text?: string | null; avatar_url?: string | null } | null;
 };
 
 async function callRpc<T>(fn: string, body: object): Promise<T | null> {

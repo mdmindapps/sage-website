@@ -115,6 +115,7 @@ export default function CommunityFunnel({ community }: { community: Community })
               creatorName={cr.display_name}
               handle={cr.handle}
               coaching={community.coaching}
+              creatorAvatar={cr.avatar_url}
             />
           </div>
 
