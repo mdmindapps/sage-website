@@ -19,7 +19,9 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
 
   return (
     <div className="w-full">
-      <div className="relative w-full overflow-hidden rounded-3xl bg-ink/5 aspect-[4/5] sm:aspect-[16/10]">
+      {/* one format everywhere (16:9), same as the app's CommunityGallery and Skool — what the creator
+          designs is exactly what every screen shows (no 4:5 phone crop, no letterboxed videos) */}
+      <div className="relative w-full overflow-hidden rounded-3xl bg-ink/5 aspect-video">
         {embed ? (
           <iframe
             src={embed}
