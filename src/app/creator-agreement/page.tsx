@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     "The terms under which creators offer coaching and communities on Sage and get paid.",
 };
 
-const LAST_UPDATED = "August 26, 2026";
-const VERSION = "1.0";
+const LAST_UPDATED = "September 21, 2026";
+const VERSION = "1.1";
 // Flip to false at go-live (after the accountant has reviewed the tax clauses).
 const DRAFT = false;
 
@@ -113,13 +113,27 @@ export default function CreatorAgreementPage() {
                 Platform.
               </li>
               <li>
-                <strong>Net Revenue</strong>{" "}&mdash; the amount paid by a
+                <strong>Sales Revenue</strong>{" "}&mdash; the amount paid by a
                 Subscriber for an Offer, excluding taxes (VAT/sales tax) and
                 before any platform fee.
               </li>
               <li>
-                <strong>Creator Earnings</strong>{" "}&mdash; your 80% share of Net
-                Revenue, as defined in Section 6.
+                <strong>Payment Costs</strong>{" "}&mdash; the costs of taking and
+                paying out the money for your sales: card and payment processing
+                fees, currency conversion, payout fees, and the payment
+                provider&apos;s fee for keeping your payout account active.
+              </li>
+              <li>
+                <strong>Net Revenue</strong>{" "}&mdash; Sales Revenue minus Payment
+                Costs.
+              </li>
+              <li>
+                <strong>Founding Creator</strong>{" "}&mdash; one of the first 100
+                creators approved on the Platform.
+              </li>
+              <li>
+                <strong>Creator Earnings</strong>{" "}&mdash; your share, as defined
+                in Section 6.
               </li>
             </ul>
           </LegalSection>
@@ -218,19 +232,32 @@ export default function CreatorAgreementPage() {
             </p>
             <ul>
               <li>
-                <strong>Platform fee & split.</strong>{" "}Sage retains a platform
-                fee of <strong>20%</strong>{" "}of Net Revenue. You receive{" "}
-                <strong>Creator Earnings of 80%</strong>{" "}of Net Revenue. Taxes
-                collected from Subscribers are not part of Net Revenue and are
-                retained by Sage to remit.
+                <strong>Founding Creators.</strong>{" "}If you are a Founding
+                Creator, you receive <strong>Creator Earnings of 95%</strong>{" "}of
+                Net Revenue and Sage retains a platform fee of{" "}
+                <strong>5%</strong>{" "}of Net Revenue, for as long as your creator
+                account remains active and in good standing. Payment Costs are
+                deducted before the split, so both shares carry them in
+                proportion.
+              </li>
+              <li>
+                <strong>All other creators.</strong>{" "}Sage retains a platform
+                fee of <strong>20%</strong>{" "}of Sales Revenue and you receive{" "}
+                <strong>Creator Earnings of 80%</strong>{" "}of Sales Revenue; Sage
+                bears the Payment Costs out of its fee.
+              </li>
+              <li>
+                <strong>Taxes.</strong>{" "}Taxes collected from Subscribers are not
+                part of Sales Revenue or Net Revenue and are retained by Sage to
+                remit.
               </li>
               <li>
                 <strong>Payouts.</strong>{" "}Creator Earnings are paid to you
                 through Stripe Connect on a <strong>weekly</strong>{" "}cadence,
                 after a <strong>7-day holding period</strong>{" "}from each sale (a
                 fraud/chargeback buffer), in your Stripe settlement currency.
-                Stripe&apos;s fees and any currency conversion may apply as set
-                by Stripe.
+                Any payout-side currency conversion is applied by Stripe at its
+                own rates.
               </li>
               <li>
                 <strong>Refunds & chargebacks.</strong>{" "}If a sale is refunded,

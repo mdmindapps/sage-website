@@ -165,7 +165,7 @@ const HTML = `
         <h3>Analytics</h3>
         <div class="sub"><p><b>MRR</b>, new vs lost clients, churn + avg stay, revenue by source, <b>LTV</b>, fastest-growing offer — over 3 / 6 / 12 months. Plus <b>Top supporters</b> (ranked) and a live <b>Recent activity</b> feed.</p></div>
         <h3>Taxes &amp; invoices</h3>
-        <div class="sub"><p>Confirm billing once (that turns on payouts). Sage issues a <b>self-billing invoice per payout</b> — a PDF in Your invoices. Payouts run weekly, on Mondays, with a short fraud hold. You always receive your full 80%.</p></div>
+        <div class="sub"><p>Confirm billing once (that turns on payouts). Sage issues a <b>self-billing invoice per payout</b> — a PDF in Your invoices. Payouts run weekly, on Mondays, with a short fraud hold. You always receive your full share.</p></div>
       </section>
 
       <section id="deliver">

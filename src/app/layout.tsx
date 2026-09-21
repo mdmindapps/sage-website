@@ -104,7 +104,7 @@ const SITE_JSONLD = [
     applicationCategory: "HealthApplication",
     operatingSystem: "iOS, Android",
     description:
-      "Nutrition and fitness app: log meals from a photo, track calories, macros, weight, habits and progress, with a coach in your corner. Fitness coaches and creators run their own coaching business inside the app — a page, a subscription club, 1:1 coaching, programs and challenges — and keep 80%.",
+      "Nutrition and fitness app: log meals from a photo, track calories, macros, weight, habits and progress, with a coach in your corner. Fitness coaches and creators run their own coaching business inside the app — a page, a subscription club, 1:1 coaching, programs and challenges — and founding creators keep 95%.",
     url: "https://www.sageacademy.app",
     installUrl: "https://www.sageacademy.app/get",
     downloadUrl: [

@@ -312,10 +312,10 @@ const HTML = `
 
 <div class="moneyWrap"><div class="wrap">
   <div class="money">
-    <p class="k">The economics</p>
-    <div class="big"><span>80%</span></div>
-    <div class="cap">You keep 80% of everything you earn.</div>
-    <p class="fine">The other 20% covers your entire back office — no setup fee, no monthly fee. <b style="color:#fff">We only earn when you do.</b> Nothing to build, no one to hire; you just create your offer and coach.</p>
+    <p class="k">Founding creators</p>
+    <div class="big"><span>95%</span></div>
+    <div class="cap">Our first 100 creators keep 95%, for life.</div>
+    <p class="fine">After payment fees. No setup fee, no monthly fee. <b style="color:#fff">We only earn when you do.</b></p>
     <div class="handled">
       <span>Card payments</span><span>Currency conversion</span><span>Weekly payouts</span>
       <span>VAT &amp; sales tax</span><span>Invoices</span><span>Refunds &amp; disputes</span>

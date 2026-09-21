@@ -34,8 +34,8 @@ export default function CoachBanner() {
                 Coach, nutritionist, trainer? Launch your programs on Sage.
               </h2>
               <p className="text-white/70 text-base md:text-lg mt-3 max-w-xl">
-                Coach on real data, earn five ways, keep 80% — payments, taxes
-                and invoices handled for you.
+                Coach on real data, earn five ways, and our first 100 founding
+                creators keep 95% — payments, taxes and invoices handled for you.
               </p>
             </div>
             <Link

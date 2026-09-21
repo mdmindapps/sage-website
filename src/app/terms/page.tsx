@@ -375,10 +375,12 @@ export default function TermsPage() {
 
             <h3>13.1 Selling on Sage (creators)</h3>
             <p>
-              <strong>Earnings and fee.</strong> You keep <strong>80% of every payment</strong> from
-              your subscribers; Sage keeps a <strong>20% platform fee</strong> (which also covers
+              <strong>Earnings and fee.</strong> Our first 100 approved creators (Founding Creators)
+              keep <strong>95% of every payment, after payment processing fees, for life</strong>;
+              Sage keeps 5%. All other creators keep <strong>80% of every payment</strong> from their
+              subscribers, and Sage keeps a <strong>20% platform fee</strong> (which also covers
               payment processing). This applies to subscriptions, memberships, tips, and any paid
-              content. You set your own prices.
+              content. You set your own prices. The full terms are in the Creator Agreement.
             </p>
             <p>
               <strong>Getting paid.</strong> Payouts run through Stripe to your connected account,

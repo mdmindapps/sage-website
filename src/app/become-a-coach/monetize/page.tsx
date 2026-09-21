@@ -160,7 +160,7 @@ const HTML = `
             <tr><td><b>Patreon / OnlyFans-style membership</b></td><td>$0</td><td>8–20%</td><td class="yes">Yes</td><td class="no">No</td><td>Content creators (behind-the-scenes, extras)</td></tr>
             <tr><td><b>Skool / Circle community</b></td><td>$99/mo</td><td>$99/mo + fees</td><td class="yes">Yes</td><td class="no">No</td><td>Course creators who want a forum</td></tr>
             <tr><td><b>Your own custom app</b></td><td>$50K–$200K + 9–12 months</td><td>App stores 15–30%</td><td class="yes">Yes</td><td class="yes">Yes, if you build it</td><td>Creators with 1M+ and capital</td></tr>
-            <tr class="hi"><td><b>A club inside a fitness app</b> (Sage Academy)</td><td>$0</td><td>20%</td><td class="yes">Yes</td><td class="yes">Yes, live</td><td>Coaches and creators from ~5K up</td></tr>
+            <tr class="hi"><td><b>A club inside a fitness app</b> (Sage Academy)</td><td>$0</td><td>5% for founding creators</td><td class="yes">Yes</td><td class="yes">Yes, live</td><td>Coaches and creators from ~5K up</td></tr>
           </tbody>
         </table></div>
         <p class="src">Custom-app cost: Solin's founders report 9–12 months and tens to hundreds of thousands of dollars per creator app before they pivoted to a platform (<a href="https://blog.solin.stream/the-solin-story/" rel="nofollow">The Solin Story</a>). Skool pricing from skool.com. Patreon fees from patreon.com/pricing.</p>
@@ -213,8 +213,8 @@ const HTML = `
             <li><span>Chat, announcements, challenge leaderboard</span><span>included</span></li>
             <li><span>Setup fee, monthly fee</span><span>none</span></li>
             <li><span>Payouts to your bank</span><span>every Monday</span></li>
-            <li><span>Platform fee</span><span>20% of what you earn</span></li>
-          </ul><div class="tot">$0 to launch. You keep 80%. We only earn when you earn.</div></div>
+            <li><span>Platform fee, founding creators</span><span>5%, after payment fees</span></li>
+          </ul><div class="tot">$0 to launch. Our first 100 creators keep 95%, for life. We only earn when you earn.</div></div>
         </div>
       </section>
 
@@ -228,9 +228,9 @@ const HTML = `
           <li><b>Members pay inside the app.</b> Card, Apple Pay, Google Pay. Recurring billing, invoices, refunds and taxes handled. You are paid every Monday.</li>
           <li><b>You coach on real data:</b> every member's meals and macros, weight trend, habits, progress photos and measurements, live, if they choose to share them.</li>
           <li><b>Launch in about 20 minutes:</b> profile → create your offer → turn on payouts → go live → share your link. We build the page and the first launch with you.</li>
-          <li><b>Economics:</b> you keep 80%, Sage keeps 20%. No setup fee, no monthly fee. We only earn when you earn.</li>
+          <li><b>Economics:</b> our first 100 founding creators keep 95% of what they earn, after payment fees, for life. No setup fee, no monthly fee. We only earn when you earn.</li>
         </ul>
-        <p class="note">Members also pay a <b>$4.99/month Sage Premium</b> for the app itself (meal recognition, transaction costs). It is not where Sage makes money and it does not come out of your 80%. Creators never pay for Premium.</p>
+        <p class="note">Members also pay a <b>$4.99/month Sage Premium</b> for the app itself (meal recognition, transaction costs). It is not where Sage makes money and it does not come out of your share. Creators never pay for Premium.</p>
       </section>
 
       <section id="faq" class="faq">
@@ -240,7 +240,7 @@ const HTML = `
         <details><summary>Do I need to be a certified trainer to run a club?</summary><p>For 1:1 coaching with prescriptions, certification matters and many countries require it. A club is different: it is you sharing how you train and eat, members following programs and logging their own food, and a challenge on consistency. Most transformation creators run clubs without a certification; they say so openly and avoid medical claims.</p></details>
         <details><summary>What percentage of followers convert to paying members?</summary><p>OnlyFans guidance says 1–1.5% of social followers. Patreon creators see 0.5–2.5% of total audience. Skool communities convert 2–5% of free members to paid. Fitness creators selling paid groups from a bio link are often at 0.05–0.3%. A reasonable planning number is 0.5%.</p></details>
         <details><summary>Is a club better than selling a one-time program?</summary><p>A one-time program earns once per person. A club earns every month and is where people actually do the work. Many creators keep the program as the front door and move the ongoing part (tracking, accountability, check-ins) into the club. On Sage, programs live inside the club as included content or one-time unlocks.</p></details>
-        <details><summary>What does Sage cost a coach?</summary><p>Nothing to launch or run. Sage keeps 20% of what you earn through the platform; that covers payments, invoices, the app and weekly payouts. You keep 80%. There is no setup fee and no monthly fee.</p></details>
+        <details><summary>What does Sage cost a coach?</summary><p>Nothing to launch or run. Our first 100 founding creators keep 95% of what they earn, after payment fees, for life; Sage keeps 5%. There is no setup fee and no monthly fee.</p></details>
         <details><summary>How is this different from Skool, Patreon or Trainerize?</summary><p>Skool and Patreon are communities or memberships where the coach cannot see what members eat or weigh; you coach blind, and Skool costs $99/month. Trainerize is a coaching tool paid per client with no audience or community layer. Sage combines a consumer fitness app (members log meals from a photo) with your club, 1:1 and payments, so you see real data and pay nothing until you earn.</p></details>
         <details><summary>How do members pay, and how do I get paid?</summary><p>Members pay inside the app with a card, Apple Pay or Google Pay. Sage handles recurring billing, invoices and refunds. Your share is paid to your bank every Monday through Stripe, with a self-billing invoice generated for each payout.</p></details>
       </section>
@@ -281,7 +281,7 @@ const FAQ_JSONLD = {
       name: "What does Sage cost a coach?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nothing to launch or run. Sage keeps 20% of what the coach earns through the platform, covering payments, invoices, the app and weekly payouts. The coach keeps 80%. No setup fee, no monthly fee.",
+        text: "Nothing to launch or run. The first 100 founding creators keep 95% of what they earn, after payment fees, for life; Sage keeps 5%. No setup fee, no monthly fee.",
       },
     },
     {
@@ -309,7 +309,7 @@ const ARTICLE_JSONLD = {
     name: "Sage Academy",
     applicationCategory: "HealthApplication",
     operatingSystem: "iOS, Android",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free for coaches to launch; Sage keeps 20% of creator earnings." },
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free for coaches to launch; founding creators keep 95% of their earnings for life." },
   },
 };
 
