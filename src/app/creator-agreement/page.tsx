@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const LAST_UPDATED = "September 23, 2026";
-const VERSION = "1.2";
+const VERSION = "1.3";
 // Flip to false at go-live (after the accountant has reviewed the tax clauses).
 const DRAFT = false;
 
@@ -96,6 +96,10 @@ export default function CreatorAgreementPage() {
             <p>This version of the Creator Agreement is offered to Sage&apos;s first 100 creators, the <strong>Founding Creators</strong>. When you accept it, Sage records the version number, the date and the exact text you accepted, and that record is what governs your account. Later versions of this Agreement, offered to creators who join after the founding group, carry different fees and different benefits, and they do not change the terms you accepted here.</p>
           </LegalSection>
 
+          <LegalSection title="Preamble">
+            <p>This version of the Creator Agreement is offered to Sage&apos;s first 100 creators, the <strong>Founding Creators</strong>. When you accept it, Sage records the version number, the date and the exact text you accepted, and that record is what governs your account. Later versions of this Agreement, offered to creators who join after the founding group, carry different fees and different benefits, and they do not change the terms you accepted here.</p>
+          </LegalSection>
+
           <LegalSection title="1. Definitions">
             <ul>
               <li><strong>Platform</strong> &mdash; the Sage mobile applications, website and related services.</li>
@@ -146,7 +150,7 @@ export default function CreatorAgreementPage() {
               <li><strong>All other creators.</strong> Sage retains a platform fee of <strong>20%</strong> of Sales Revenue and they receive <strong>Creator Earnings of 80%</strong> of Sales Revenue; Sage bears the Payment Costs out of its fee.</li>
               <li><strong>What your members pay.</strong> A member who joins your club pays two separate things: the price you set for your Offer, which is what your Creator Earnings are calculated from, and Sage Premium, which gives them the app and the AI that powers it. Sage Premium belongs to Sage. You earn nothing from it, and nothing is deducted from your side for it. You are free to set and change the price of your own Offer at any time.</li>
               <li><strong>Taxes.</strong> Consumption taxes charged to Subscribers on the sale of your Offer, such as VAT in the EU and the UK, sales tax in the United States and GST elsewhere, are added on top of your price at checkout. They are never part of Sales Revenue or Net Revenue, and no part of them is yours: Sage collects them and pays them to the tax authority of the Subscriber&apos;s country.</li>
-              <li><strong>Payouts.</strong> Where Stripe Connect is available in your country, Creator Earnings are paid to you through Stripe Connect on a <strong>weekly</strong> cadence, after a <strong>7-day holding period</strong> from each sale (a fraud/chargeback buffer), in your Stripe settlement currency. Any payout-side currency conversion is applied by Stripe at its own rates.</li>
+              <li><strong>Payouts.</strong> Where Stripe Connect is available in your country, Creator Earnings are paid to you through Stripe Connect <strong>every Monday</strong>, covering every sale whose funds have cleared with our payment provider by then &mdash; typically 2–7 days from the sale, depending on your country and the payment method. Payment is made in your Stripe settlement currency; any payout-side currency conversion is applied by Stripe at its own rates.</li>
               <li><strong>If Stripe is not available where you live.</strong> Some countries are not supported by our payment provider. In that case we pay you by <strong>bank transfer</strong>, <strong>monthly</strong>, against an invoice you issue to Friday Technologies SRL (or that we issue on your behalf under Section 10), for the Creator Earnings accumulated in the previous month. You provide accurate bank details in your own name, and any bank or intermediary transfer fees charged by your bank are yours. We may apply a <strong>minimum payout amount of $50</strong> for these transfers, carrying anything below it into the next month, because transfer costs would otherwise take most of the payment. Where the law requires us to withhold tax on a payment to a non-resident, we withhold it, remit it, and give you the documents you need to claim or offset it at home.</li>
               <li><strong>Refunds &amp; chargebacks.</strong> If a sale is refunded, reversed or charged back, the corresponding amount (including your share) is deducted from your balance or clawed back from future Creator Earnings.</li>
               <li><strong>Refunds required by law.</strong> As Merchant of Record, Sage must honour the refund and withdrawal rights a Subscriber has under the law of their country, for example the 14-day withdrawal right for digital services in the EU. Where such a refund is made, the corresponding Creator Earnings are deducted from your balance or set off against future Creator Earnings, in the same way as any other refund.</li>
@@ -205,7 +209,7 @@ export default function CreatorAgreementPage() {
               <li><strong>If we restrict or suspend your account.</strong> We will give you the reasons, in a form you can keep, at the latest when the restriction or suspension takes effect, and tell you what you can do about it.</li>
               <li><strong>If we end this Agreement.</strong> We will give you <strong>at least 30 days&apos; notice</strong>, with the reasons, in a form you can keep. During that period your existing Subscribers keep their access and your Creator Earnings continue to be paid.</li>
               <li><strong>Immediate exception.</strong> We may suspend or terminate immediately, giving reasons as soon as possible, where you have repeatedly breached this Agreement, where we are required to by law or by our payment providers, or where keeping your Offers live would expose users, Sage or third parties to immediate harm, for example fraud, illegal content, or content that puts someone&apos;s health at risk.</li>
-              <li>On termination, active Subscriptions are handled as set out on the Platform. Earned but unpaid Creator Earnings are paid out subject to the normal holding period and any offsets.</li>
+              <li>On termination, active Subscriptions are handled as set out on the Platform. Earned but unpaid Creator Earnings are paid out on the normal weekly cycle, subject to any offsets.</li>
               <li>Sections that by their nature should survive (IP warranties, fees owed, taxes, indemnity, liability, governing law) survive termination.</li>
             </ul>
           </LegalSection>
