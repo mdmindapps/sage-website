@@ -215,6 +215,16 @@ const HTML = `
   </div>
 </header>
 
+<section class="blk" id="whatitis" style="background:var(--white)">
+  <div class="wrap">
+    <p class="khead">Start here</p>
+    <h2>First, what this actually is.</h2>
+    <p class="lead">Sage is a fitness and nutrition tracking app — your people log their meals from a photo, their training and their weigh-ins, and see their own progress. You open <b>your own club</b> inside it, on a monthly subscription: your courses, your channels where members talk to each other, your challenges. <b>1:1</b> is separate and private — a chat with each client, and their numbers day by day when they share them.</p>
+    <p class="lead">What goes in, what it's about and what it costs is yours to decide. Your members pay <b>$4.99 a month</b> for the app on top of your price. Yours is free.</p>
+    <p style="margin:22px 0 0"><a class="btn outline sm" href="/become-a-coach/guide">See how it works</a></p>
+  </div>
+</section>
+
 <section class="blk" id="studio" style="background:var(--cream)">
   <div class="wrap">
     <p class="khead">Your studio</p>

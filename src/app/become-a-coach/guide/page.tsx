@@ -83,7 +83,7 @@ const HTML = `
   <div class="wrap">
     <p class="eyebrow">Sage · Creator Guide</p>
     <h1>Everything you need to run it.</h1>
-    <p>From your first client to mastering every tool — the complete reference for coaching on Sage. In easy steps, always up to date.</p>
+    <p>What Sage is, what a club is actually made of, and then every tool, step by step. Always up to date.</p>
   </div>
 </header>
 
@@ -93,6 +93,7 @@ const HTML = `
   <div class="layout">
     <aside class="toc">
       <p>On this page</p>
+      <a href="#what">What Sage is</a>
       <a href="#quickstart">Quick-Start</a>
       <a href="#approved">01 · Get approved</a>
       <a href="#offer">02 · Build your offer</a>
@@ -102,9 +103,48 @@ const HTML = `
     </aside>
 
     <main class="main">
+      <section id="what">
+        <h2>What Sage actually is</h2>
+        <p class="slead">Before the tools: what you get, what your members get, and what you have to make yourself.</p>
+
+        <h3>The app</h3>
+        <div class="sub"><p>Sage is a fitness and nutrition tracking app. People log their meals by photographing the plate, their workouts, their steps and their weigh-ins, and they see their own progress. On top of that, a coach can open their own club inside it, with a monthly subscription.</p></div>
+
+        <h3>What goes inside a club</h3>
+        <div class="sub">
+          <ul>
+            <li><b>Courses and lessons</b>, built from video, text, PDFs and images — whatever you want to teach, laid out in the order you want people to go through it.</li>
+            <li><b>Channels</b> — announcement channels where only you post, and open channels where the members talk to each other, ask questions and push each other along.</li>
+            <li><b>Challenges</b>, whenever you decide to run one and for as long as you want, a few weeks or a few months. The leaderboard builds itself from what the app is already tracking — kilos lost and percentage of bodyweight — so you collect nothing by hand.</li>
+          </ul>
+          <p>In the club you see your members, the channels and the challenge board. You don't see anyone's private data there.</p>
+        </div>
+
+        <h3>1:1 is the separate one</h3>
+        <div class="sub"><p>That's where it gets individual: a private chat with each client — text, photos, voice notes and files — and, when they turn sharing on, their meals, their weigh-ins and their progress day by day. So your feedback is based on what they actually did that week, not on what they remember doing.</p></div>
+
+        <h3>What you sell is your call</h3>
+        <div class="sub">
+          <p>What goes in the club, what it's about, what it costs — that's yours to decide, as long as it's fitness, nutrition, training or health. Your business stays your business.</p>
+          <p>And the subscription doesn't have to be the only thing you sell. Every course you build can either come with the membership, or sit behind its own one-off price inside the club. So when you make something bigger — a twelve-week programme, a proper rehab course — you put it up at its own price, and the people already in there are the first ones to see it. Members can tip you too, and 1:1 sits above all of it, for the few who want you personally.</p>
+        </div>
+
+        <h3>Who pays what</h3>
+        <div class="sub">
+          <ul>
+            <li>Your own Sage Premium is <b>free from the moment you're approved</b>.</li>
+            <li>Your members pay <b>$4.99 / month</b> for Sage on top of whatever you charge, at the same checkout — nothing for you to explain, collect or manage. On its own the app is $7.99, so they get it cheaper because they came through you.</li>
+            <li>It doesn't touch your share, which is calculated only on what they pay <i>you</i>.</li>
+          </ul>
+        </div>
+
+        <h3>And the part nobody tells you</h3>
+        <div class="sub"><p>The five steps below take about twenty minutes. The material doesn't. Proper lessons — filmed and edited for someone to follow along — are a different thing from a reel, and that's a few hours at least, sometimes a few days. You already know what goes in them; what takes the time is recording it properly. Everything stays editable forever, so nothing has to be finished before you start.</p></div>
+      </section>
+
       <section id="quickstart">
         <h2>Quick-Start — your first client, fast</h2>
-        <p class="slead">You're approved. Five steps to go live and land your first sale — most creators are done in about twenty minutes.</p>
+        <p class="slead">You're approved. Five steps to be open for business — most creators are done in about twenty minutes.</p>
         <div class="steps">
           <div class="step"><div class="sn"></div><div><div class="shead"><h4>Set up your profile</h4><span class="min">~3 min</span></div><p>Add an avatar, your name, a short bio, and pick your @handle — it lives in every link you share.</p></div></div>
           <div class="step"><div class="sn"></div><div><div class="shead"><h4>Create your offer</h4><span class="min">~7 min</span></div><p>Start with 1:1 Coaching or a Community. Give it a title, a short pitch, and set your price / month. Don't over-polish — edit anytime.</p></div></div>
@@ -181,7 +221,7 @@ const HTML = `
         <div class="sub"><p>When shared: goal + targets, weight trend + 90-day history, macros &amp; meals (with photos), habits + adherence %, measurements. Progress photos are a separate share.</p></div>
         <h3>Programs &amp; Classroom</h3>
         <div class="sub"><ul>
-          <li>Programs → Lessons → Blocks (video, text, PDF, image, action).</li>
+          <li>Programs → Lessons → Blocks (video, text, PDF, image).</li>
           <li>Per program: <b>Included</b> or <b>PPV</b> (one-time unlock). Publish when ready.</li>
           <li><b>Action blocks tie to real tracking</b> — log a meal, weigh in, complete a habit — so progress is real.</li>
         </ul></div>
