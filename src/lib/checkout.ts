@@ -18,6 +18,31 @@ const PLAN = "monthly" as const;
 
 /** Is the logged-in user already actively subscribed to this creator? Guards the
  *  funnel from creating a duplicate coach subscription (double charge). */
+/**
+ * supabase-js puts the whole failure in `error` and leaves `data` null when an edge function
+ * answers non-2xx, so the `data?.error` branches below never run and the user is shown the
+ * useless "Edge Function returned a non-2xx status code". The real reason is in the response
+ * body, which is hanging off error.context — open it and use it.
+ */
+async function explain(error: unknown): Promise<Error> {
+  const ctx = (error as { context?: Response })?.context;
+  if (ctx && typeof ctx.json === "function") {
+    try {
+      const body = await ctx.clone().json();
+      const msg = body?.detail || body?.error;
+      if (msg) return new Error(String(msg));
+    } catch {
+      try {
+        const text = await ctx.clone().text();
+        if (text) return new Error(text.slice(0, 300));
+      } catch {
+        /* fall through to the generic error */
+      }
+    }
+  }
+  return error instanceof Error ? error : new Error(String(error));
+}
+
 export async function isSubscribedTo(creatorId: string): Promise<boolean> {
   const supabase = getSupabase();
   const {
@@ -44,7 +69,7 @@ export async function startPremiumCheckout(
     "stripe-premium-checkout",
     { body: { plan: PLAN, creatorId, share, baseUrl: window.location.origin } },
   );
-  if (error) throw error;
+  if (error) throw await explain(error);
   if (data?.error) throw new Error(data.detail || data.error);
   return data as { ready?: boolean; url?: string };
 }
@@ -65,7 +90,7 @@ export async function startCoachCheckout(
       baseUrl: window.location.origin,
     },
   });
-  if (error) throw error;
+  if (error) throw await explain(error);
   if (data?.error) throw new Error(data.detail || data.error);
   return data.url as string;
 }
@@ -100,7 +125,7 @@ export async function startPremiumForCommunity(
   const { data, error } = await supabase.functions.invoke("stripe-premium-checkout", {
     body: { plan, communityId, baseUrl: window.location.origin },
   });
-  if (error) throw error;
+  if (error) throw await explain(error);
   if (data?.error) throw new Error(data.detail || data.error);
   return data as { ready?: boolean; url?: string };
 }
@@ -114,7 +139,7 @@ export async function startCommunityCheckout(
   const { data, error } = await supabase.functions.invoke("stripe-community-checkout", {
     body: { communityId, plan, baseUrl: window.location.origin },
   });
-  if (error) throw error;
+  if (error) throw await explain(error);
   if (data?.error) throw new Error(data.detail || data.error);
   return data.url as string;
 }
