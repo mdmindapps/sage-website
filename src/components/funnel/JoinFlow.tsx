@@ -28,15 +28,15 @@ const PREMIUM = { monthly: "$4.99", yearly: "$39.99" } as const;
 const PREMIUM_WAS = { monthly: "$7.99", yearly: "$59.99" } as const;
 const PREMIUM_SAVE = { monthly: "37%", yearly: "33%" } as const;
 
-/* Apple sign-in is DISABLED on the web. Supabase has `external_apple_enabled = true`, but with the
-   NATIVE bundle id (app.sageacademy) as client_id and no secret, so the web redirect flow answers
-   400 "Unsupported provider: missing OAuth secret" — verified on prod 2026-09-27, and reproduced on
-   an iPhone. The button was the first, dark, default-looking one on the checkout screen, so anyone
-   on iOS who reached for it hit an error on the page that takes the money.
-   To re-enable: create an Apple Services ID (a separate identifier from the app's bundle id), put it
-   in Supabase as the Apple client id, and generate the client secret JWT from the .p8 key.
-   ⚠️ That secret expires every 6 months and has to be regenerated, or this breaks again silently. */
-const APPLE_WEB_OAUTH = false;
+/* Apple sign-in on the web goes through an Apple **Services ID**, which is a different identifier
+   from the app's bundle id. Supabase holds both in external_apple_client_id, comma-separated
+   ("com.frydaytech.sage.signin,app.sageacademy"): the first is used for the web redirect, and both
+   are accepted when the native app signs in with an ID token — so do not remove the bundle id.
+   ⚠️ The Apple client secret is a JWT that EXPIRES EVERY 6 MONTHS (this one: 2027-03-26). When it
+   lapses, this button starts answering 400 "missing OAuth secret" again, silently, on the page that
+   takes the money — exactly what happened until 2026-09-27. Regenerate it from the .p8 in
+   Keys/Apple Keys/Apple Key - Web Sign In and PATCH it into the project's auth config. */
+const APPLE_WEB_OAUTH = true;
 
 /**
  * Account step (/join/<handle>). The visitor creates/logs into a Sage account
