@@ -1,0 +1,86 @@
+# Watchdog for the one path that takes money: a creator's page -> sign-in -> checkout.
+#
+# On 2026-09-27 all three steps of it were broken at once and nobody knew, because nobody ever tested
+# the paying flow on production. Apple sign-in answered 400 for months (prod never got the client
+# secret that dev had), checkout errors were unreadable, and prod profiles carried test-mode Stripe
+# customer ids. This job exists so that never goes unnoticed again.
+#
+# It needs NO secrets — everything it checks is public. If anything fails, the run fails and GitHub
+# emails the repo owner.
+
+name: Money path health
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # every day, 06:17 UTC
+  workflow_dispatch: # and on demand, from the Actions tab
+
+env:
+  SUPABASE_URL: https://flchqdspfidwcljtuttq.supabase.co
+  JOIN_URL: https://www.sageacademy.app/join/andreeafit
+  # The Apple client secret is a JWT we sign ourselves and Apple caps it at 6 months, so it CANNOT be
+  # made permanent. Warn a month before it lapses, while there is still time to do something.
+  APPLE_SECRET_EXPIRES: "2027-03-26"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: The creator's checkout page loads, with all three sign-in options
+        run: |
+          set -euo pipefail
+          html=$(curl -sS --max-time 30 "$JOIN_URL")
+          fail=0
+          for want in "Continue with Apple" "Continue with Google" "Continue with email"; do
+            if ! grep -qF "$want" <<<"$html"; then
+              echo "::error::\"$want\" is missing from $JOIN_URL"
+              fail=1
+            fi
+          done
+          exit $fail
+
+      - name: Apple sign-in redirects to Apple (this is the one that was broken)
+        run: |
+          set -euo pipefail
+          url="$SUPABASE_URL/auth/v1/authorize?provider=apple&redirect_to=https%3A%2F%2Fwww.sageacademy.app%2F"
+          code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 "$url")
+          target=$(curl -sS -o /dev/null -w '%{redirect_url}' --max-time 30 "$url")
+          echo "HTTP $code -> $target"
+          if [ "$code" != "302" ] || [[ "$target" != https://appleid.apple.com/* ]]; then
+            echo "::error::Apple sign-in is broken. Usually the client secret expired — regenerate it from Keys/Apple Keys/Apple Key - Web Sign In/AuthKey_K7YJVB3F6Z.p8 (team NWKR552R2Z, services id com.frydaytech.sage.signin) and PATCH external_apple_secret."
+            exit 1
+          fi
+
+      - name: Google sign-in redirects to Google
+        run: |
+          set -euo pipefail
+          url="$SUPABASE_URL/auth/v1/authorize?provider=google&redirect_to=https%3A%2F%2Fwww.sageacademy.app%2F"
+          code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 "$url")
+          target=$(curl -sS -o /dev/null -w '%{redirect_url}' --max-time 30 "$url")
+          echo "HTTP $code -> $target"
+          if [ "$code" != "302" ] || [[ "$target" != https://accounts.google.com/* ]]; then
+            echo "::error::Google sign-in is broken (its secret does not expire, so this is a config change or an outage)."
+            exit 1
+          fi
+
+      - name: Apple actually accepts our production callback
+        run: |
+          set -euo pipefail
+          url="https://appleid.apple.com/auth/authorize?client_id=com.frydaytech.sage.signin&redirect_uri=https%3A%2F%2Fflchqdspfidwcljtuttq.supabase.co%2Fauth%2Fv1%2Fcallback&response_mode=form_post&response_type=code&scope=email%20name&state=healthcheck"
+          body=$(curl -sS --max-time 30 "$url")
+          if grep -qiE 'invalid_redirect_uri|invalid_client|invalid_request' <<<"$body"; then
+            echo "::error::Apple rejected our callback URL — check the Return URLs on the Services ID in the Apple Developer portal."
+            exit 1
+          fi
+          grep -qi "Sign in with Apple" <<<"$body" || {
+            echo "::error::Apple did not serve its sign-in page for our callback."; exit 1; }
+
+      - name: The Apple secret is not about to expire
+        run: |
+          set -euo pipefail
+          left=$(( ( $(date -d "$APPLE_SECRET_EXPIRES" +%s) - $(date +%s) ) / 86400 ))
+          echo "$left days left on the Apple client secret (expires $APPLE_SECRET_EXPIRES)"
+          if [ "$left" -lt 30 ]; then
+            echo "::error::The Apple client secret expires in $left days ($APPLE_SECRET_EXPIRES). Regenerate it BEFORE it lapses — once it does, Continue with Apple starts answering 400 silently on the page that takes the money. Then update APPLE_SECRET_EXPIRES in this workflow."
+            exit 1
+          fi
