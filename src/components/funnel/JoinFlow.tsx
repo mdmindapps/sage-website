@@ -28,6 +28,16 @@ const PREMIUM = { monthly: "$4.99", yearly: "$39.99" } as const;
 const PREMIUM_WAS = { monthly: "$7.99", yearly: "$59.99" } as const;
 const PREMIUM_SAVE = { monthly: "37%", yearly: "33%" } as const;
 
+/* Apple sign-in is DISABLED on the web. Supabase has `external_apple_enabled = true`, but with the
+   NATIVE bundle id (app.sageacademy) as client_id and no secret, so the web redirect flow answers
+   400 "Unsupported provider: missing OAuth secret" — verified on prod 2026-09-27, and reproduced on
+   an iPhone. The button was the first, dark, default-looking one on the checkout screen, so anyone
+   on iOS who reached for it hit an error on the page that takes the money.
+   To re-enable: create an Apple Services ID (a separate identifier from the app's bundle id), put it
+   in Supabase as the Apple client id, and generate the client secret JWT from the .p8 key.
+   ⚠️ That secret expires every 6 months and has to be regenerated, or this breaks again silently. */
+const APPLE_WEB_OAUTH = false;
+
 /**
  * Account step (/join/<handle>). The visitor creates/logs into a Sage account
  * (Google or email — Apple added once its web OAuth is configured), then we start
@@ -367,6 +377,7 @@ export default function JoinFlow({
         </div>
       ) : mode === "choose" ? (
         <div className="mt-5 flex flex-col gap-3">
+          {APPLE_WEB_OAUTH && (
           <button
             onClick={() => withOAuth("apple")}
             className="flex h-13 w-full items-center justify-center gap-2 rounded-full bg-ink text-base font-semibold text-white transition hover:opacity-90 active:scale-[0.98]"
@@ -376,6 +387,7 @@ export default function JoinFlow({
             </svg>
             Continue with Apple
           </button>
+          )}
           <button
             onClick={() => withOAuth("google")}
             className="flex h-13 w-full items-center justify-center gap-2.5 rounded-full border border-[#E2E4E7] bg-white text-base font-semibold text-ink transition hover:bg-surface active:scale-[0.98]"
