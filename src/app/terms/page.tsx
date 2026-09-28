@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Terms and conditions for using the Sage AI fitness coach app and website.",
 };
 
-const LAST_UPDATED = "August 26, 2026";
+const LAST_UPDATED = "September 28, 2026";
 
 function LegalSection({
   title,
@@ -383,56 +383,12 @@ export default function TermsPage() {
 
             <h3>13.1 Selling on Sage (creators)</h3>
             <p>
-              <strong>Earnings and fee.</strong> Our first 100 approved creators (Founding Creators)
-              keep <strong>95% of every payment, after payment processing fees</strong>;
-              Sage keeps 5%. All other creators keep <strong>80% of every payment</strong> from their
-              subscribers, and Sage keeps a <strong>20% platform fee</strong> (which also covers
-              payment processing). This applies to subscriptions, memberships, tips, and any paid
-              content. You set your own prices. The full terms are in the Creator Agreement.
-            </p>
-            <p>
-              <strong>Getting paid.</strong> Payouts run through Stripe to your connected account,
-              weekly, after a short clearing window (about 7 days) that protects against fraud and
-              chargebacks. You must complete Stripe&apos;s payout setup before you can be paid.
-            </p>
-            <p>
-              <strong>Chargebacks and refunds.</strong> If a payment you&apos;ve received is later
-              refunded or charged back, that amount (your share) is deducted from your current or
-              upcoming earnings. If your balance goes negative, we may recover the difference,
-              including from your connected payout account.
-            </p>
-            <p>
-              <strong>Refund policy.</strong> Payments are non-refundable by default. You may grant a
-              refund to your own subscriber at your discretion. Sage may issue a refund where the law
-              requires it, or in cases of fraud or abuse.
-            </p>
-            <p>
-              <strong>Invoicing (self-billing).</strong> You authorise Sage to issue invoices on your
-              behalf (self-billing) for the amounts you earn, and you agree not to issue your own
-              invoices for those same amounts. You can view and download these invoices in the app.
-            </p>
-            <p>
-              <strong>Taxes.</strong> You are an independent business, responsible for declaring and
-              paying your own taxes (income tax, and VAT/GST if you&apos;re registered) in your own
-              country. Sage handles the sales tax/VAT charged to the end customer as the merchant of
-              record.
-            </p>
-            <p>
-              <strong>Your responsibilities.</strong> Deliver what you promise to your subscribers.
-              Don&apos;t make medical claims or guarantee specific results. Keep your content and
-              conduct legal, honest, and respectful. Your content stays yours. Sage may remove
-              content, restrict features, suspend, or remove a creator who breaks these Terms,
-              commits fraud, or abuses the platform or its members. You are an independent creator,
-              not an employee, partner, or agent of Sage. Either side can end this at any time;
-              cleared earnings are still paid, and on a breach (for example, fraud) pending
-              unconfirmed earnings may be voided.
-            </p>
-            <p>
-              <strong>Full Creator Agreement.</strong> The complete terms for creators &mdash;
-              including the self-billing authorisation, intellectual-property licence, payout
-              details, and tax responsibilities &mdash; are set out in the{" "}
-              <Link href="/creator-agreement">Sage Creator Agreement</Link>, which you accept when
-              you apply to become a creator.
+              Creators sell under a separate contract with Sage, the{" "}
+              <Link href="/creator-agreement">Sage Creator Agreement</Link>, which they accept when
+              they apply. It sets out their prices, Sage&apos;s platform fee, how and when they are
+              paid, their tax and invoicing position, and what applies if either side ends the
+              arrangement. A creator is an independent business, not an employee, partner, or agent
+              of Sage.
             </p>
 
             <h3>13.2 Subscribing to a creator (members)</h3>
