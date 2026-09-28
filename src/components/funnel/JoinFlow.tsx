@@ -84,8 +84,12 @@ export default function JoinFlow({
   // Signing in with Google or Apple reloads this page, so the answer is parked in sessionStorage
   // for the round-trip; it is read back below and again at checkout, never trusted from state alone.
   const shareKey = `sage.share.${creatorId}`;
+  // The provider sends the member back to a URL we wrote, so the answer rides in it; sessionStorage
+  // is the fallback for a return that lost the query (and for the no-reload email path).
   const readShare = () => {
     try {
+      const fromUrl = new URLSearchParams(window.location.search).get("share");
+      if (fromUrl === "0" || fromUrl === "1") return fromUrl === "1";
       return window.sessionStorage.getItem(shareKey) !== "0";
     } catch {
       return true;
@@ -138,7 +142,9 @@ export default function JoinFlow({
   const returnPath = community
     ? `/join/${handle}/${community.slug}`
     : `/join/${handle}`;
-  const returnQuery = community ? `?continue=1&plan=${effPlan}` : `?continue=1`;
+  const returnQuery = community
+    ? `?continue=1&plan=${effPlan}`
+    : `?continue=1&share=${shareData ? 1 : 0}`;
 
   // After any successful auth: guard against a duplicate purchase, else go to checkout.
   async function proceedAfterAuth() {
