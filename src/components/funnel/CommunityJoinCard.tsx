@@ -92,7 +92,7 @@ export default function CommunityJoinCard({
       </div>
       <p className="mt-2.5 text-xs leading-relaxed text-subtle">
         {effPlan === "yearly"
-          ? "Both billed once for the year — the community and the app. Cancel either anytime."
+          ? "Both billed once for the year — the community and the app. Cancel the community anytime; the app subscription keeps the app."
           : "The community lives in Sage — two separate subscriptions. Cancel the community anytime; the app subscription keeps the app."}
       </p>
       <Link
