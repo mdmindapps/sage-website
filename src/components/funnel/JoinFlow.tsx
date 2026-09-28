@@ -81,7 +81,31 @@ export default function JoinFlow({
   const firstName = creatorName.split(" ")[0];
   // The app asks this before a 1:1 subscription (ShareControls, creator-profile.tsx). The web
   // funnel used to send `true` without asking, which contradicted Agreement s.9 and Privacy 4.2.
+  // Signing in with Google or Apple reloads this page, so the answer is parked in sessionStorage
+  // for the round-trip; it is read back below and again at checkout, never trusted from state alone.
+  const shareKey = `sage.share.${creatorId}`;
+  const readShare = () => {
+    try {
+      return window.sessionStorage.getItem(shareKey) !== "0";
+    } catch {
+      return true;
+    }
+  };
+  // Set after mount, not in the initialiser: React does not repair a `checked` mismatch during
+  // hydration, so a box restored that way renders ticked while the state says otherwise.
   const [shareData, setShareData] = useState(true);
+  useEffect(() => {
+    setShareData(readShare());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  function chooseShare(on: boolean) {
+    setShareData(on);
+    try {
+      window.sessionStorage.setItem(shareKey, on ? "1" : "0");
+    } catch {
+      /* private window, or storage blocked — the in-page value still applies */
+    }
+  }
   // Community can be monthly-only, annual-only, or both; the funnel passes the chosen `plan`.
   const cHasMonthly = (community?.priceMonthly ?? 0) > 0;
   const cHasAnnual = (community?.priceAnnual ?? 0) > 0;
@@ -132,7 +156,8 @@ export default function JoinFlow({
       setBusy(false);
       return;
     }
-    await beginCheckout(creatorId, shareData); // redirects to Stripe (skips Premium if already owned)
+    const share = typeof window === "undefined" ? shareData : readShare();
+    await beginCheckout(creatorId, share); // redirects to Stripe (skips Premium if already owned)
   }
 
   // Returning from Google OAuth (?continue=1) → wait for the session, then proceed.
@@ -352,6 +377,22 @@ export default function JoinFlow({
         </p>
       )}
 
+      {/* 1:1 only — a club shows no private data, so there is nothing to consent to. */}
+      {!community && !busy && (
+        <label className="mt-4 flex cursor-pointer items-start gap-2.5 rounded-xl bg-surface px-4 py-3">
+          <input
+            type="checkbox"
+            checked={shareData}
+            onChange={(e) => chooseShare(e.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+          />
+          <span className="text-xs leading-relaxed text-subtle">
+            Let {firstName} see your meals, weight and habits, so they can coach you on what you
+            actually did. <span className="text-ink">You can turn this off anytime.</span>
+          </span>
+        </label>
+      )}
+
       {busy ? (
         <div className="mt-6 flex items-center justify-center gap-3 py-4">
           <span className="h-5 w-5 animate-spin rounded-full border-[3px] border-border border-t-primary" />
@@ -385,20 +426,6 @@ export default function JoinFlow({
               How we handle your data
             </a>
           </p>
-          {!community && (
-            <label className="flex cursor-pointer items-start gap-2.5 rounded-xl bg-surface px-4 py-3">
-              <input
-                type="checkbox"
-                checked={shareData}
-                onChange={(e) => setShareData(e.target.checked)}
-                className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
-              />
-              <span className="text-xs leading-relaxed text-subtle">
-                Let {firstName} see your meals, weight and habits, so they can coach you on what
-                you actually did. <span className="text-ink">You can turn this off anytime.</span>
-              </span>
-            </label>
-          )}
         </div>
       ) : mode === "choose" ? (
         <div className="mt-5 flex flex-col gap-3">
