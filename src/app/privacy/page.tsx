@@ -288,14 +288,42 @@ export default function PrivacyPage() {
               </table>
             </div>
 
-            <h3>4.2 Legal Requirements</h3>
+            <h3>4.2 Creators You Buy From</h3>
+            <p>
+              If you subscribe to a creator&apos;s club or 1:1 coaching, we give that creator your name,
+              your email address, what you bought, when you became their customer, and what you have paid
+              them. You are their customer as well as ours, and they need this to deliver what you paid
+              for and to run their business. You are told this at checkout, before you pay.
+            </p>
+            <p>
+              For this information the creator is an <strong>independent controller</strong>, not our
+              processor: they decide how they use it, under their own privacy policy. In the Sage Creator
+              Agreement they commit to using it only in connection with their own offers, to including a
+              working unsubscribe in every marketing message and acting on opt-outs, to answering you if
+              you ask what they hold or ask them to delete it, and never to sell, rent or pass your
+              details to anyone else.
+            </p>
+            <p>
+              We do <strong>not</strong> give creators your weigh-ins, meals, habits, progress photos, or
+              your conversations with Sage. The one exception is 1:1 coaching, where you can choose to
+              share your meals and weigh-ins with your coach &mdash; you turn that on yourself, and you
+              can turn it off at any time.
+            </p>
+            <p>
+              You can change the address your coaches see, or remove it, at any time in the app under
+              <strong> Account &rarr; Contact email</strong>. If you want a creator to delete your
+              details, write to them directly, or to contact@sageacademy.app and we will pass the request
+              on.
+            </p>
+
+            <h3>4.3 Legal Requirements</h3>
             <p>
               We may disclose your information where required by applicable law, a court order,
               subpoena, or governmental request. We will notify you of such requirements where
               legally permitted.
             </p>
 
-            <h3>4.3 Business Transfers</h3>
+            <h3>4.4 Business Transfers</h3>
             <p>
               If Friday Technologies SRL is acquired or merges with another company, your
               information may be transferred as part of that transaction. You will be notified
@@ -452,9 +480,11 @@ export default function PrivacyPage() {
 
           <LegalSection title="9. Children&apos;s Privacy">
             <p>
-              Sage is intended for users aged 18 and over. We do not knowingly collect personal
-              data from anyone under 18. If you are a parent or guardian and believe your child
-              has created an account or submitted personal data, please contact us at{" "}
+              Sage is for users aged 13 and over. If you are under 18, you should have your
+              parent&apos;s or guardian&apos;s permission to use Sage. Purchases, and paid coaching
+              offers sold by creators, are for users aged 18 and over. We do not knowingly collect
+              personal data from anyone under 13. If you are a parent or guardian and believe your
+              child has created an account or submitted personal data, please contact us at{" "}
               <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a> and we will
               delete the relevant data promptly.
             </p>

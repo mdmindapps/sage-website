@@ -5,7 +5,8 @@ const footerLinks = {
   Product: [
     { label: "Features", href: "/#features" },
     { label: "Pricing", href: "/#pricing" },
-    { label: "FAQ", href: "/#faq" },
+    { label: "FAQ for members", href: "/#faq" },
+    { label: "FAQ for creators", href: "/become-a-coach/faq" },
     { label: "Launch on Sage", href: "/become-a-coach" },
     { label: "How coaches monetize", href: "/become-a-coach/monetize" },
   ],
@@ -18,6 +19,7 @@ const footerLinks = {
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "Cookie Policy", href: "/cookies" },
+    { label: "Community Guidelines", href: "/community-guidelines" },
     { label: "GDPR", href: "/privacy#gdpr" },
     { label: "Creator Agreement", href: "/creator-agreement" },
   ],

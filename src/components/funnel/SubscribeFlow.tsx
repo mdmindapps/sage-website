@@ -54,8 +54,8 @@ export default function SubscribeFlow({
         </div>
       </div>
       <p className="mt-2.5 text-xs leading-relaxed text-subtle">
-        Your coach works through Sage — two separate subscriptions, cancel either
-        anytime.
+        Your coach works through Sage. Sage Premium is the app itself — the coaching runs
+        on top of it. Cancel your coaching anytime; the app subscription keeps the app.
       </p>
 
       <Link

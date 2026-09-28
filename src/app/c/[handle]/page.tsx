@@ -8,5 +8,5 @@ export default async function CreatorRedirect({
 }) {
   const { handle } = await params;
   const target = CREATOR_LINKS[handle.toLowerCase()];
-  redirect(target ?? "/creators");
+  redirect(target ?? "/become-a-coach");
 }

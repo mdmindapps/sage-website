@@ -20,8 +20,9 @@ export type JoinCommunity = {
   priceAnnual: number | null;
 };
 
-// Display-only Premium prices (real charge comes from Stripe). DEV values — update monthly to
-// the prod price ($12.99) at cutover; annual ($39.99) matches prod.
+// Display-only Premium prices; the real charge comes from Stripe. These ARE the live prices:
+// $4.99/mo and $39.99/yr through a creator page. ($12.99 was our first monthly price, dropped
+// because it did not convert — it is gone, do not reinstate it from an old comment.)
 const PREMIUM = { monthly: "$4.99", yearly: "$39.99" } as const;
 // coached rate vs the standalone (solo) price — shown as a strike-through + "save" badge so the coach
 // subscription visibly discounts Premium. $7.99→$4.99 = 37% ; $59.99→$39.99 = 33%.
@@ -78,6 +79,9 @@ export default function JoinFlow({
   const [signedIn, setSignedIn] = useState<string | null>(null);
 
   const firstName = creatorName.split(" ")[0];
+  // The app asks this before a 1:1 subscription (ShareControls, creator-profile.tsx). The web
+  // funnel used to send `true` without asking, which contradicted Agreement s.9 and Privacy 4.2.
+  const [shareData, setShareData] = useState(true);
   // Community can be monthly-only, annual-only, or both; the funnel passes the chosen `plan`.
   const cHasMonthly = (community?.priceMonthly ?? 0) > 0;
   const cHasAnnual = (community?.priceAnnual ?? 0) > 0;
@@ -128,7 +132,7 @@ export default function JoinFlow({
       setBusy(false);
       return;
     }
-    await beginCheckout(creatorId, true); // redirects to Stripe (skips Premium if already owned)
+    await beginCheckout(creatorId, shareData); // redirects to Stripe (skips Premium if already owned)
   }
 
   // Returning from Google OAuth (?continue=1) → wait for the session, then proceed.
@@ -374,6 +378,27 @@ export default function JoinFlow({
           <p className="mt-1 text-center text-xs font-medium text-subtle">
             Secure card payment · Cancel anytime
           </p>
+          <p className="text-center text-[11px] leading-relaxed text-subtle">
+            {firstName} gets your name and email address so they can reach you about what you
+            bought. Your tracking stays private.{" "}
+            <a href="/privacy" className="underline underline-offset-2 hover:text-ink">
+              How we handle your data
+            </a>
+          </p>
+          {!community && (
+            <label className="flex cursor-pointer items-start gap-2.5 rounded-xl bg-surface px-4 py-3">
+              <input
+                type="checkbox"
+                checked={shareData}
+                onChange={(e) => setShareData(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-primary"
+              />
+              <span className="text-xs leading-relaxed text-subtle">
+                Let {firstName} see your meals, weight and habits, so they can coach you on what
+                you actually did. <span className="text-ink">You can turn this off anytime.</span>
+              </span>
+            </label>
+          )}
         </div>
       ) : mode === "choose" ? (
         <div className="mt-5 flex flex-col gap-3">
@@ -407,6 +432,13 @@ export default function JoinFlow({
           </button>
           <p className="mt-1 text-center text-xs font-medium text-subtle">
             Secure card payment · Cancel anytime
+          </p>
+          <p className="text-center text-[11px] leading-relaxed text-subtle">
+            {firstName} gets your name and email address so they can reach you about what you
+            bought. Your tracking stays private.{" "}
+            <a href="/privacy" className="underline underline-offset-2 hover:text-ink">
+              How we handle your data
+            </a>
           </p>
         </div>
       ) : (

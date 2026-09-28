@@ -230,6 +230,14 @@ export default function TermsPage() {
               adults; if you have any doubt about your fitness to participate, consult a physician
               first.
             </p>
+            <p>
+              Participation is voluntary and at your own risk. Neither Sage{" "}
+              <strong>nor the creator whose programs, club or coaching you follow</strong> is
+              responsible for injury or adverse health effects arising from it, and you release both
+              from claims arising out of it. Nothing in these Terms limits liability that cannot be
+              limited by law, including for death or personal injury caused by negligence, or for
+              fraud.
+            </p>
 
             <h3>6.3 Not for Medical Conditions, Eating Disorders, or Emergencies</h3>
             <p>
@@ -376,7 +384,7 @@ export default function TermsPage() {
             <h3>13.1 Selling on Sage (creators)</h3>
             <p>
               <strong>Earnings and fee.</strong> Our first 100 approved creators (Founding Creators)
-              keep <strong>95% of every payment, after payment processing fees, for life</strong>;
+              keep <strong>95% of every payment, after payment processing fees</strong>;
               Sage keeps 5%. All other creators keep <strong>80% of every payment</strong> from their
               subscribers, and Sage keeps a <strong>20% platform fee</strong> (which also covers
               payment processing). This applies to subscriptions, memberships, tips, and any paid

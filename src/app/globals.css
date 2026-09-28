@@ -56,12 +56,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Base heading typography ── */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: #11181C;
+/* ── Base heading typography ──
+   Must live in @layer base: Tailwind v4 emits utilities inside @layer utilities, and an unlayered
+   rule wins against ANY layered rule regardless of specificity. Unlayered, this `color` silently
+   beat `text-white` and made every heading on a dark background invisible. */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #11181C;
+  }
 }
 
 /* ── Phone mockup placeholder ── */

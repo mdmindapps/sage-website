@@ -10,8 +10,6 @@ const STANDALONE_ROUTES = [
   "/delete-account",
   "/get",
   "/download",
-  "/creators",
-  "/creator-terms",
   "/become-a-coach",
   "/creator-docs",
   "/join",

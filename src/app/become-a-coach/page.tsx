@@ -280,7 +280,7 @@ const HTML = `
   <div class="wrap">
     <p class="khead">The difference</p>
     <h2>Coach where the work actually happens.</h2>
-    <p class="lead">On other platforms you coach blind — a chat window and a guess. On Sage, every client's day flows in automatically, so you walk in already knowing what happened. That's the difference between advice and coaching.</p>
+    <p class="lead">On other platforms you coach blind — a chat window and a guess. On Sage your 1:1 clients can share their day as it happens, so you walk in already knowing what happened. That's the difference between advice and coaching.</p>
     <figure class="banner"><img src="/images/coach/coach-consult.jpg" alt="A coach reviewing a plan with a client" width="1600" height="820" loading="lazy"><span class="tint"></span></figure>
     <div class="vgrid">
       <div class="vcard">
@@ -310,8 +310,8 @@ const HTML = `
 <section class="blk" id="discover" style="background:var(--cream)">
   <div class="wrap">
     <p class="khead">Get discovered</p>
-    <h2>Found on reputation, not ad budget.</h2>
-    <p class="lead">Sage's discovery ranks coaches by quality — and every badge is earned, from real reviews and real members. You can't buy your way up: do great work and it compounds.</p>
+    <h2>Found on reputation.</h2>
+    <p class="lead">Sage's discovery ranks coaches on how well they match what someone is looking for, and on real reviews and real members. Every badge is earned.</p>
     <div class="badges">
       <span class="badge"><b>&#9733;</b> Top rated</span>
       <span class="badge"><b>&#9650;</b> Popular</span>
@@ -324,7 +324,7 @@ const HTML = `
   <div class="money">
     <p class="k">Founding creators</p>
     <div class="big"><span>95%</span></div>
-    <div class="cap">Our first 100 creators keep 95%, for life.</div>
+    <div class="cap">Our first 100 creators keep 95%.</div>
     <p class="fine">After payment fees. No setup fee, no monthly fee. <b style="color:#fff">We only earn when you do.</b></p>
     <div class="handled">
       <span>Card payments</span><span>Currency conversion</span><span>Weekly payouts</span>
@@ -342,7 +342,7 @@ const HTML = `
     <div class="steps">
       <div class="step"><div class="sn"></div><h4>Download the app</h4><p>Get Sage on iOS or Android and create your account — the same app your clients will use.</p></div>
       <div class="step"><div class="sn"></div><h4>Apply to launch</h4><p>Tell us what you do and who you help. Every creator is reviewed by hand — we keep the bar high on purpose.</p></div>
-      <div class="step"><div class="sn"></div><h4>Go live &amp; get paid</h4><p>Set your offer and price, connect payouts, and go live. Most creators land their first client in about 20 minutes.</p></div>
+      <div class="step"><div class="sn"></div><h4>Go live &amp; get paid</h4><p>Set your offer and price, connect payouts, and go live. Being open for business takes about twenty minutes.</p></div>
     </div>
     <p class="lead" style="margin-top:26px">Want the full walkthrough? <a href="/become-a-coach/guide" style="color:var(--tealD);font-weight:700;text-decoration:none">Read the complete creator guide →</a></p>
     <p class="lead" style="margin-top:10px">Wondering what your audience is worth? <a href="/become-a-coach/monetize" style="color:var(--tealD);font-weight:700;text-decoration:none">How fitness coaches monetize their audience, with real numbers →</a></p>
@@ -356,6 +356,7 @@ const HTML = `
       <p class="ceyebrow">Ready when you are</p>
       <h2>Your coaching, finally running like a business.</h2>
       <p class="csub">Download Sage, create your account, and apply to become a creator. We'll take it from there.</p>
+      <p class="csub" style="margin-top:10px;font-size:14.5px">Questions first? The <a href="/become-a-coach/faq">creator FAQ</a> answers the money, the members and what happens if you leave &mdash; each one naming the clause it comes from.</p>
       <div class="stores">
         <a class="store" href="https://apps.apple.com/app/id6777168646" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>

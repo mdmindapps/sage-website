@@ -68,6 +68,10 @@ const CSS = `
   .cmon tr.hi td{background:var(--tealWash)}
   .cmon .yes{color:var(--tealD);font-weight:700}.cmon .no{color:#B4462B;font-weight:700}
 
+  .cmon .ways{list-style:none;margin:0 0 18px;padding:0}
+  .cmon .ways li{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:15px 18px;margin:0 0 9px;font-size:15.5px;color:var(--muted);line-height:1.6}
+  .cmon .ways li b{color:var(--ink)}
+  .cmon .ways li.hi{background:var(--tealWash);border-color:color-mix(in srgb,var(--teal) 28%,var(--border))}
   .cmon .note{margin:20px 0 0;background:var(--tealWash);border:1px solid color-mix(in srgb,var(--teal) 22%,transparent);border-radius:14px;padding:15px 18px;font-size:15px;color:var(--ink);font-weight:600}
   .cmon .note b{color:var(--tealD)}
   .cmon .src{font-size:12.5px;color:var(--subtle);margin-top:10px;line-height:1.5;font-weight:500}
@@ -115,8 +119,8 @@ const HTML = `
   <div class="wrap">
     <p class="eyebrow">Sage · For fitness coaches &amp; creators</p>
     <h1>How fitness coaches and creators monetize their audience in 2026</h1>
-    <p>Six ways to turn followers into income, with what each one costs, what it pays, and the real conversion numbers from Patreon, OnlyFans, Skool and the coaching industry. Written for a coach with 5K to 500K followers who is tired of brand codes.</p>
-    <p class="meta">Updated September 2026 · 9 min read · Every number links to its source</p>
+    <p>Six ways an audience turns into income that comes back every month &mdash; what people actually pay for, what it costs to run, and what to expect at your size. Written for a coach with 5K to 500K followers who is tired of brand codes.</p>
+    <p class="meta">Updated September 2026 · 8 min read</p>
   </div>
 </header>
 
@@ -127,11 +131,11 @@ const HTML = `
     <aside class="toc">
       <p>On this page</p>
       <a href="#problem">Why codes and 1:1 cap out</a>
-      <a href="#options">The six options, compared</a>
-      <a href="#numbers">What % of followers actually pay</a>
-      <a href="#math">The math on your audience</a>
+      <a href="#options">The six ways you earn on Sage</a>
+      <a href="#numbers">How many people actually buy</a>
+      <a href="#math">What that looks like at your size</a>
       <a href="#stack">What it costs on Sage</a>
-      <a href="#sage">How a club on Sage works</a>
+      <a href="#sage">How it actually works</a>
       <a href="#faq">Questions coaches ask</a>
     </aside>
 
@@ -142,62 +146,102 @@ const HTML = `
         <p class="slead">Most fitness creators earn through two things: discount codes for other people's products, and a handful of 1:1 clients. Both have a ceiling, and neither grows with the audience.</p>
         <ul class="l">
           <li><b>Codes pay a few percent of someone else's sale</b>, only when someone happens to buy. A 50K account with three codes typically earns hundreds a month, not thousands.</li>
-          <li><b>1:1 coaching is capped by hours.</b> A solo online coach carries 20 to 50 clients at $100 to $500 a month; past that, there is no more week. <span class="src">Source: <a href="https://www.theptdc.com/articles/how-big-is-online-personal-training-industry" rel="nofollow">PTDC, online personal training industry report</a>; <a href="https://www.mypthub.net/blog/how-many-clients-personal-trainer/" rel="nofollow">My PT Hub, client capacity</a>.</span></li>
+          <li><b>1:1 coaching is capped by hours.</b> A solo online coach carries 20 to 50 clients; past that, there is no more week. <span class="src">Source: <a href="https://www.mypthub.net/blog/how-many-clients-personal-trainer/" rel="nofollow">My PT Hub, client capacity</a>.</span></li>
           <li><b>Everyone who can't afford 1:1 walks away.</b> Between "I follow this coach" and "I'm this coach's client" there is usually nothing to join at an accessible price.</li>
           <li><b>The DMs asking "what do you eat?" earn nothing.</b> That demand is real, it just has nowhere to go.</li>
         </ul>
+        <p class="note">That last line is the whole page. You are not short of people &mdash; you are
+        short of a door they can walk through at a price they can say yes to. What follows is what is
+        behind that door, and what it is worth.</p>
       </section>
 
       <section id="options">
         <p class="snum">02</p>
-        <h2>The six ways to monetize a fitness audience, compared</h2>
-        <p class="slead">Honest comparison. Every option here works for someone; the question is what it costs you to start, whether the income recurs, and whether you can actually see what your members do.</p>
-        <div class="tbl"><table>
-          <thead><tr><th>Option</th><th>Cost to start</th><th>Platform cut</th><th>Recurring?</th><th>See members' food &amp; weight?</th><th>Best for</th></tr></thead>
-          <tbody>
-            <tr><td><b>1:1 online coaching</b> (forms, DMs, PayPal)</td><td>$0</td><td>Payment fees only</td><td class="yes">Yes</td><td class="no">No (screenshots)</td><td>Certified coaches with hours to sell</td></tr>
-            <tr><td><b>One-time course / ebook</b> (Kajabi, Gumroad)</td><td>$0–$149/mo</td><td>0–10% + tool fee</td><td class="no">No</td><td class="no">No</td><td>Creators with a method to package</td></tr>
-            <tr><td><b>Patreon / OnlyFans-style membership</b></td><td>$0</td><td>8–20%</td><td class="yes">Yes</td><td class="no">No</td><td>Content creators (behind-the-scenes, extras)</td></tr>
-            <tr><td><b>Skool / Circle community</b></td><td>$99/mo</td><td>$99/mo + fees</td><td class="yes">Yes</td><td class="no">No</td><td>Course creators who want a forum</td></tr>
-            <tr><td><b>Your own custom app</b></td><td>$50K–$200K + 9–12 months</td><td>App stores 15–30%</td><td class="yes">Yes</td><td class="yes">Yes, if you build it</td><td>Creators with 1M+ and capital</td></tr>
-            <tr class="hi"><td><b>A club inside a fitness app</b> (Sage Academy)</td><td>$0</td><td>5% for founding creators</td><td class="yes">Yes</td><td class="yes">Yes, live</td><td>Coaches and creators from ~5K up</td></tr>
-          </tbody>
-        </table></div>
-        <p class="src">Custom-app cost: Solin's founders report 9–12 months and tens to hundreds of thousands of dollars per creator app before they pivoted to a platform (<a href="https://blog.solin.stream/the-solin-story/" rel="nofollow">The Solin Story</a>). Skool pricing from skool.com. Patreon fees from patreon.com/pricing.</p>
+        <h2>The six ways you earn on Sage</h2>
+        <p class="slead">A club is not one product. Once there is a room of people training with you,
+        money comes in through six separate doors &mdash; and most creators end up with four or five of
+        them open at the same time. Every one of these already exists; none of it is something you have
+        to build.</p>
+
+        <ul class="ways">
+          <li><b>1. The club, monthly.</b> One price, every month, for everyone inside. This is the part
+          that grows with your audience instead of with your hours &mdash; a hundred members at $19 is
+          the same amount of work as forty.</li>
+          <li><b>2. The same club, paid for the year.</b> You can offer a yearly price next to the
+          monthly one. People who pay for a year stay for a year, and the money is in your account now
+          rather than in twelve pieces.</li>
+          <li><b>3. One-to-one, for the few who want you.</b> Private, monthly, at your price. It is the
+          top of your range and it is limited by your week &mdash; which is exactly why it works best
+          sitting above a club instead of being the only thing you sell.</li>
+          <li><b>4. Programs sold on their own.</b> A program can be included in the club, or sold as a
+          one-time unlock on top of it &mdash; a twelve-week plan, a course, a video series. The same
+          program, sold twice: once inside the membership, once to people who only want that one thing.
+          You can sell them to your 1:1 clients too.</li>
+          <li><b>5. Challenges.</b> You start one whenever you decide, for a week or for a season, with
+          a leaderboard on kg lost and percentage of bodyweight. A challenge has a start date, and a
+          start date is what makes people finally join &mdash; it is the single best reason for someone
+          to stop following you and start paying you.</li>
+          <li><b>6. Tips.</b> Members can tip you inside a channel or in a private chat, with a message
+          attached. Small on its own, and it tells you who your next 1:1 client is.</li>
+        </ul>
+
+        <p class="note"><b>And the alternative, honestly.</b> You could build the app yourself. Founders
+        who have done it for fitness creators report nine to twelve months and tens to hundreds of
+        thousands of dollars before a single member can pay them &mdash; and the app stores still take
+        15&ndash;30% when it ships. <b>Sage is that app, already built.</b> Opening a club inside it
+        costs nothing, takes no developer, and the six doors above are open on day one.</p>
+
+        <p class="slead" style="margin-top:22px">What none of that decides is how many people walk
+        through. That number is smaller than most coaches expect, and it is the one thing worth being
+        honest about before you price anything.</p>
       </section>
 
       <section id="numbers">
         <p class="snum">03</p>
-        <h2>What percentage of followers actually pay</h2>
-        <p class="slead">This is the number everything depends on, and it is public. Across platforms, between 0.5% and 1.5% of a social audience will pay a creator monthly for something of their own. Fitness creators usually sit at the low end, because they sell through bio links and forms instead of inside a product.</p>
-        <div class="stat">
-          <div><div class="n">1–1.5%</div><div class="t">of social followers convert to paid on OnlyFans (official creator guidance)</div><div class="s"><a href="https://www.inro.social/blog/instagram-to-onlyfans-conversion-benchmarks" rel="nofollow">Instagram→OnlyFans benchmarks</a></div></div>
-          <div><div class="n">0.5–2.5%</div><div class="t">of total audience become Patreon patrons</div><div class="s"><a href="https://bloggingwizard.com/patreon-statistics/" rel="nofollow">Patreon statistics</a></div></div>
-          <div><div class="n">2–5%</div><div class="t">of free members upgrade to paid on Skool</div><div class="s"><a href="https://communipass.com/blog/skool-revenue-benchmarks-2026/" rel="nofollow">Skool revenue benchmarks</a></div></div>
-          <div><div class="n">0.05–0.3%</div><div class="t">what fitness creators (50–150K) typically achieve with paid groups sold from a bio link</div><div class="s"><a href="https://communipass.com/blog/fitness-influencer-monetization-benchmarks-2026/" rel="nofollow">Fitness monetization benchmarks</a></div></div>
-          <div><div class="n">2.8%</div><div class="t">Sweat: 16M Instagram followers → 450K paying subscribers (the ceiling, after 10 years)</div><div class="s"><a href="https://www.builtbyfoundry.io/blog/kayla-itsines-sweat-app-400m-exit" rel="nofollow">Sweat / Kayla Itsines</a></div></div>
-          <div><div class="n">6–9%</div><div class="t">monthly churn for creator-led paid communities (annual plans cut it sharply)</div><div class="s"><a href="https://retentioncheck.com/churn-benchmarks/membership-communities" rel="nofollow">Membership churn benchmarks</a></div></div>
-        </div>
-        <h3>Why the gap between 0.1% and 1.5%?</h3>
-        <div class="sub"><p>Three things, in order of impact: <b>where the link is</b> (a link delivered in a DM converts 5–8% of the people who receive it; a bio link converts 0.1–0.5% of visitors), <b>whether there is a start date</b> (a monthly challenge with a deadline sells 4–6× a "join anytime" membership), and <b>whether members get results</b> (fitness paid groups keep 47% of members at 4 months; with a weekly live or check-in, 62%). <span class="src"><a href="https://www.inro.social/blog/instagram-to-onlyfans-conversion-benchmarks" rel="nofollow">DM vs bio conversion</a> · <a href="https://communipass.com/blog/skool-upsell-strategy-2026/" rel="nofollow">Challenge funnels</a> · <a href="https://kourses.com/member-retention/" rel="nofollow">Member retention</a></span></p></div>
+        <h2>How many people actually buy</h2>
+        <p class="slead">Nobody will tell you this honestly, so: a small fraction of an audience ever
+        pays. That is normal, it is true for everyone, and it is still enough &mdash; because the
+        fraction is paying you every month instead of once.</p>
+
+        <ul class="ways">
+          <li><b>The ceiling, after ten years.</b> Sweat, the biggest fitness creator business ever
+          built, reached 450,000 paying subscribers from 16 million Instagram followers. <b>2.8%.</b>
+          That is the top of the sport, and it took a decade. <span class="src"><a
+          href="https://www.builtbyfoundry.io/blog/kayla-itsines-sweat-app-400m-exit"
+          rel="nofollow">Source</a></span></li>
+          <li><b>A realistic number to plan with: 0.5%.</b> Half a percent of your followers, paying
+          monthly. If that sounds low, it is because it is: at 50K followers it is 250 people, and at
+          $19 a month that is $4,750 coming back every month.</li>
+          <li><b>Where the link is decides more than the price.</b> A link sent in a conversation
+          converts many times better than a link sitting in your bio. Most fitness creators sell only
+          from the bio, which is why most fitness creators are at the bottom of the range.</li>
+          <li><b>People leave, and that is normal too.</b> Paid communities lose a meaningful share of
+          members every month. Two things slow it down: a yearly price, and being seen individually
+          &mdash; a check-in, a live, a reply with your name on it.</li>
+        </ul>
       </section>
 
       <section id="math">
         <p class="snum">04</p>
-        <h2>The math on your audience</h2>
-        <p class="slead">Base case: 0.5% of followers in a $19/month club, plus a capped 1:1 offer. Conservative and optimistic columns use 0.15% and 1.5%. These are projections from the benchmarks above, not promises.</p>
+        <h2>What that looks like at your size</h2>
+        <p class="slead">Half a percent of your followers in a $19 club. These are projections, not
+        promises &mdash; and they are what members pay you, before payment costs and our 5%.</p>
         <div class="tbl"><table>
-          <thead><tr><th>Followers</th><th>Club members (0.5%)</th><th>Club / month</th><th>1:1 (15 spots × $199)</th><th>Base total / month</th><th>Range (0.15% – 1.5%)</th></tr></thead>
+          <thead><tr><th>Followers</th><th>Club members (0.5%)</th><th>Club / month</th><th>Club range (0.15% &ndash; 1.5%)</th></tr></thead>
           <tbody>
-            <tr><td class="num">5,000</td><td class="num">25</td><td class="num">$475</td><td class="num">$2,985</td><td class="num">$3,460</td><td>$3,100 – $4,400</td></tr>
-            <tr><td class="num">10,000</td><td class="num">50</td><td class="num">$950</td><td class="num">$2,985</td><td class="num">$3,935</td><td>$3,300 – $5,800</td></tr>
-            <tr><td class="num">25,000</td><td class="num">125</td><td class="num">$2,375</td><td class="num">$2,985</td><td class="num">$5,360</td><td>$3,700 – $10,100</td></tr>
-            <tr><td class="num">50,000</td><td class="num">250</td><td class="num">$4,750</td><td class="num">$2,985</td><td class="num">$7,735</td><td>$4,400 – $17,200</td></tr>
-            <tr><td class="num">100,000</td><td class="num">500</td><td class="num">$9,500</td><td class="num">$2,985</td><td class="num">$12,485</td><td>$5,800 – $31,500</td></tr>
-            <tr><td class="num">250,000</td><td class="num">1,250</td><td class="num">$23,750</td><td class="num">$2,985</td><td class="num">$26,735</td><td>$10,100 – $74,200</td></tr>
+            <tr><td class="num">5,000</td><td class="num">25</td><td class="num">$475</td><td class="num">$140 &ndash; $1,425</td></tr>
+            <tr><td class="num">10,000</td><td class="num">50</td><td class="num">$950</td><td class="num">$285 &ndash; $2,850</td></tr>
+            <tr><td class="num">25,000</td><td class="num">125</td><td class="num">$2,375</td><td class="num">$710 &ndash; $7,125</td></tr>
+            <tr><td class="num">50,000</td><td class="num">250</td><td class="num">$4,750</td><td class="num">$1,425 &ndash; $14,250</td></tr>
+            <tr><td class="num">100,000</td><td class="num">500</td><td class="num">$9,500</td><td class="num">$2,850 &ndash; $28,500</td></tr>
+            <tr><td class="num">250,000</td><td class="num">1,250</td><td class="num">$23,750</td><td class="num">$7,125 &ndash; $71,250</td></tr>
           </tbody>
         </table></div>
-        <p class="note">Notice what the table says: <b>1:1 is the same at every size</b>, because it is limited by your hours. The club is the part that grows with the audience. And the club is where your next 1:1 clients come from: about 14% of challenge finishers upgrade to coaching. <span class="src"><a href="https://gymkee.com/blog/online-personal-trainer-salary-guide/" rel="nofollow">1:1 pricing and capacity</a> · <a href="https://communipass.com/blog/skool-upsell-strategy-2026/" rel="nofollow">Challenge → 1:1 upgrade rate</a></span></p>
+        <p class="note"><b>Fifteen 1:1 clients at $199 add $2,985 a month &mdash; and that number is the
+        same on every row</b>, because it is limited by your week, not by your audience. That is the
+        whole argument for a club: it is the only column that moves when you grow. And the club is where
+        your next 1:1 clients come from &mdash; people who finished a challenge with you and want
+        more.</p>
       </section>
 
       <section id="stack">
@@ -209,40 +253,62 @@ const HTML = `
             <li><span>Your page, club, 1:1, programs, challenges</span><span>$0</span></li>
             <li><span>Payments, subscriptions, invoices, refunds</span><span>included</span></li>
             <li><span>Members log meals from a photo, weigh in, track progress</span><span>included</span></li>
-            <li><span>You see every member's food, weight and adherence</span><span>included</span></li>
+            <li><span>Your 1:1 clients can share their food and weight with you</span><span>included</span></li>
             <li><span>Chat, announcements, challenge leaderboard</span><span>included</span></li>
             <li><span>Setup fee, monthly fee</span><span>none</span></li>
-            <li><span>Payouts to your bank</span><span>every Monday</span></li>
+            <li><span>Payouts to your bank</span><span>every Monday, where Stripe operates</span></li>
             <li><span>Platform fee, founding creators</span><span>5%, after payment fees</span></li>
-          </ul><div class="tot">$0 to launch. Our first 100 creators keep 95%, for life. We only earn when you earn.</div></div>
+          </ul><div class="tot">$0 to launch. Our first 100 creators keep 95%. Our 5% only comes out of what you earn.</div></div>
         </div>
+        <p class="note">We do it the other way round. <b>Sage Premium is our product</b> &mdash; it is on
+        the App Store at <b>$7.99 a month</b> with no coach, no club and no page attached. Your members
+        pay <b>$4.99</b> for the same app because they came in through you. A member who already subscribes is not charged again; she just joins. It is her
+        subscription, on her card, and it never touches your side.</p>
+        <p class="note">The honest half: your member sees two lines instead of one, and both are shown
+        before she buys. In exchange, nothing about running the app comes out of your price &mdash;
+        which is exactly why your share can be what it is.</p>
       </section>
 
       <section id="sage">
         <p class="snum">06</p>
-        <h2>How a club on Sage works</h2>
-        <p class="slead">Sage Academy is a nutrition and fitness app on the App Store and Google Play where people log meals by taking a photo. In 2026 it opened to coaches and creators: you run your own coaching business inside the app.</p>
+        <h2>How it actually works</h2>
+        <p class="slead">Sage Academy is a nutrition and fitness app on the App Store and Google Play,
+        where people log their meals by taking a photo of them. Since 2026 it is also where coaches run
+        their own business &mdash; your page, your offers, your prices &mdash; inside the app your
+        members already open every day.</p>
         <ul class="l">
-          <li><b>Your page:</b> sageacademy.app/@you, with your photos, your offers and your prices.</li>
-          <li><b>Two kinds of offers:</b> 1:1 coaching (private, monthly, limited spots) and communities (monthly or yearly, unlimited members). Programs and 30-day challenges with a live leaderboard live inside them.</li>
-          <li><b>Members pay inside the app.</b> Card, Apple Pay, Google Pay. Recurring billing, invoices, refunds and taxes handled. You are paid every Monday.</li>
-          <li><b>You coach on real data:</b> every member's meals and macros, weight trend, habits, progress photos and measurements, live, if they choose to share them.</li>
-          <li><b>Launch in about 20 minutes:</b> profile → create your offer → turn on payouts → go live → share your link. We build the page and the first launch with you.</li>
-          <li><b>Economics:</b> our first 100 founding creators keep 95% of what they earn, after payment fees, for life. No setup fee, no monthly fee. We only earn when you earn.</li>
+          <li><b>Your page:</b> sageacademy.app/yourname, with your photos, your offers and your prices. It
+          is a sales page: what you sell, and what it costs, in your words.</li>
+          <li><b>Two kinds of offers:</b> a club (monthly or yearly, as many members as you want) and
+          one-to-one coaching (private, monthly, at a price you set). Run one, or
+          both.</li>
+          <li><b>Inside a club:</b> channels you post in, a classroom for your programs, PDFs and
+          videos, and challenges you start whenever you decide &mdash; a week, six weeks, a season
+          &mdash; with a leaderboard on kg lost and percentage of bodyweight.</li>
+          <li><b>Inside one-to-one:</b> private chat, a program written for that one client, and
+          &mdash; only when she turns sharing on &mdash; her meals, her weigh-ins and her progress, day
+          by day. That is the only place private data is ever shown.</li>
+          <li><b>Members pay on your page.</b> Card, Apple Pay, Google Pay. Recurring billing, invoices,
+          refunds and tax are handled for you.</li>
+          <li><b>You get paid</b> every Monday where Stripe operates in your country, and monthly by
+          bank transfer against an invoice everywhere else.</li>
+          <li><b>What it costs you:</b> nothing to set up, nothing per month, nothing per member. Our
+          first 100 founding creators keep 95% of what they earn after payment fees, and that rate stays
+          with the account.</li>
         </ul>
-        <p class="note">Members also pay a <b>$4.99/month Sage Premium</b> for the app itself (meal recognition, transaction costs). It is not where Sage makes money and it does not come out of your share. Creators never pay for Premium.</p>
+        <p class="note">None of this asks you to leave what you already use. If you coach inside another
+        app, or sell a program somewhere else, that stays exactly as it is &mdash; a club on Sage is the
+        tier underneath it, at a price a follower can say yes to without booking a call.</p>
       </section>
 
       <section id="faq" class="faq">
         <p class="snum">07</p>
         <h2>Questions coaches ask</h2>
-        <details open><summary>How much can a fitness coach make from a paid community?</summary><p>It depends on audience size and how the club is sold. Using public benchmarks (0.5% of followers paying, $19/month), a 50K account is about 250 members and $4,750/month recurring; at 1% it doubles. Fitness creators who sell only from a bio link typically see 0.05–0.3%; a DM link and a monthly challenge with a start date push it toward 1%.</p></details>
-        <details><summary>Do I need to be a certified trainer to run a club?</summary><p>For 1:1 coaching with prescriptions, certification matters and many countries require it. A club is different: it is you sharing how you train and eat, members following programs and logging their own food, and a challenge on consistency. Most transformation creators run clubs without a certification; they say so openly and avoid medical claims.</p></details>
-        <details><summary>What percentage of followers convert to paying members?</summary><p>OnlyFans guidance says 1–1.5% of social followers. Patreon creators see 0.5–2.5% of total audience. Skool communities convert 2–5% of free members to paid. Fitness creators selling paid groups from a bio link are often at 0.05–0.3%. A reasonable planning number is 0.5%.</p></details>
+        <details open><summary>How much can a fitness coach make from a paid community?</summary><p>It depends on audience size and how the club is sold. At 0.5% of followers paying $19/month, a 50K account is about 250 members and $4,750/month recurring; at 1% it doubles. Creators who sell only from a bio link sit at the bottom of that range; a link sent in a conversation, and a challenge with a start date, push it up.</p></details>
+        <details><summary>What percentage of followers convert to paying members?</summary><p>A small one. The most successful fitness creator business ever built reached 2.8% of its Instagram following after a decade &mdash; that is the ceiling, not the norm. A reasonable number to plan with is 0.5%, and where you sell matters more than the price you pick.</p></details>
         <details><summary>Is a club better than selling a one-time program?</summary><p>A one-time program earns once per person. A club earns every month and is where people actually do the work. Many creators keep the program as the front door and move the ongoing part (tracking, accountability, check-ins) into the club. On Sage, programs live inside the club as included content or one-time unlocks.</p></details>
-        <details><summary>What does Sage cost a coach?</summary><p>Nothing to launch or run. Our first 100 founding creators keep 95% of what they earn, after payment fees, for life; Sage keeps 5%. There is no setup fee and no monthly fee.</p></details>
-        <details><summary>How is this different from Skool, Patreon or Trainerize?</summary><p>Skool and Patreon are communities or memberships where the coach cannot see what members eat or weigh; you coach blind, and Skool costs $99/month. Trainerize is a coaching tool paid per client with no audience or community layer. Sage combines a consumer fitness app (members log meals from a photo) with your club, 1:1 and payments, so you see real data and pay nothing until you earn.</p></details>
-        <details><summary>How do members pay, and how do I get paid?</summary><p>Members pay inside the app with a card, Apple Pay or Google Pay. Sage handles recurring billing, invoices and refunds. Your share is paid to your bank every Monday through Stripe, with a self-billing invoice generated for each payout.</p></details>
+        <details><summary>What makes a club inside a fitness app different?</summary><p>A general community tool gives you a feed: your members are names and posts. A per-client coaching tool gives you programming, but no audience and no community. Sage is a fitness app people already use every day &mdash; they log their meals from a photo, their training and their weigh-ins &mdash; and your club lives inside it: your programs, your channels, and challenges scored on kg lost and percentage of bodyweight. In 1:1, when a client turns sharing on, you see their food and weight day by day. You pay nothing until you earn.</p></details>
+        <p class="note" style="margin-top:14px">Everything else a creator asks &mdash; how the 95% is calculated, whether you get your members&rsquo; email addresses, what happens if you leave, what is expected of you &mdash; is answered in the <a href="/become-a-coach/faq"><b>creator FAQ</b></a>, with the clause each answer comes from.</p>
       </section>
 
       <div class="cta" id="apply">
@@ -253,7 +319,7 @@ const HTML = `
   </div>
 </div>
 
-<div class="foot"><div class="wrap">Sage Academy · Friday Technologies SRL · Every figure on this page links to a public source. Projections are estimates, not promises. · <a href="/become-a-coach">Launch on Sage</a> · <a href="/become-a-coach/guide">Creator Guide</a></div></div>
+<div class="foot"><div class="wrap">Sage Academy · Friday Technologies SRL · Projections are estimates, not promises. · <a href="/become-a-coach">Launch on Sage</a> · <a href="/become-a-coach/guide">Creator Guide</a></div></div>
 `;
 
 const FAQ_JSONLD = {
@@ -265,7 +331,7 @@ const FAQ_JSONLD = {
       name: "How much can a fitness coach make from a paid community?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Using public benchmarks (0.5% of followers paying, $19/month), a 50K account is about 250 members and $4,750/month recurring; at 1% it doubles. Fitness creators selling only from a bio link typically see 0.05–0.3%.",
+        text: "At 0.5% of followers paying $19/month, a 50K account is about 250 members and $4,750/month recurring; at 1% it doubles. Creators who sell only from a bio link sit at the bottom of that range.",
       },
     },
     {
@@ -273,23 +339,15 @@ const FAQ_JSONLD = {
       name: "What percentage of followers convert to paying members?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OnlyFans guidance says 1–1.5% of social followers. Patreon creators see 0.5–2.5% of total audience. Skool converts 2–5% of free members. Fitness creators selling from a bio link are often at 0.05–0.3%. A reasonable planning number is 0.5%.",
+        text: "A small one. The most successful fitness creator business ever built reached 2.8% of its Instagram following after a decade — that is the ceiling, not the norm. A reasonable number to plan with is 0.5%, and where you sell matters more than the price you pick.",
       },
     },
     {
       "@type": "Question",
-      name: "What does Sage cost a coach?",
+      name: "What makes a club inside a fitness app different?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nothing to launch or run. The first 100 founding creators keep 95% of what they earn, after payment fees, for life; Sage keeps 5%. No setup fee, no monthly fee.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How is Sage different from Skool, Patreon or Trainerize?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Skool and Patreon are communities where the coach cannot see members' food or weight; Trainerize is a per-client coaching tool without an audience layer. Sage combines a consumer fitness app (members log meals from a photo) with the coach's club, 1:1 and payments, so the coach sees real data and pays nothing until they earn.",
+        text: "A general community tool gives the coach a feed where members are names and posts; a per-client coaching tool gives programming but no audience. Sage is a fitness app people use daily, logging meals from a photo, training and weigh-ins, and the coach's club lives inside it, with challenges scored on kg lost and percentage of bodyweight. In 1:1, when the client turns sharing on, the coach sees their food and weight day by day. The coach pays nothing until they earn.",
       },
     },
   ],
@@ -300,7 +358,7 @@ const ARTICLE_JSONLD = {
   "@type": "Article",
   headline: "How fitness coaches and creators monetize their audience in 2026",
   datePublished: "2026-09-08",
-  dateModified: "2026-09-08",
+  dateModified: "2026-09-28",
   author: { "@type": "Organization", name: "Sage Academy" },
   publisher: { "@type": "Organization", name: "Friday Technologies SRL" },
   mainEntityOfPage: "https://www.sageacademy.app/become-a-coach/monetize",
@@ -309,7 +367,7 @@ const ARTICLE_JSONLD = {
     name: "Sage Academy",
     applicationCategory: "HealthApplication",
     operatingSystem: "iOS, Android",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Free for coaches to launch; founding creators keep 95% of their earnings for life." },
+    offers: { "@type": "Offer", price: "7.99", priceCurrency: "USD", description: "Sage Premium is $7.99 a month, or $4.99 for members who join through a creator. Free for coaches to launch; founding creators keep 95% of their earnings after payment fees." },
   },
 };
 

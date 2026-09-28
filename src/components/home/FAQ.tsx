@@ -49,7 +49,7 @@ const faqs = [
   {
     question: "I'm a coach — can I offer my services on Sage?",
     answer:
-      "Yes. Coaches, nutritionists and trainers can launch their programs on Sage, and our first 100 founding creators keep 95% for life — while we handle payments, currency conversion, taxes and invoices. Every creator is reviewed by hand. Head to the \"Launch on Sage\" page to apply.",
+      "Yes. Coaches, nutritionists and trainers can launch their programs on Sage, and our first 100 founding creators keep 95% — while we handle payments, currency conversion, taxes and invoices. Every creator is reviewed by hand. Head to the \"Launch on Sage\" page to apply.",
   },
   {
     question: "Is Sage a replacement for a dietitian?",

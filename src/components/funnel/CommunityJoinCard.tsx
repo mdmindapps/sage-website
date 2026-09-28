@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 
-// Display-only Premium prices (the real charge comes from Stripe). DEV values — update the
-// monthly to the prod price ($12.99) at cutover; annual ($39.99) matches prod.
+// Display-only Premium prices; the real charge comes from Stripe. These ARE the live prices:
+// $4.99/mo and $39.99/yr through a creator page. ($12.99 was our first monthly price, dropped
+// because it did not convert — it is gone, do not reinstate it from an old comment.)
 const PREMIUM = { monthly: "$4.99", yearly: "$39.99" } as const;
 
 type Plan = "monthly" | "yearly";
@@ -92,7 +93,7 @@ export default function CommunityJoinCard({
       <p className="mt-2.5 text-xs leading-relaxed text-subtle">
         {effPlan === "yearly"
           ? "Both billed once for the year — the community and the app. Cancel either anytime."
-          : "The community lives in Sage — two separate subscriptions, cancel either anytime."}
+          : "The community lives in Sage — two separate subscriptions. Cancel the community anytime; the app subscription keeps the app."}
       </p>
       <Link
         href={`/join/${handle}/${slug}?plan=${effPlan}`}

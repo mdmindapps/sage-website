@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How Fitness Coaches Monetize Their Audience (2026, With Numbers)",
+  title: "How Fitness Coaches Monetize Their Audience (2026)",
   description:
-    "Six ways fitness coaches and creators turn followers into income — brand codes, 1:1, courses, Patreon, Skool, a custom app, or a club inside a fitness app — with costs, platform cuts and the real follower-to-paid conversion rates, sourced.",
+    "The six ways a fitness coach earns on Sage — a monthly club, a yearly plan, one-to-one coaching, programs sold on their own, challenges and tips — with what it costs to run and what to expect at your audience size.",
   keywords: [
     "how to monetize fitness audience",
     "fitness coach monetization",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How fitness coaches monetize their audience in 2026",
     description:
-      "Six options compared, what % of followers actually pay, and the math on a 5K–250K audience. Every number sourced.",
+      "The six ways money reaches a coach on Sage, how many followers actually buy, and what that is worth on a 5K–250K audience.",
     url: "https://www.sageacademy.app/become-a-coach/monetize",
     type: "article",
   },

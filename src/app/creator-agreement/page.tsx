@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     "The terms under which creators offer coaching and communities on Sage and get paid.",
 };
 
-const LAST_UPDATED = "September 23, 2026";
-const VERSION = "1.3";
+const LAST_UPDATED = "September 28, 2026";
+const VERSION = "1.4";
 // Flip to false at go-live (after the accountant has reviewed the tax clauses).
 const DRAFT = false;
 
@@ -93,11 +93,7 @@ export default function CreatorAgreementPage() {
           </p>
 
           <LegalSection title="Preamble">
-            <p>This version of the Creator Agreement is offered to Sage&apos;s first 100 creators, the <strong>Founding Creators</strong>. When you accept it, Sage records the version number, the date and the exact text you accepted, and that record is what governs your account. Later versions of this Agreement, offered to creators who join after the founding group, carry different fees and different benefits, and they do not change the terms you accepted here.</p>
-          </LegalSection>
-
-          <LegalSection title="Preamble">
-            <p>This version of the Creator Agreement is offered to Sage&apos;s first 100 creators, the <strong>Founding Creators</strong>. When you accept it, Sage records the version number, the date and the exact text you accepted, and that record is what governs your account. Later versions of this Agreement, offered to creators who join after the founding group, carry different fees and different benefits, and they do not change the terms you accepted here.</p>
+            <p>This version of the Creator Agreement is offered to Sage&apos;s first 100 creators, the <strong>Founding Creators</strong>. When you accept it, Sage records the version number, the date and the exact text you accepted, and keeps that record for as long as your account exists.</p>
           </LegalSection>
 
           <LegalSection title="1. Definitions">
@@ -111,7 +107,7 @@ export default function CreatorAgreementPage() {
               <li><strong>Net Revenue</strong> &mdash; Sales Revenue minus Payment Costs.</li>
               <li><strong>Founding Creator</strong> &mdash; one of the first 100 creators approved on the Platform, who accepted this version of the Agreement.</li>
               <li><strong>Creator Earnings</strong> &mdash; your share, as defined in Section 6.</li>
-              <li><strong>Sage Premium</strong> &mdash; Sage&apos;s own subscription to the app itself, which every member pays for separately, in addition to the price of your Offer. It gives the member the app and the AI that powers it. Sage Premium is Sage&apos;s product and Sage&apos;s revenue: it is not part of Sales Revenue or Net Revenue, and no Creator Earnings arise from it.</li>
+              <li><strong>Sage Premium</strong> &mdash; Sage&apos;s own subscription to the Sage app, sold by Sage to any user on its own terms, with or without a Creator, at Sage&apos;s published standalone price. Members who subscribe through a Creator receive it at a reduced price; a member who already holds Sage Premium is not charged again when joining your Offer, and keeps it if they leave. It is a separate contract between Sage and that member, for a separate product. Sage Premium is Sage&apos;s product and Sage&apos;s revenue: it is not part of Sales Revenue or Net Revenue, no Creator Earnings arise from it, and nothing is deducted from your side for it.</li>
             </ul>
           </LegalSection>
 
@@ -122,7 +118,7 @@ export default function CreatorAgreementPage() {
               <li>You must complete payment onboarding and identity verification (KYC) through our payments provider, Stripe, including Stripe&apos;s Connected Account Agreement. We may not pay you until this is complete.</li>
               <li>Creator accounts are subject to <strong>review and approval by Sage</strong>. We may approve, decline, suspend or remove any Creator or Offer at our discretion.</li>
               <li>One Creator account per person or entity, unless we agree otherwise in writing.</li>
-              <li><strong>Founding Creator status.</strong> Founding Creator status is granted when Sage approves your creator account, to the first 100 approved creators, and it is the reason you were offered this version of the Agreement. We confirm it in writing when we approve you. It stays with your account for as long as the account remains active and in good standing, and it does not change if Sage later changes its standard fees for new creators. It may be withdrawn only if we terminate your account for a serious breach of this Agreement.</li>
+              <li><strong>Founding Creator status.</strong> Founding Creator status is granted when Sage approves your creator account, to the first 100 approved creators, and it is the reason you were offered this version of the Agreement. We confirm it in writing when we approve you.</li>
             </ul>
           </LegalSection>
 
@@ -135,7 +131,7 @@ export default function CreatorAgreementPage() {
               <li>You decide what Offers to publish and set their price within the ranges the Platform allows.</li>
               <li>You are solely responsible for delivering the coaching, community and other services you promise to Subscribers, to a professional standard and in line with your published description.</li>
               <li>You are responsible for the accuracy, legality and safety of your Content, including any fitness, nutrition or health guidance. You will include appropriate disclaimers and will not provide medical advice unless you are qualified and licensed to do so.</li>
-              <li>You will comply with the Sage Community Guidelines and the prohibited-content rules in Section 11.</li>
+              <li>You will comply with the <a href="/community-guidelines" className="underline">Sage Community Guidelines</a> and the prohibited-content rules in Section 11.</li>
             </ul>
           </LegalSection>
 
@@ -146,8 +142,7 @@ export default function CreatorAgreementPage() {
           <LegalSection title="6. Fees, pricing &amp; payment">
             <p><strong>Sage is the Merchant of Record.</strong> Sage sells access to your Offers to Subscribers in its own name, collects payment, and is responsible for charging and remitting the consumer sales tax/VAT due on those sales. Your relationship for tax purposes is with Sage, not with the individual Subscriber.</p>
             <ul>
-              <li><strong>Founding Creators.</strong> As a Founding Creator you receive <strong>Creator Earnings of 95%</strong> of Net Revenue and Sage retains a platform fee of <strong>5%</strong> of Net Revenue, for as long as your creator account remains active and in good standing. This applies to <strong>every Subscriber</strong>, including Subscribers who find you through Sage&apos;s own discovery feed, in-app search or advertising paid for by Sage. Payment Costs are deducted before the split, so both shares carry them in proportion.</li>
-              <li><strong>All other creators.</strong> Sage retains a platform fee of <strong>20%</strong> of Sales Revenue and they receive <strong>Creator Earnings of 80%</strong> of Sales Revenue; Sage bears the Payment Costs out of its fee.</li>
+              <li><strong>Creator Earnings.</strong> You receive <strong>95%</strong> of Net Revenue and Sage retains a platform fee of <strong>5%</strong> of Net Revenue. This applies to <strong>every Subscriber</strong>, including Subscribers who find you through Sage&apos;s own discovery feed, in-app search or advertising paid for by Sage. Payment Costs are deducted before the split, so both shares carry them in proportion.</li>
               <li><strong>What your members pay.</strong> A member who joins your club pays two separate things: the price you set for your Offer, which is what your Creator Earnings are calculated from, and Sage Premium, which gives them the app and the AI that powers it. Sage Premium belongs to Sage. You earn nothing from it, and nothing is deducted from your side for it. You are free to set and change the price of your own Offer at any time.</li>
               <li><strong>Taxes.</strong> Consumption taxes charged to Subscribers on the sale of your Offer, such as VAT in the EU and the UK, sales tax in the United States and GST elsewhere, are added on top of your price at checkout. They are never part of Sales Revenue or Net Revenue, and no part of them is yours: Sage collects them and pays them to the tax authority of the Subscriber&apos;s country.</li>
               <li><strong>Payouts.</strong> Where Stripe Connect is available in your country, Creator Earnings are paid to you through Stripe Connect <strong>every Monday</strong>, covering every sale whose funds have cleared with our payment provider by then &mdash; typically 2–7 days from the sale, depending on your country and the payment method. Payment is made in your Stripe settlement currency; any payout-side currency conversion is applied by Stripe at its own rates.</li>
@@ -169,17 +164,19 @@ export default function CreatorAgreementPage() {
           <LegalSection title="8. Where creators are treated differently">
             <p>Sage treats some creators differently from others, and this section sets out how:</p>
             <ul>
-              <li><strong>Fees.</strong> Founding Creators keep 95% of Net Revenue. All other creators keep 80% of Sales Revenue.</li>
+              <li><strong>Fees.</strong> Founding Creators keep 95% of Net Revenue. All other creators keep 80% of Sales Revenue. <strong>Your Founding Creator rate stays with your account for as long as it remains active and in good standing, and does not change if Sage later changes its fees for new creators.</strong></li>
               <li><strong>Sage&apos;s own products.</strong> Sage may promote its own products, such as Sage Premium, inside the app, including in places where creator Offers appear.</li>
               <li><strong>Promotion.</strong> Sage may feature individual creators in its own marketing, newsletters or social channels at its discretion and at no charge, with no obligation to feature all creators equally.</li>
             </ul>
             <p>Sage does not give any creator access to data about another creator&apos;s Subscribers, and does not use one creator&apos;s data to give another creator an advantage.</p>
           </LegalSection>
 
-          <LegalSection title="9. The data you can access">
-            <p><strong>While this Agreement is in force</strong>, you can see inside Sage: the list of your members and when they joined; the messages posted in your channels; the results of challenges you run; your revenue, payouts and refunds; and, for 1:1 clients only and only where that client has explicitly agreed to share it, their meals, weigh-ins and progress.</p>
-            <p><strong>What you cannot access.</strong> You do not receive Subscribers&apos; payment details, email addresses or other contact details, or any data about users who are not your members. You may not export, copy, sell or reuse member data outside Sage, and you may not contact members outside Sage using data obtained through Sage, unless the member gave you their details directly and freely.</p>
-            <p><strong>After this Agreement ends.</strong> You keep your own Content. Member data belongs to the members and to Sage as the party they contracted with, and it is not exported to you. Sage keeps transaction records for as long as tax and accounting law requires.</p>
+          <LegalSection title="9. Subscriber data">
+            <p><strong>What you receive.</strong> While this Agreement is in force you have access, through the Platform, to the following, and you can export it: your Subscribers and the date each joined; the name and email address of each Subscriber; what each Subscriber purchased, when, and the amounts they have paid; the messages posted in your channels; the results of challenges you run; and your revenue, payouts and refunds. For 1:1 clients only, and only where that client has enabled sharing, you also see their meals, weigh-ins and progress.</p>
+            <p><strong>What you do not receive.</strong> Payment or card details. Any Subscriber&apos;s weigh-ins, meals, habits, progress photos or conversations with Sage, except as set out above. Any data concerning users who are not your Subscribers, or concerning another creator&apos;s Subscribers.</p>
+            <p><strong>Your responsibility.</strong> You are the controller of the Subscriber contact details you receive and are responsible for complying with applicable data-protection law in respect of them. You will: use them only in connection with your own Offers; include a functioning unsubscribe mechanism in every marketing communication and give effect to opt-outs without delay; respond to a Subscriber&apos;s access, correction or deletion request; keep the data secure; and maintain your own privacy notice where required. You will not sell, rent, license or otherwise disclose Subscriber contact details to any third party.</p>
+            <p><strong>Indemnity.</strong> You indemnify Sage under Section 15 against any claim, penalty, fine or loss arising from your use of Subscriber data.</p>
+            <p><strong>After this Agreement ends.</strong> You retain the Subscriber contact details you received, subject to the obligations in this Section. Sage retains transaction records for the period required by tax and accounting law.</p>
           </LegalSection>
 
           <LegalSection title="10. Self-billing (invoicing on your behalf)">
@@ -209,7 +206,7 @@ export default function CreatorAgreementPage() {
               <li><strong>If we restrict or suspend your account.</strong> We will give you the reasons, in a form you can keep, at the latest when the restriction or suspension takes effect, and tell you what you can do about it.</li>
               <li><strong>If we end this Agreement.</strong> We will give you <strong>at least 30 days&apos; notice</strong>, with the reasons, in a form you can keep. During that period your existing Subscribers keep their access and your Creator Earnings continue to be paid.</li>
               <li><strong>Immediate exception.</strong> We may suspend or terminate immediately, giving reasons as soon as possible, where you have repeatedly breached this Agreement, where we are required to by law or by our payment providers, or where keeping your Offers live would expose users, Sage or third parties to immediate harm, for example fraud, illegal content, or content that puts someone&apos;s health at risk.</li>
-              <li>On termination, active Subscriptions are handled as set out on the Platform. Earned but unpaid Creator Earnings are paid out on the normal weekly cycle, subject to any offsets.</li>
+              <li>On termination, active Subscriptions are handled as set out on the Platform. Sage does not transfer or reassign your Subscribers to another creator. Earned but unpaid Creator Earnings are paid out on the normal weekly cycle, subject to any offsets.</li>
               <li>Sections that by their nature should survive (IP warranties, fees owed, taxes, indemnity, liability, governing law) survive termination.</li>
             </ul>
           </LegalSection>
@@ -226,14 +223,14 @@ export default function CreatorAgreementPage() {
             <p>You will not publish or deliver Content that is illegal, sexually explicit, hateful, harassing, dangerous, misleading, or that promotes disordered eating, unsafe practices or unlicensed medical claims; that infringes intellectual property; or that violates the Sage Community Guidelines or the rules of Apple&apos;s App Store or Google Play. You will not use the Platform to defraud users.</p>
             <ul>
               <li><strong>Health and safety.</strong> You will not diagnose, treat or claim to cure any medical condition, prescribe or recommend prescription medication, or promise specific medical results. You will not promote extreme calorie restriction, rapid weight-loss claims, fasting protocols for minors, or content that encourages disordered eating. Your Offers must carry a clear notice that your content is for general fitness and nutrition purposes, is not medical advice, and that members should consult a doctor before starting, especially if they are pregnant, recovering from illness or injury, or have a medical condition. Your Offers are for adults; you will not knowingly coach anyone under 18.</li>
-              <li><strong>No circumvention.</strong> You will not (a) direct, encourage or solicit Subscribers to buy your Content or transact with you outside the Platform in order to avoid Sage&apos;s fees; (b) advertise, link to, or name competing platforms inside the Platform or to Subscribers you reached through it; or (c) use Subscriber contact details obtained through the Platform to take that relationship off-Platform. Deliberate or repeated circumvention is a material breach and may lead to suspension, termination, and withholding of the affected earnings.</li>
+              <li><strong>No circumvention.</strong> Inside the Platform, you will not (a) direct or encourage Subscribers to buy, outside the Platform, an Offer you are at the same time selling on the Platform, in order to avoid Sage&apos;s fees, or (b) advertise, link to, or name a competing platform. <strong>Your other products are your own business.</strong> If you sell programs, guides or anything else from your own shop or your own site, you may keep selling them and you may tell your members about them; this Section is about the Offers you sell here, not about everything you sell. What you do with your own contact list outside the Platform is likewise your own business. Deliberate or repeated circumvention is a material breach and may lead to suspension, termination, and withholding of the affected earnings.</li>
             </ul>
           </LegalSection>
 
           <LegalSection title="14b. What Sage does not promise, and what you must keep doing">
             <ul>
               <li><strong>No guarantee of income, traffic or visibility.</strong> Sage does not promise you any number of Subscribers, any level of earnings, any position in the discovery feed, or any promotion. Anything we show you as an example or an estimate is illustrative, not a forecast.</li>
-              <li><strong>We can change the product.</strong> Sage may add, change, price, or remove features, including the discovery feed, the price of Sage Premium and the tools available to creators. We will not reduce the revenue share that applies to you without the notice set out in Section 18.</li>
+              <li><strong>We can change the product.</strong> Sage may add, change, price, or remove features, including the discovery feed and the tools available to creators. Your Creator Earnings share is set in Section 8.</li>
               <li><strong>Keep your Offer alive.</strong> If you sell a subscription, members expect you to be there. You will respond to member messages within a reasonable time and keep your Offer&apos;s content and channels active.</li>
               <li><strong>Inactive or abandoned Offers.</strong> If you stop delivering what you promised, for example by not posting and not answering members for 30 days, we may pause new sales, tell your members, refund or cancel active subscriptions, and remove the Offer. Where we refund members because you stopped delivering, the refunded Creator Earnings are recovered from you in the usual way.</li>
               <li><strong>Quality and removal from discovery.</strong> We may remove an Offer from the discovery feed, or decline to feature it, where it is incomplete, inactive, receives repeated member complaints, or does not meet the standards in this Agreement. This does not affect your existing Subscribers.</li>
@@ -248,14 +245,14 @@ export default function CreatorAgreementPage() {
           </LegalSection>
 
           <LegalSection title="16. Limitation of liability">
-            <p>To the maximum extent permitted by law, Sage is not liable for indirect or consequential losses, or for lost profits or lost earnings. Sage&apos;s total liability to you under this Agreement is limited to the total platform fees Sage retained from your sales in the three (3) months before the event giving rise to the claim.</p>
+            <p>To the maximum extent permitted by law, Sage is not liable for indirect or consequential losses, or for lost profits or lost earnings. Sage&apos;s total liability to you under this Agreement is limited to <strong>the greater of $500 and</strong> the total platform fees Sage retained from your sales in the three (3) months before the event giving rise to the claim.</p>
             <ul>
               <li>Nothing in this Agreement limits or excludes liability for death or personal injury caused by negligence, for fraud or fraudulent misrepresentation, or for anything else that cannot be limited or excluded by law.</li>
             </ul>
           </LegalSection>
 
           <LegalSection title="17. Data protection">
-            <p>Each party will comply with applicable data-protection law (including the GDPR) when handling personal data. Sage processes Subscriber and Creator data in line with the Sage Privacy Policy. You will only use Subscriber personal data made available to you to deliver your Offers, and not for unrelated marketing without a lawful basis.</p>
+            <p>Each party will comply with applicable data-protection law, including the GDPR, in handling personal data. Sage processes Subscriber and Creator data in accordance with the Sage Privacy Policy. Your obligations in respect of Subscriber contact details are set out in Section 9.</p>
           </LegalSection>
 
           <LegalSection title="18. Changes to this Agreement">
