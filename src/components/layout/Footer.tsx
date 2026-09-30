@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SageLogo from "@/components/ui/SageLogo";
+import { founders } from "@/lib/founders";
 
 const footerLinks = {
   Product: [
@@ -37,6 +38,32 @@ export default function Footer() {
               Sage Academy — your AI fitness coach. Track meals from a photo,
               chat with Sage, and build habits that stick. By Friday Technologies SRL.
             </p>
+
+            <p className="mt-8 text-[11px] font-semibold uppercase tracking-wider text-white/35">
+              Founders
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-7 gap-y-3">
+              {founders.map((f) => (
+                <a
+                  key={f.name}
+                  href={f.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2.5"
+                >
+                  <img
+                    src={f.photo}
+                    alt={f.name}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded-full object-cover ring-1 ring-white/15 transition group-hover:ring-white/40"
+                  />
+                  <span className="text-sm text-white/55 transition group-hover:text-white">
+                    {f.name}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Links */}
