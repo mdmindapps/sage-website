@@ -14,22 +14,26 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  // The title used to lead on "AI fitness coach". Google Ads data puts that at ~390 US searches a
+  // month, against 74,000 for "calorie counter app"; Google Trends returns no related queries for it
+  // at all. So the title spends its weight on what people actually type, and on the photo, which is
+  // the part of the tracking that is ours.
   title: {
-    default: "Sage Academy — AI Fitness Coach App",
+    default: "Calorie Counter App — Snap a Photo | Sage Academy",
     template: "%s | Sage Academy",
   },
   description:
-    "Sage Academy is the AI fitness coach app: snap a photo of your meal, chat with your coach, build habits that stick. On the App Store and Google Play.",
+    "Snap a photo of your plate and Sage works out the calories and macros. Track what you burn, follow your weight, and work with a real coach in the same app.",
   keywords: [
     "Sage Academy",
     "Sage Academy app",
-    "AI fitness coach",
+    "calorie counter app",
     "calorie tracker",
-    "meal photo logging",
-    "diet app",
-    "fitness app",
-    "healthy habits",
-    "food tracking",
+    "calorie tracking app",
+    "food scanner app",
+    "macro tracker app",
+    "photo calorie tracker",
+    "online fitness coach",
   ],
   authors: [{ name: "Friday Technologies SRL" }],
   creator: "Friday Technologies SRL",
@@ -40,23 +44,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.sageacademy.app",
     siteName: "Sage Academy",
-    title: "Sage Academy — AI Fitness Coach App",
+    title: "Calorie Counter App — Snap a Photo | Sage Academy",
     description:
-      "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
+      "Snap a photo of your plate and Sage works out the calories and macros. Track what you burn, follow your weight, and work with a real coach in the same app.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Sage Academy — AI Fitness Coach App",
+        alt: "Sage Academy — snap a photo of your meal and it counts the calories",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sage Academy — AI Fitness Coach App",
+    title: "Calorie Counter App — Snap a Photo | Sage Academy",
     description:
-      "Snap a photo of your meal. Chat with your AI fitness coach. Build habits that stick.",
+      "Snap a photo of your plate and Sage works out the calories and macros. Track what you burn, follow your weight, and work with a real coach in the same app.",
     images: ["/og-image.png"],
   },
   verification: {
