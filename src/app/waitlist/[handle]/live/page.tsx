@@ -89,17 +89,40 @@ export default async function LiveList({
           Only you have this link. Nobody else can see these names.
         </p>
 
-        {/* The number is the page. */}
+        {/* The number is the page. Before she has posted, the number is zero and saying "that's $0
+            a month" is the first thing she would ever read here — so at zero the card stops
+            reporting and tells her the one thing that changes it. */}
         <div className="mt-8 bg-ink text-white rounded-3xl p-8 md:p-10">
-          <p className="text-6xl md:text-7xl font-bold leading-none" style={{ letterSpacing: "-0.03em" }}>
-            {total}
-          </p>
-          <p className="text-white/70 mt-3 text-lg">people waiting for you to open the doors</p>
-          {/* The ceiling, not a forecast. A conversion rate here would be a number we invented. */}
-          <p className="text-white/45 text-sm mt-5 max-w-lg leading-relaxed">
-            That&apos;s <b className="text-white/80">${(total * firstNum).toLocaleString("en-US", { maximumFractionDigits: 0 })}</b> a month if
-            they all join at {first}. Every post you make moves this number.
-          </p>
+          {total === 0 ? (
+            <>
+              <p className="text-4xl md:text-5xl font-bold leading-tight" style={{ letterSpacing: "-0.03em" }}>
+                Nothing yet
+              </p>
+              <p className="text-white/70 mt-3 text-lg">
+                This fills up the moment you post your page.
+              </p>
+              <p className="text-white/45 text-sm mt-5 max-w-lg leading-relaxed">
+                Your page is live at{" "}
+                <b className="text-white/80">sageacademy.app/waitlist/{handle}</b>. Come back here
+                after you post it.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-6xl md:text-7xl font-bold leading-none" style={{ letterSpacing: "-0.03em" }}>
+                {total}
+              </p>
+              <p className="text-white/70 mt-3 text-lg">people waiting for you to open the doors</p>
+              {/* The ceiling, not a forecast. A conversion rate here would be a number we invented. */}
+              <p className="text-white/45 text-sm mt-5 max-w-lg leading-relaxed">
+                That&apos;s{" "}
+                <b className="text-white/80">
+                  ${(total * firstNum).toLocaleString("en-US", { maximumFractionDigits: 0 })}
+                </b>{" "}
+                a month if they all join at {first}. Every post you make moves this number.
+              </p>
+            </>
+          )}
           {/* Sits with the number, not with the list: it answers "and if I never open the club?" at
               the moment she is looking at what the list is worth. */}
           <p className="text-white/45 text-sm mt-3 max-w-lg leading-relaxed">
@@ -107,8 +130,9 @@ export default async function LiveList({
           </p>
         </div>
 
-        {/* The list itself, masked. */}
-        <div className="mt-12">
+        {/* The list itself, masked. Hidden while empty: an empty table and a button that downloads
+            a file with no addresses in it are worse than not showing the section at all. */}
+        <div className={`mt-12 ${total === 0 ? "hidden" : ""}`}>
           {/* Stacked on a phone: side by side, both the heading and the button broke onto two lines. */}
           <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 mb-4">
             <h2 className="text-lg font-bold text-ink" style={{ letterSpacing: "-0.01em" }}>
