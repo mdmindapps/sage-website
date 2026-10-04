@@ -1,0 +1,56 @@
+{
+  "handle": "bella",
+  "name": "Bella",
+  "photo": "/images/waitlist/bella.jpg",
+  "photoAlt": "Bella",
+  "headline": "How I actually eat and train.",
+  "subhead": "My week, written out — what I eat, what I train, and me in the chat while you do it.",
+  "inside": [
+    {
+      "title": "The way I eat",
+      "text": "What's on my plate on a normal day, what's always in my kitchen, and what I change when I want to lean out.\nPlus the shopping list, so you're not standing in the aisle guessing.",
+      "pending": true,
+      "group": "What I'll show you"
+    },
+    {
+      "title": "My training week",
+      "text": "Every session I do, in order, with the sets and the reps.\nThere's a version for the gym and one for the days you're stuck at home.",
+      "group": "What I'll show you"
+    },
+    {
+      "title": "The group chat, and I'm in it",
+      "text": "Ask me anything.\nWhat to eat before a morning session, why the scale went up this week, whether to train through a sore shoulder.",
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "Live Q&A with me",
+      "text": "Bring the questions you're actually dealing with.\nOn camera, no script — just me answering what the club wants to know.",
+      "pending": true,
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "Challenges we start together",
+      "text": "Everyone begins on the same day, and there's a leaderboard.\nIt's a lot harder to quit in week two when everyone else is still going.",
+      "group": "Everyone else in there"
+    },
+    {
+      "title": "The week you fall off",
+      "text": "Because it happens to everyone, and it's the week most people quit for good.\nThere's a place for exactly that, and I'm in it.",
+      "group": "Everyone else in there"
+    },
+    {
+      "title": "Everyone else doing it with you",
+      "text": "People on the same journey as you, posting what's working and what isn't.\nYou can post, chat and connect with any of them.",
+      "group": "Everyone else in there"
+    }
+  ],
+  "lockedLine": "Whatever you join at is what you pay for as long as you stay. It goes up for the people who come later, not for you.",
+  "instagram": "isabella_grae",
+  "clubName": "Bella's Fitness Club",
+  "price": {
+    "founding": "$24.99",
+    "regular": "$39.99",
+    "windowHours": 48
+  },
+  "badge": "Opening soon"
+}

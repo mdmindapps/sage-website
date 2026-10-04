@@ -31,7 +31,16 @@ function Icon({ name }: { name: (typeof ITEMS)[number]["icon"] }) {
   );
 }
 
-export default function SageAppBlock({ offer }: { offer: "club" | "coaching" }) {
+export default function SageAppBlock({
+  offer,
+  intro,
+}: {
+  offer: "club" | "coaching";
+  /** Optional lead-in under the heading. The four rows say what it does; this says what it is like
+   *  to use, for a reader who has never seen the app. The live creator pages pass nothing and are
+   *  unchanged. */
+  intro?: string;
+}) {
   return (
     <section className="mt-12 grid grid-cols-1 items-center gap-8 md:grid-cols-[300px_1fr] md:gap-12">
       <div className="relative mx-auto w-[300px]">
@@ -73,6 +82,12 @@ export default function SageAppBlock({ offer }: { offer: "club" | "coaching" }) 
         <h2 className="text-2xl font-extrabold leading-tight text-ink md:text-[28px]" style={{ letterSpacing: "-0.025em", textWrap: "balance" }}>
           Everything is tracked in the Sage app
         </h2>
+        {intro &&
+          intro.split("\n").map((line) => (
+            <p key={line} className="text-[15px] leading-relaxed text-muted">
+              {line}
+            </p>
+          ))}
         <ul className="flex flex-col gap-3.5">
           {ITEMS.map((it) => (
             <li key={it.title} className="flex items-start gap-3">

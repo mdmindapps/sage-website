@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
 
 const STANDALONE_ROUTES = [
+  "/waitlist",
   "/reset",
   "/delete-account",
   "/get",

@@ -172,6 +172,24 @@ export default function PrivacyPage() {
               Settings → Health → Data Access &amp; Devices → Sage, and on Android via the Health
               Connect app → App permissions → Sage.
             </p>
+
+            <h3>2.7 Waitlist Pages</h3>
+            <p>
+              A creator may run a waitlist page for a club that has not opened yet. If you leave your
+              email address there, we store that address, the creator&apos;s page you left it on, the
+              date and time, and your position on the list. We do not ask for anything else, and you do
+              not need a Sage account.
+            </p>
+            <p>
+              The legal basis is your consent, given when you submit the form. We use the address to
+              tell you when that creator opens their club, and to send you emails from Sage about the
+              app, other creators and our offers. Every marketing email carries an unsubscribe link, and
+              you can withdraw at any time there or by writing to{" "}
+              <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>.
+            </p>
+            <p>
+              We keep the address for as long as the list is in use, and until you ask us to remove it.
+            </p>
           </LegalSection>
 
           <LegalSection title="3. How We Use Your Information">
@@ -314,6 +332,11 @@ export default function PrivacyPage() {
               <strong> Account &rarr; Contact email</strong>. If you want a creator to delete your
               details, write to them directly, or to contact@sageacademy.app and we will pass the request
               on.
+            </p>
+            <p>
+              If you left your email on a creator&apos;s waitlist page, that creator receives the
+              address and the date you left it. For this they are an independent controller, on the
+              same terms as above.
             </p>
 
             <h3>4.3 Legal Requirements</h3>
