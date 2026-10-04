@@ -239,8 +239,10 @@ export default async function WaitlistPage({ params }: { params: Promise<{ handl
         ))}
       </section>
 
-      {/* The one place Sage appears, and it appears as something the member gets. */}
-      <section className="mt-16 md:mt-24">
+      {/* The one place Sage appears, and it appears as something the member gets.
+          The same container as every other section on this page: the block brings no width or
+          padding of its own — on the club pages it inherits them from the column it sits in. */}
+      <section className="max-w-[1100px] mx-auto px-5 md:px-8 mt-16 md:mt-24">
         <SageAppBlock
           offer="club"
           intro={"Take a photo of your plate and it works out the calories and macros on its own. Your steps come from your phone without you doing anything; a workout takes a couple of taps, or lands by itself if you wear a watch. Your weight and photos build up week by week.\nBy the end of it you can see whether what you did actually added up."}
