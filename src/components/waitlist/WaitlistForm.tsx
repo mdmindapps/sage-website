@@ -175,12 +175,14 @@ export default function WaitlistForm({ handle, name }: { handle: string; name: s
 
       {state === "error" && error && <p className="mt-3 text-sm text-danger">{error}</p>}
 
-      {/* Consent has to name every use, or the only one it covers is the launch email. The second
-          purpose is stated here because it is stated in the privacy policy, and the two have to match. */}
+      {/* Consent has to name every use, or the only one it covers is the launch email — so the
+          second purpose is here, but kept general. It used to read "about Sage and other creators",
+          which on a creator's own page tells her followers we will be emailing them about her
+          competitors. The privacy policy stays specific; a page may summarise, a policy may not. */}
       <p className="mt-4 text-xs text-subtle leading-relaxed">
         No payment now — this is a list, not a purchase. Your email goes to {name} and to Sage
-        (Friday Technologies SRL), who run the app, so we can tell you when the doors open and send
-        you the occasional email about Sage and other creators. Unsubscribe any time — see our{" "}
+        (Friday Technologies SRL), who run the app, so we can tell you when the doors open, plus the
+        occasional marketing email from Sage. Unsubscribe any time — see our{" "}
         <a href="/privacy" target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-ink">
           privacy policy
         </a>
