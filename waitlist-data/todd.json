@@ -27,6 +27,12 @@
       "group": "Me, in there with you"
     },
     {
+      "title": "Live Q&A with me",
+      "text": "Bring the questions you're actually sitting with.\nOn camera, no script — the same conversations I have on the podcast, except these ones are about your week.",
+      "pending": true,
+      "group": "Me, in there with you"
+    },
+    {
       "title": "Challenges we start together",
       "text": "Everyone begins on the same day, and there's a leaderboard.\nIt's a lot harder to quit in week two when everyone else is still going.",
       "group": "Me, in there with you"
