@@ -1,0 +1,49 @@
+{
+  "handle": "todd",
+  "name": "Todd",
+  "photo": "/images/waitlist/todd.jpg",
+  "photoAlt": "Todd Cave",
+  "headline": "Your mind is already sovereign.",
+  "subhead": "It's time your body caught up — the training, the food and the daily discipline, every month, with the others doing the same.",
+  "inside": [
+    {
+      "title": "Three sessions a week, built on compounds",
+      "text": "The lifts that give you the most back for the time you actually have, in the order I'd do them, with the circuit at the end that burns the fat.\nWritten for someone with a job and kids, not for someone who lives in a gym.",
+      "group": "The work itself"
+    },
+    {
+      "title": "Real food, built around what you already eat",
+      "text": "No bland chicken and rice, and nothing you enjoy taken away from you. Protein, carbs and fat set for testosterone, energy and longevity, not vanity.\nPlus the shopping list, so you're not standing in the aisle guessing.",
+      "group": "The work itself"
+    },
+    {
+      "title": "The daily protocols",
+      "text": "The habits that turn inconsistency into structure your body can't argue with.\nSmall enough to do on your worst day, which is the only reason they stick.",
+      "group": "The discipline"
+    },
+    {
+      "title": "The chat, and I'm in it",
+      "text": "Ask the things you'd otherwise keep to yourself. Whether to train through the sore shoulder, what to eat before a 6am session, why week three feels harder than week one.",
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "Challenges we start together",
+      "text": "Everyone begins on the same day, and there's a leaderboard.\nIt's a lot harder to quit in week two when everyone else is still going.",
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "People who've done the inner work too",
+      "text": "Not a gym full of strangers. People who've already changed their minds and are now changing the body to match.\nYou can post, ask and answer any of them.",
+      "group": "Everyone else in there"
+    }
+  ],
+  "lockedLine": "What you join at is what you pay for as long as you stay. It goes up for the people who come later, not for you.",
+  "instagram": "compoundbodytraining",
+  "clubName": "The Sovereign Body",
+  "price": {
+    "founding": "$29.99",
+    "regular": "$49.99",
+    "windowHours": 48
+  },
+  "badge": "Opening soon"
+}
