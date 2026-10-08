@@ -1,0 +1,54 @@
+{
+  "handle": "brianna",
+  "name": "Brianna",
+  "photo": "/images/waitlist/brianna.jpg",
+  "photoAlt": "Brianna",
+  "headline": "I didn't do it perfectly. I just kept showing up.",
+  "subhead": "Over 150 lbs down, and the question I get every single day is how I stayed consistent. This is me answering it every week, next to people starting exactly where you are.",
+  "inside": [
+    {
+      "title": "My training week, written out",
+      "text": "The same sessions I do, in the order I do them, with the sets and the reps.\nThere's an easier version of every week for when you're just starting, because I remember what week one felt like.",
+      "group": "What I'll show you"
+    },
+    {
+      "title": "What I eat, so Monday isn't a guess",
+      "text": "My meals and the staples that are always in my kitchen, written out so you're not rebuilding your whole diet every Sunday night.\nNothing on there that I don't actually eat myself.",
+      "group": "What I'll show you"
+    },
+    {
+      "title": "Everything I learned about loose skin",
+      "text": "It's the question I get more than any other, and it was my own biggest fear too.\nWhat I did about it, what actually helped, and what I wish someone had told me at the start.",
+      "group": "What I'll show you"
+    },
+    {
+      "title": "The chat, and I'm in it",
+      "text": "Post your wins, your bad days, and the questions you'd be embarrassed to ask anywhere else.\nSomeone always answers, and a lot of the time it's me.",
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "The week you fall off",
+      "text": "It happens to everyone, and it's the week most people quit for good. It's the week I nearly did.\nThere's a place for exactly that, and I'm in it.",
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "Challenges we start together",
+      "text": "Everyone begins on the same day, and the leaderboard counts both the pounds lost and the percent of your own bodyweight.\nSo someone starting at 300 and someone starting at 170 are both in it to win.",
+      "group": "Everyone else in there"
+    },
+    {
+      "title": "People who are starting where you are",
+      "text": "Not a feed full of people who already finished. People at the beginning of their own 150, posting what's working and what isn't.\nIt's a lot harder to quit in week two when they're all still going.",
+      "group": "Everyone else in there"
+    }
+  ],
+  "lockedLine": "Whatever you join at is what you pay for as long as you stay. It goes up for the people who come later, not for you.",
+  "instagram": "itsbrianna.sh",
+  "clubName": "The Consistency Club",
+  "price": {
+    "founding": "$24.99",
+    "regular": "$39.99",
+    "windowHours": 48
+  },
+  "badge": "Opening soon"
+}
