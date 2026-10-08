@@ -331,7 +331,7 @@ const HTML = `
   <footer class="foot"><div class="wrap">
     <p>The full Creator Agreement is at <a href="/creator-agreement">sageacademy.app/creator-agreement</a>.
     If something here and the agreement ever disagree, the agreement is what governs.</p>
-    <p>Anything not answered here: <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>.</p>
+    <p>Anything not answered here: <a href="/book">book thirty minutes</a> and ask me directly, or write to <a href="mailto:contact@sageacademy.app">contact@sageacademy.app</a>.</p>
     <p class="cta"><a class="btn big" href="/become-a-coach">Launch on Sage</a></p>
   </div></footer>`;
 

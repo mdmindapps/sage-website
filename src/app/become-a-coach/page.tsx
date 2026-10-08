@@ -157,6 +157,9 @@ const CSS = `
   .bcoach .ctacard .ceyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:700;margin:0 0 16px}
   .bcoach .ctacard h2{color:var(--ink);font-size:clamp(28px,4.4vw,42px);line-height:1.06;letter-spacing:-.025em;max-width:18ch;margin:0 auto}
   .bcoach .ctacard .csub{color:rgba(255,255,255,.85);font-size:17px;max-width:46ch;margin:16px auto 0;font-weight:500}
+  /* On the teal card an unstyled link renders browser-blue, which is unreadable there. */
+  .bcoach .ctacard .csub a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .bcoach .ctacard .csub a:hover{text-decoration-color:rgba(255,255,255,.5)}
   .bcoach .ctacard .stores{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
   .bcoach .ctacard .store{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 22px;background:var(--ink);color:#fff;border-radius:999px;text-decoration:none;transition:transform .18s ease}
   .bcoach .ctacard .store:hover{transform:scale(1.02)}
@@ -367,6 +370,7 @@ const HTML = `
           <span class="col"><span class="sm up">Get it on</span><span class="lg">Google Play</span></span>
         </a>
       </div>
+      <p class="csub" style="margin-top:26px">Or talk to me first &mdash; <a href="/book">book thirty minutes</a> and ask whatever you want.</p>
     </div>
   </div>
 </section>

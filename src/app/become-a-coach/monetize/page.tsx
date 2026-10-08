@@ -103,6 +103,10 @@ const CSS = `
   .cmon .cta{margin-top:44px;background:var(--ink);color:#fff;border-radius:22px;padding:clamp(26px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
   .cmon .cta h3{color:#fff;font-size:clamp(20px,2.6vw,26px);margin:0}
   .cmon .cta p{color:#B8C2CB;margin:6px 0 0;font-size:15px;max-width:52ch}
+  .cmon .ctabtns{display:flex;flex-wrap:wrap;gap:10px}
+  /* Secondary action on the dark card — the teal fill would read as a second primary. */
+  .cmon .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+  .cmon .btn.ghost:hover{background:rgba(255,255,255,.08)}
   .cmon .foot{border-top:1px solid var(--border);padding:26px 0 40px;font-size:13px;color:var(--subtle)}
   .cmon .foot a{color:var(--subtle)}
 `;
@@ -313,7 +317,10 @@ const HTML = `
 
       <div class="cta" id="apply">
         <div><h3>See what your page and your numbers would look like.</h3><p>Apply as a creator in the Sage Academy app, or send us your Instagram handle and we'll build a preview of your page with an income estimate for your audience, free.</p></div>
-        <a class="btn big" href="/become-a-coach#apply">Become a creator →</a>
+        <div class="ctabtns">
+          <a class="btn big" href="/become-a-coach#apply">Become a creator →</a>
+          <a class="btn big ghost" href="/book">Book a call</a>
+        </div>
       </div>
     </main>
   </div>
