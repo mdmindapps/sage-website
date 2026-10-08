@@ -1,0 +1,54 @@
+{
+  "handle": "robert",
+  "name": "Robert",
+  "photo": "/images/waitlist/robert.jpg",
+  "photoAlt": "Robert",
+  "headline": "I don't have talent. I'm just obsessed.",
+  "subhead": "The food I actually cook, the training I actually do, and me in the chat while you do it too.",
+  "inside": [
+    {
+      "title": "The recipes, written out properly",
+      "text": "The ones I post, except with the amounts, the timings and the oven temperature — the things you keep asking me for in the comments.\nSaved in one place instead of buried under a reel from three weeks ago.",
+      "group": "What I'll show you"
+    },
+    {
+      "title": "Our food, built for protein",
+      "text": "Batata, rice, plantain, the meat we actually eat. Not a diet that asks you to give up everything your family cooks.\nI'll show you what I change and what I leave exactly as it is.",
+      "group": "What I'll show you"
+    },
+    {
+      "title": "My training week",
+      "text": "What I do in the gym, in order, with the sets and the reps.\nAnd a version for the weeks you can only get there twice, because those weeks happen.",
+      "group": "What I'll show you"
+    },
+    {
+      "title": "The chat, and I'm in it",
+      "text": "Ask me anything. How long, what temperature, what to swap it for, whether to train through a sore shoulder.\nThe questions you'd send me in a DM, except everyone gets the answer.",
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "The week you fall off",
+      "text": "Everyone has one, and it's the week most people quit for good.\nThere's a place for exactly that, and I'm in it.",
+      "group": "Me, in there with you"
+    },
+    {
+      "title": "Challenges we start together",
+      "text": "Everyone begins on the same day, and the leaderboard counts both the pounds lost and the percent of your own bodyweight.\nSo someone starting at 250 and someone starting at 170 are both in it to win.",
+      "group": "Everyone else in there"
+    },
+    {
+      "title": "People cooking the same things",
+      "text": "Not a feed full of strangers eating chicken and rice out of a container. People making the food you grew up with, posting what worked.\nIt's a lot harder to quit in week two when they're all still going.",
+      "group": "Everyone else in there"
+    }
+  ],
+  "lockedLine": "Whatever you join at is what you pay for as long as you stay. It goes up for the people who come later, not for you.",
+  "instagram": "roobert_04",
+  "clubName": "Proteína y Sazón",
+  "price": {
+    "founding": "$24.99",
+    "regular": "$39.99",
+    "windowHours": 48
+  },
+  "badge": "Opening soon"
+}
