@@ -71,6 +71,25 @@ const CLIPS: Clip[] = [
       { at: 56, label: "Ask the coach about it" },
     ],
   },
+  {
+    id: "club-member-view",
+    group: "club",
+    duration: "1:56",
+    title: "Inside a club, as a member",
+    lead:
+      "The Academy tab is where clubs and coaches are found. Inside one you've joined, your coach's programmes sit in the Classroom — open a lesson, read the week, watch the video, mark it done. Some programmes your coach sells separately, on top of the membership. Then the channels: announcements, the chat where you can tip, the one where the wins go, and the people doing it alongside you.",
+    src: `${BUCKET}/3-club-member-view.mp4${V}`,
+    poster: `${BUCKET}/3-club-member-view.jpg${V}`,
+    chapters: [
+      { at: 15, label: "The club, and what's inside it" },
+      { at: 24, label: "The Classroom" },
+      { at: 30, label: "Inside a lesson" },
+      { at: 45, label: "A programme sold on its own" },
+      { at: 72, label: "The chat, and a tip" },
+      { at: 93, label: "The wins channel" },
+      { at: 99, label: "Who else is in there" },
+    ],
+  },
 ];
 
 export default function DemoPage() {
