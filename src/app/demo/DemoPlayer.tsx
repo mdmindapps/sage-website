@@ -27,7 +27,9 @@ export default function DemoPlayer({ clips, groups }: { clips: Clip[]; groups: G
   const [playingFrom, setPlayingFrom] = useState<number | null>(null);
   const video = useRef<HTMLVideoElement>(null);
   const stage = useRef<HTMLDivElement>(null);
-  const clip = clips[active];
+  // Falls back rather than throwing: a clip removed from the list while somebody is watching it
+  // would otherwise leave them on a blank page.
+  const clip = clips[active] ?? clips[0];
 
   const jump = (at: number) => {
     const v = video.current;

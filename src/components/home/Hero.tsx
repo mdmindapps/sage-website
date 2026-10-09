@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import StoreButton from "@/components/ui/StoreButton";
 import PhoneMockup from "@/components/ui/PhoneMockup";
 
@@ -77,10 +78,32 @@ export default function Hero() {
             animate="show"
             custom={0.21}
             variants={fadeUp}
-            className="flex flex-col sm:flex-row items-center gap-4 mb-14 w-full justify-center"
+            className="flex flex-col sm:flex-row items-center gap-4 mb-5 w-full justify-center"
           >
             <StoreButton platform="appstore" theme="light" />
             <StoreButton platform="play" theme="light" />
+          </motion.div>
+
+          {/* Under the store buttons, not beside them: installing is still the thing to do here,
+              and the demo is for whoever wants to look before they do. */}
+          <motion.div
+            initial="hidden"
+            animate="show"
+            custom={0.24}
+            variants={fadeUp}
+            className="mb-14 flex justify-center"
+          >
+            <Link
+              href="/demo"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-ink bg-white border border-border rounded-full pl-3 pr-4 py-2 shadow-sm hover:border-primary/40 transition-colors"
+            >
+              <span className="w-6 h-6 rounded-full bg-primary flex items-center justify-center shrink-0">
+                <svg width="9" height="10" viewBox="0 0 9 10" aria-hidden="true">
+                  <path d="M0 0.5 L9 5 L0 9.5 Z" fill="white" />
+                </svg>
+              </span>
+              <span>Watch the demo</span>
+            </Link>
           </motion.div>
 
           {/* Trust signals — honest feature pills, no fabricated stats */}
