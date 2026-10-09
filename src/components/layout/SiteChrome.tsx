@@ -24,7 +24,7 @@ const STANDALONE_ROUTES = [
 const KNOWN_FIRST = new Set([
   "about", "privacy", "terms", "cookies", "support", "reset", "delete-account", "get",
   "download", "creators", "creator-terms", "become-a-coach", "creator-docs", "join", "creator-profile", "mentor", "c", "api",
-  "book",
+  "book", "demo",
 ]);
 
 export default function SiteChrome({

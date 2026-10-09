@@ -5,6 +5,7 @@ import { founders } from "@/lib/founders";
 const footerLinks = {
   Product: [
     { label: "Features", href: "/#features" },
+    { label: "Watch the demo", href: "/demo" },
     { label: "Pricing", href: "/#pricing" },
     { label: "FAQ for members", href: "/#faq" },
     { label: "FAQ for creators", href: "/become-a-coach/faq" },
