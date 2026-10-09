@@ -90,6 +90,26 @@ const CLIPS: Clip[] = [
       { at: 99, label: "Who else is in there" },
     ],
   },
+  {
+    id: "creator-view",
+    group: "club",
+    duration: "4:19",
+    title: "Inside a club, as the creator",
+    lead:
+      "The same club from the other side. Maya adds a channel and sets how often people can post in it. She builds a programme in the Classroom and decides whether it comes with the membership or sells on its own. She runs a ten-week challenge with its own leaderboard, handles reports and members, edits the three places people see her, copies the link for her bio, and checks what's coming in.",
+    src: `${BUCKET}/4-creator-view.mp4${V}`,
+    poster: `${BUCKET}/4-creator-view.jpg${V}`,
+    chapters: [
+      { at: 15, label: "The Creator studio" },
+      { at: 25, label: "Adding a channel" },
+      { at: 70, label: "The Classroom, and building a programme" },
+      { at: 130, label: "The challenge, and its leaderboard" },
+      { at: 155, label: "Members, and moderating one" },
+      { at: 195, label: "The three places people see you" },
+      { at: 205, label: "The sales page, and your link" },
+      { at: 230, label: "What's coming in" },
+    ],
+  },
 ];
 
 export default function DemoPage() {
