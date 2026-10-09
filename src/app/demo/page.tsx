@@ -5,6 +5,10 @@ import DemoPlayer, { type Clip, type Group } from "./DemoPlayer";
 const BUCKET =
   "https://flchqdspfidwcljtuttq.supabase.co/storage/v1/object/public/site-media/demo";
 
+/* A re-render keeps its filename, so the CDN would go on serving the old copy. Bump this whenever
+   a file in the bucket is replaced. v2 = the phone status bar cropped off the top of both. */
+const V = "?v=2";
+
 export const metadata: Metadata = {
   title: "Demo",
   description:
@@ -12,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "See Sage from the inside",
     description: "A member's day in the app, narrated, start to finish.",
-    images: [`${BUCKET}/1-a-day-in-the-app.jpg`],
+    images: [`${BUCKET}/1-a-day-in-the-app.jpg${V}`],
   },
 };
 
@@ -35,8 +39,8 @@ const CLIPS: Clip[] = [
     title: "A day in the app",
     lead:
       "Weigh in and watch the trend line pick it up. Take your measurements. A meal goes in whichever way suits you — photograph the plate, pick a photo from your library, describe it in words, or pull one from the meals you've saved. Add a training session, and the day's balance moves every time. Then set a habit and start the streak.",
-    src: `${BUCKET}/1-a-day-in-the-app.mp4`,
-    poster: `${BUCKET}/1-a-day-in-the-app.jpg`,
+    src: `${BUCKET}/1-a-day-in-the-app.mp4${V}`,
+    poster: `${BUCKET}/1-a-day-in-the-app.jpg${V}`,
     chapters: [
       { at: 12, label: "Your weight, and the trend line" },
       { at: 30, label: "Measurements" },
@@ -53,8 +57,8 @@ const CLIPS: Clip[] = [
     title: "The meal scanner",
     lead:
       "Photograph the plate, or pick a photo you already took. Sage names the meal, finds the ingredients and estimates the weight of each one. Change anything that looks off and the calories and macros follow. Log it, and the feedback card that comes back opens a conversation with the coach, where you can ask what to do about it.",
-    src: `${BUCKET}/2-meal-scanner.mp4`,
-    poster: `${BUCKET}/2-meal-scanner.jpg`,
+    src: `${BUCKET}/2-meal-scanner.mp4${V}`,
+    poster: `${BUCKET}/2-meal-scanner.jpg${V}`,
     // Starts at the photo rather than at 0:08: this recording predates August, so the add-a-meal
     // sheet still shows the barcode card we replaced with My Meals, and a chapter would point
     // straight at it. Re-film is Liviu's, and the chapters move with it.
