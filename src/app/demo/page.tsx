@@ -34,13 +34,13 @@ const CLIPS: Clip[] = [
     duration: "2:27",
     title: "A day in the app",
     lead:
-      "Weigh in and watch the trend line pick it up. Take your measurements. Log a meal from the ones you've saved, add a training session, and the day's balance moves every time. Then set a habit and start the streak.",
+      "Weigh in and watch the trend line pick it up. Take your measurements. A meal goes in whichever way suits you — photograph the plate, pick a photo from your library, describe it in words, or pull one from the meals you've saved. Add a training session, and the day's balance moves every time. Then set a habit and start the streak.",
     src: `${BUCKET}/1-a-day-in-the-app.mp4`,
     poster: `${BUCKET}/1-a-day-in-the-app.jpg`,
     chapters: [
       { at: 12, label: "Your weight, and the trend line" },
       { at: 30, label: "Measurements" },
-      { at: 42, label: "A meal from the ones you've saved" },
+      { at: 42, label: "Four ways to log a meal" },
       { at: 60, label: "A training session" },
       { at: 84, label: "What made up the burn" },
       { at: 126, label: "A habit, and the streak" },
