@@ -46,6 +46,27 @@ const CLIPS: Clip[] = [
       { at: 126, label: "A habit, and the streak" },
     ],
   },
+  {
+    id: "meal-scanner",
+    group: "app",
+    duration: "1:13",
+    title: "The meal scanner",
+    lead:
+      "Photograph the plate, or pick a photo you already took. Sage names the meal, finds the ingredients and estimates the weight of each one. Change anything that looks off and the calories and macros follow. Log it, and the feedback card that comes back opens a conversation with the coach, where you can ask what to do about it.",
+    src: `${BUCKET}/2-meal-scanner.mp4`,
+    poster: `${BUCKET}/2-meal-scanner.jpg`,
+    // Starts at the photo rather than at 0:08: this recording predates August, so the add-a-meal
+    // sheet still shows the barcode card we replaced with My Meals, and a chapter would point
+    // straight at it. Re-film is Liviu's, and the chapters move with it.
+    chapters: [
+      { at: 12, label: "Pick a photo you already took" },
+      { at: 16, label: "Sage reads the plate" },
+      { at: 20, label: "Every ingredient, with its weight" },
+      { at: 32, label: "Correct a portion, the numbers follow" },
+      { at: 44, label: "Logged into the day" },
+      { at: 56, label: "Ask the coach about it" },
+    ],
+  },
 ];
 
 export default function DemoPage() {
