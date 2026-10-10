@@ -16,7 +16,7 @@
    The project key is public by design - it is write-only and ships inside every client - which is
    why the app commits the same one in app.json. It is not a secret and cannot read any data. */
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import type { PostHog } from "posthog-js";
 
@@ -35,11 +35,44 @@ function hasConsent(): boolean {
   }
 }
 
+/* OUR OWN DEVICES. On the real domain our visits are indistinguishable from a creator's - we never
+   identify anyone on the web - so PostHog's "filter test accounts" has nothing to key on. Open
+   ?noph=1 once on a phone or laptop and it stops sending from that browser for good; ?noph=0 undoes
+   it. Without this, a slice of next month's "visitors" is us checking whether we have visitors. */
+const OPTOUT_KEY = "sage_ph_optout";
+
+function optedOut(): boolean {
+  try {
+    return window.localStorage.getItem(OPTOUT_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+/** Reads ?noph= and remembers it. Returns a message to show, because this gets used on a phone,
+ *  where there is no console to check and no way to tell whether it took. */
+function applyOptOutParam(): string | null {
+  const v = new URLSearchParams(window.location.search).get("noph");
+  if (v !== "1" && v !== "0") return null;
+  try {
+    if (v === "1") {
+      window.localStorage.setItem(OPTOUT_KEY, "1");
+      ph?.opt_out_capturing(); // already running from an earlier load
+      return "Sage: analytics off for this browser.";
+    }
+    window.localStorage.removeItem(OPTOUT_KEY);
+    return "Sage: analytics back on for this browser.";
+  } catch {
+    return "Sage: could not save the setting - storage is blocked in this browser.";
+  }
+}
+
 let ph: PostHog | null = null;
 let starting: Promise<void> | null = null;
 
 /** Loads and initialises PostHog. Safe to call repeatedly; only the first call does the work. */
 function start(): Promise<void> {
+  if (optedOut()) return Promise.resolve();
   if (starting) return starting;
   starting = import("posthog-js").then(({ default: posthog }) => {
     posthog.init(KEY, {
@@ -81,6 +114,21 @@ function PageViews() {
 }
 
 export default function PostHogProvider({ children }: { children: React.ReactNode }) {
+  const [notice, setNotice] = useState<string | null>(null);
+
+  useEffect(() => {
+    const msg = applyOptOutParam(); // before anything starts, so ?noph=1 wins on the same load
+    if (!msg) return;
+    // Deferred, not set straight from the effect body: the toast is a reaction to having written
+    // the setting, and setting state synchronously here cascades renders.
+    const show = window.setTimeout(() => setNotice(msg), 0);
+    const hide = window.setTimeout(() => setNotice(null), 6000);
+    return () => {
+      window.clearTimeout(show);
+      window.clearTimeout(hide);
+    };
+  }, []);
+
   useEffect(() => {
     if (hasConsent()) void start();
 
@@ -103,6 +151,14 @@ export default function PostHogProvider({ children }: { children: React.ReactNod
       <Suspense fallback={null}>
         <PageViews />
       </Suspense>
+      {notice && (
+        <div
+          role="status"
+          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-[100] rounded-full bg-ink text-white text-sm font-medium px-5 py-2.5 shadow-2xl"
+        >
+          {notice}
+        </div>
+      )}
       {children}
     </>
   );
