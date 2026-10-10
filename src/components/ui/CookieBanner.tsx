@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { CONSENT_EVENT } from "@/components/analytics/PostHogProvider";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [showManage, setShowManage] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem("sage_cookie_consent");
@@ -16,15 +18,26 @@ export default function CookieBanner() {
     }
   }, []);
 
-  const accept = () => {
-    localStorage.setItem("sage_cookie_consent", "all");
+  // One place that writes the choice, so analytics can never start on a path that skipped it.
+  // The event is what lets PostHogProvider load the SDK immediately instead of on the next page.
+  const save = (value: "all" | "essential") => {
+    try {
+      localStorage.setItem("sage_cookie_consent", value);
+    } catch {
+      /* private mode — the choice simply isn't remembered, and nothing loads */
+    }
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
   };
 
-  const reject = () => {
-    localStorage.setItem("sage_cookie_consent", "essential");
-    setVisible(false);
+  const accept = () => {
+    setAnalytics(true);
+    save("all");
   };
+
+  const reject = () => save("essential");
+
+  const savePreferences = () => save(analytics ? "all" : "essential");
 
   return (
     <AnimatePresence>
@@ -88,14 +101,23 @@ export default function CookieBanner() {
                       <p className="font-medium text-sm">Analytics cookies</p>
                       <p className="text-white/50 text-xs">Help us understand site usage via PostHog (anonymised).</p>
                     </div>
-                    <div className="w-10 h-6 rounded-full bg-white/20 flex items-center px-1 cursor-pointer" onClick={() => {}}>
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={analytics}
+                      aria-label="Analytics cookies"
+                      onClick={() => setAnalytics((on) => !on)}
+                      className={`w-10 h-6 rounded-full flex items-center px-1 transition-colors ${
+                        analytics ? "bg-primary justify-end" : "bg-white/20 justify-start"
+                      }`}
+                    >
                       <div className="w-4 h-4 rounded-full bg-white" />
-                    </div>
+                    </button>
                   </label>
                 </div>
                 <div className="flex gap-2 justify-end">
                   <button
-                    onClick={reject}
+                    onClick={savePreferences}
                     className="px-4 h-9 text-sm font-semibold rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
                   >
                     Save preferences
