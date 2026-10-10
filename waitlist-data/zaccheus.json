@@ -1,0 +1,59 @@
+{
+  "handle": "zaccheus",
+  "name": "Zaccheus",
+  "photo": "/images/waitlist/zaccheus.jpg",
+  "photoAlt": "Zaccheus",
+  "headline": "Your skin is telling on your week.",
+  "subhead": "The routine, the training, the food and the waves — all of it written down in one place, and me in the chat while you run it.",
+  "inside": [
+    {
+      "group": "What I'll show you",
+      "title": "The routine, in order",
+      "text": "Morning and night. What I use, what order it goes in, and how long to wait between steps.\nNot a shelf of bottles — the actual order, which is the part nobody writes down."
+    },
+    {
+      "group": "What I'll show you",
+      "title": "The inside half",
+      "text": "Your skin is a reflection of how you treat the inside of your body. That is the whole thing I say, so this is where I show it.\nWhat I eat, what I drink, what I cut — and what changed first when I did."
+    },
+    {
+      "group": "What I'll show you",
+      "title": "My training week",
+      "text": "What I do in the gym, in order, with the sets and the reps.\nPlus the version for the weeks you only make it twice, because those weeks come."
+    },
+    {
+      "group": "What I'll show you",
+      "title": "The waves",
+      "text": "The brushing, the durag, how long a session really takes and what ruins it.\nI get asked this more than anything else and I have never written it out properly. Here I will."
+    },
+    {
+      "group": "Me, in there with you",
+      "title": "The chat, and I'm in it",
+      "text": "Ask me anything. What to swap, why you broke out this week, whether to train through it.\nThe questions you'd send me in a DM, except everyone gets to read the answer."
+    },
+    {
+      "group": "Me, in there with you",
+      "title": "Sundays",
+      "text": "The posts I put up on a Sunday, except in here we can actually talk about them.\nNot a sermon. Just the part where keeping your word to yourself is the same muscle either way."
+    },
+    {
+      "group": "Me, in there with you",
+      "title": "The month it stops working",
+      "text": "A bad stretch of skin, a week you fall off, a month where nothing moves.\nThat is when people quit for good, and that is exactly what this is for."
+    },
+    {
+      "group": "Everyone else in there",
+      "title": "Challenges we start together",
+      "text": "Everyone begins on the same day, and the board counts both the pounds lost and the percent of your own bodyweight.\nSo whoever you are and wherever you started, you're actually in it."
+    }
+  ],
+  "lockedLine": "Whatever you join at is what you pay for as long as you stay. It goes up for the people who come later, not for you.",
+  "instagram": "zaccheuspg",
+  "clubName": "Inside Out",
+  "price": {
+    "founding": "$24.99",
+    "regular": "$39.99",
+    "windowHours": 48
+  },
+  "badge": "Opening soon"
+}
