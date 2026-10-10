@@ -4,11 +4,11 @@
   "photo": "/images/waitlist/zaccheus-v2.jpg",
   "photoAlt": "Zaccheus",
   "headline": "Your skin is telling on your week.",
-  "subhead": "The routine, the training, the food and the waves — all of it written down in one place, and me in the chat while you run it.",
+  "subhead": "The routine, the training and the food — all of it written down in one place, and me in the chat while you run it.",
   "inside": [
     {
       "group": "What I'll show you",
-      "title": "The routine, in order",
+      "title": "The skin routine, in order",
       "text": "Morning and night. What I use, what order it goes in, and how long to wait between steps.\nNot a shelf of bottles — the actual order, which is the part nobody writes down."
     },
     {
@@ -20,11 +20,6 @@
       "group": "What I'll show you",
       "title": "My training week",
       "text": "What I do in the gym, in order, with the sets and the reps.\nPlus the version for the weeks you only make it twice, because those weeks come."
-    },
-    {
-      "group": "What I'll show you",
-      "title": "The waves",
-      "text": "The brushing, the durag, how long a session really takes and what ruins it.\nI get asked this more than anything else and I have never written it out properly. Here I will."
     },
     {
       "group": "Me, in there with you",
